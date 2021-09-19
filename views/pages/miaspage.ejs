@@ -10,22 +10,20 @@
 
   <div style="text-align: center;">
     <h1>Hi IPP, I am Mia Varghese!</h1>
-    <div id="variable_here"></div>
-    <div id="cat_fact"></div>
   </div>
 
-  <script>
-    var i = 0;
-    setInterval(() => {
-      console.log(i);
-      document.getElementById("variable_here").innerHTML = i;
-      i++;
-    }, 1000);
+  <div class="body">
+    <p>
+      I'm a second year Systems Engineering major from Richmond, VA with an
+      interest in data science/finance. At UVA, I'm involved in the Data Science
+      and Analytics club, WUVA News (videography and journalism), and Theta Tau.
+      My hobbies include Bollywood dance, basketball, and hiking. I also enjoy
+      traveling and creating videos wherever I go. Lastly, I also have a
+      beagador (beagle + labrador) named Coco who I love to spend time with! I am
+      very excited to work with everyone this semester!
 
-    fetch("https://meowfacts.herokuapp.com/").then(r => r.json()).then(data => {
-      document.getElementById("cat_fact").innerHTML = data.data[0];
-    })
-  </script>
+    </p>
+  </div>
 
 </body>
 </html>
