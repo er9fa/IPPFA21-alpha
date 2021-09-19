@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+
+
+<body>
+
+  <div class="grid-container">
+    <div class="item1">
+      <h1>Allison</h1>
+    </div>
+
+
+    <div class="item2">
+      <p>
+        Hi! My name is Allison but I also go by Allie! I'm a third-year BACS major,
+        and I'm also working towards a focal path in Cybersecurity. I transferred my second-year from Northern Virginia Community College
+        and I stayed home my first semester due to COVID. So this year is my first 'real' year at UVA. When I was at NOVA, I took some ITE classes that taught me
+        HTML, CSS, and JavaScript. I worked with a group to create a website about a fake entrepreneurship using only HTML and CSS and I really enjoyed it. I'm glad that
+        I have experience in this coding language that I can apply in this internship. I also know Java, Python, and C++ coding languages.
+        I also took extra courses on Coursera in SQL, so I have some experience in that. I sometimes enjoy coding when I can actually make the code work.
+        There is something satisying about fixing something that you've been spending hours
+        on...otherwise it's the most stressful thing I have ever done.
+
+        <br>This is my first internship with IPP,
+        and first internship ever. I'm really excited to work with all of you and learn more about software development.
+        I am Vice President of She's the First at UVA, a club sponsoring awareness of girls' rights and education.
+        I'm an early riser which allows me to have a job that I go to in the early hours of the morning (5:45 AM).
+      </p>
+    </div>
+
+
+    <div class="item3">
+      <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">
+      Click for Clock.</button>
+      <h2 id="demo"></h2>
+    </div>
+
+    <div class="item4">
+      <h4> Counter by 6! </h4>
+
+    <div class="item5">
+      <h3 id="counter_here"></h3>
+    </div>
+
+      <script>
+        var i = 0;
+        setInterval(() => {
+          console.log(i);
+          document.getElementById("counter_here").innerHTML = i;
+          i+=6;
+        }, 1000);
+      </script>
+
+<title>Allison's Page!</title>
+</body>
+
+<style>
+.item1 {grid-area: bioname;}
+.item2 {grid-area: bio;}
+.item3 {grid-area: button;}
+.item4 {grid-area: header;}
+.item5 {grid-area: counter;}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'bioname bioname bioname bioname'
+    'bio bio bio bio'
+    'button button button button'
+    'header header header header'
+    'counter counter counter counter';
+  grid-gap: 1px;
+  padding: 1px;
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 1px 0;
+  font-size: 12px;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 400%;
+  border: 2px solid white;
+  background-color: #0BE0F7;
+  margin: 2px 650px 2px 650px;
+}
+
+h2 {
+    color: white;
+    font-size: 170%
+}
+
+h3 {
+  color: white;
+  font-size: 200%;
+  background-color:  #0BE0F7;
+  border: 2px solid white;
+  margin: 2px 700px 2px 700px;
+}
+
+h4 {
+  color: white;
+  font-size: 300%;
+  border: 2px solid white;
+  background-color:  #0BE0F7;
+  margin: 2px 650px 2px 650px;
+}
+
+body {
+  background-image: url(https://news.virginia.edu/sites/default/files/zoom_bg_logo_l2.jpg);
+}
+
+p {
+  color: white;
+  font-size: 200%;
+  border: 2px solid white;
+  background-color: #0BE0F7;
+}
+
+</style>
+
+</div>
+
+</html>
