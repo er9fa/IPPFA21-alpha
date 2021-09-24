@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include ('../partials/header') %>
+<head>
+
+<body>
+  <%- include ('../partials/nav') %>
+  <title> Rishabs Page </title>
+  <div style="text-align: center;">
+    <h1>Rishab Gopisetti</h1>
+  <div>
+
+  <div class="body">
+    <p class="p1">
+      Hey everyone, I’m Rishab, a 2nd year B.S. in Aerospace Engineering with a possible minor<br>
+      in CS from Northern Virginia (Loudoun Country). To be honest, my CS knowledge is little<br>
+      nothing as the only experience I have is Intro Python from CS 1112 last semester, but I<br>
+      am very interested in learning with the rest of you guys and improving my skills<br>
+      in other programming languages. Other than that, I am also in the process of getting<br>
+      involved in the Virginia Motorsports team as well as the CVille Solar Project. I also<br>
+      play for intramural teams in both soccer and flag football. In my free time, I love<br>
+      playing basketball and watching pretty much any sport (Go Wizards!!). I am excited to meet<br>
+      all of you in person whenever we can make that happen and do great work on this project.<br>
+    </p>
+    <div id= "BTC_facts"></div>
+    <div id="variable_here"></div>
+    <div id="multiple_here"></div>
+
+    <img class="img1" src="https://i.ebayimg.com/images/g/RsoAAOSwMwhe4U37/s-l300.jpg"
+      alt="brad and rui"
+      width="180" height="400"
+      align="left">
+
+    <img class="img2" src="https://thecomeback.com/wp-content/uploads/2017/04/670465934.jpg"
+      alt="john wall"
+      width="300"
+      height="200"
+      align="right">
+
+    <img class="img3" src="https://media3.giphy.com/media/WaZtpSZWov49W/giphy.gif?cid=ecf05e475yjbbwhops4e8rlvh215dvwfp2xhof2am4tbhqzm&rid=giphy.gif&ct=g"
+      alt="oubre gif"
+      width="300"
+      height="200">
+
+  </div>
+
+
+  <style>
+    .p1 {
+      font-family: "Lucida Console", "Courier New", monospace;
+      color: white;
+    }
+
+    h1 {
+      font-family: "Times New Roman", Times, serif;
+      color: white;
+    }
+
+    body {
+      background-image: url(https://images2.alphacoders.com/982/thumb-1920-982133.jpg);
+      background-size: cover;
+    }
+
+    .img1 {
+      position: absolute;
+      left: 100px;
+      top: 300px;
+    }
+
+    .img2 {
+      position: absolute;
+      right: 60px;
+      top: 400px;
+    }
+
+    .img3 {
+      position: absolute;
+      bottom: 50px;
+      left: 700px;
+    }
+
+  </style>
+
+  <script>
+    var obj = document.getElementById("variable_here");
+    obj.setAttribute("style", "font-size: xx-large; color: white; font-family: Garamond, serif;")
+    var count = document.getElementById("multiple_here");
+    count.setAttribute("style", "font-size: xx-large; color: white; font-family: Garamond, serif;")
+    var i = 1;
+    var j = 1;
+    setInterval(() => {
+      console.log(i);
+      console.log(j);
+      document.getElementById("variable_here").innerHTML = "Washington Wizards: " + i;
+      i++;
+      if (i % 3 == 0){
+        document.getElementById("multiple_here").innerHTML = "Brooklyn Nets: " + j;
+        j++;
+      }
+    }, 1000);
+    fetch("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=bc695b6b-f4b5-438b-9fab-88f108aead7f").then(r => r.json()).then(data => {
+      document.getElementById("BTC_facts").innerHTML = data.data[0].quote.USD.price;
+    })
+  </script>
+
+</body>
+<html>
