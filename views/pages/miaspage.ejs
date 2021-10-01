@@ -10,8 +10,8 @@
 
   <div style="text-align: center;">
     <h1>Hi IPP, I am Mia Varghese!</h1>
-    <!-- <div id="stops"></div> -->
-    <div id="name"></div>
+    <div id="stops"></div>
+    <div id="position"></div>
   </div>
 
   <m>
@@ -37,8 +37,8 @@
     .then(r => r.json())
     .then(data => {
         console.log(data);
-        // document.getElementById("stops").innerHTML = data.stops.map(stops => stops.id).toString();
-        document.getElementById("name").innerHTML = data.name.map(name => name.id).toString();
+        document.getElementById("stops").innerHTML = data.stops.map(stops => stops.id).toString();
+        document.getElementById("position").innerHTML = data.position.map(name => position.id).toString();
     });
   </script>
 
