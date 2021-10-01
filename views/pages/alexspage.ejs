@@ -1,0 +1,86 @@
+<!-- Alex Kim, alexjoonkim02@gmail.com, alexspage.ejs -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include ('../partials/header') %>
+</head>
+
+<body>
+  <%- include ('../partials/nav') %>
+  <!-- beginning of body formatting -->
+  <style>
+    body {
+      background-image: url('https://lh3.googleusercontent.com/KMzQj8SaLSoVAm6dfSjjfkFqQhhidZwcxc2THdryZkHq3lgYT1kWrCfFI_Eh958qf6reE9G7Te39QYUbayJdVOEbUEuki1l1gxTDC-FS9o9yIUKKgiellyRPApzAs9AYLC0hgiJD4Q=w2400?source=screenshot.guru');
+      color: white;
+      font-family: Times New Roman;
+    }
+  </style>
+  <!-- Setting up grid container to ensure proper formatting -->
+  <div class="grid-container">
+    <div style="text-align: center;">
+      <div class="item1">
+        <!-- Header text -->
+        <h1> <b> <u>Alex Joon Kim </u></b> </h1>
+      </div>
+
+      <!-- Primary image for page -->
+      <a>
+        <img src="https://lh3.googleusercontent.com/2ShfGl2MTqbO-37h3BeyYD-5smLlQ-19YQnnTBnlOFFSuMjWgWrWU0dVDJsm_cmk41uNQcg72sqAK1vDBcVJGqbESLfvCIyZtsXHUSlv9tLtKmyfV6K-i4I2ECrY80urQWdCUtRHIg=w600-h315-p-k" class="rounded img-fluid" image-resolution:
+          from-image alt="Responsive image" />
+      </a>
+
+
+      <!-- Main body paragraph text -->
+      <div class="item2">
+        <h3 style="margin-left: 200px; margin-right: 200px; margin-top: 15px; margin-bottom: 15px;">
+          Hello everyone, my name is Alex Kim and I’m a 2nd year Computer Science major in the School of Engineering and Applied Sciences. I’m from Ashburn, Virginia, and I am also hoping to minor in the Engineering Business Minor as well.
+          Unlike most people within the IPP program, I am currently in this opportunity independently. Even so, I am very excited to work with my team and create a project that can help others in the university community.
+          <br>
+          <br>
+          In my free time I like to weightlift, play sports, or hang out with friends. I also love listening to music, and always appreciate new recommendations or listening parties.
+          At UVA, I am currently in the barbell club and heavily involved with my professional engineering fraternity Theta Tau. I am very excited to work new people so please feel free to reach out to me for personal/professional interests!
+        </h3>
+      </div>
+
+      <!-- Counter -->
+      <div class="item3">
+        <h2 id="counter">0</h2>
+      </div>
+
+      <!-- Button to start timer -->
+      <div class="item4">
+        <button id="buttons" style="color: black; height: 60px; width: 120px;"> Start Counter </button>
+      </div>
+
+      <!-- JavaScript for Counter and Button -->
+      <script type="text/javascript">
+        const timerText = document.getElementById("counter");
+        const buttonStart = document.getElementById("buttons");
+
+        let count = 0;
+        buttonStart.addEventListener("click", function() {
+          setInterval(function() {
+            count++;
+            timerText.textContent = count;
+          }, 1000);
+        });
+      </script>
+
+      <!-- Closing statement -->
+      <div class="item4">
+        <h3> If you would like to see any of my other projects, feel free to check out my <a href="https://ajk3158.github.io/"> <b>personal professional website</b></a>! </h3>
+      </div>
+
+      <!-- Cute GIF -->
+      <div class="item5">
+        <iframe src="https://giphy.com/embed/PnNvw5i7NYkujfCNh2" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <p><a href="https://giphy.com/stickers/appa-the-last-airbender-avatar-PnNvw5i7NYkujfCNh2">Cute Appa</a></p>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+
+</html>

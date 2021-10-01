@@ -8,9 +8,8 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .get('/nedspage', (req, res) => res.render('pages/nedspage'))
-<<<<<<< HEAD
+  .get('/rishabspage', (req, res) => res.render('pages/rishabspage'))
   .get('/miaspage', (req, res) => res.render('pages/miaspage'))
-=======
   .get('/allisonspage', (req, res) => res.render('pages/allisonspage'))
->>>>>>> main
+  .get('/alexspage', (req, res) => res.render('pages/alexspage'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
