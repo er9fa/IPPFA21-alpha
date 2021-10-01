@@ -11,7 +11,6 @@
   <div style="text-align: center;">
     <h1>Hi IPP, I am Mia Varghese!</h1>
     <div id="stops"></div>
-    <div id="position"></div>
   </div>
 
   <m>
@@ -38,7 +37,6 @@
     .then(data => {
         console.log(data);
         document.getElementById("stops").innerHTML = data.stops.map(stops => stops.id).toString();
-        document.getElementById("position").innerHTML = data.position.map(name => position.id).toString();
     });
   </script>
 
@@ -62,6 +60,13 @@ p {
   background-color: #ef7f2d
 }
 
+script{
+  color: black;
+  text-align: left;
+  font-size: 100%
+  margin-bottom: 20px;
+  background-color: #ef7f2d
+}
 
 </style>
 
