@@ -53,7 +53,23 @@
         <button id="buttons" style="color: black; height: 60px; width: 120px;"> Start Counter </button>
       </div>
 
-      <!-- JavaScript for Counter and Button -->
+      <!-- Bus Information/text-->
+      <div class="item5" style="text-align: center; font-family: courier;">
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: center; font-size:40px;"> <u> Bus Stop Locations </u> </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border:3px; border-style:solid; border-color:#ffffff; padding: 1em;" id="Busses"></td>
+            </tr>
+        </table>
+      </div>
+
+
+      <!-- JavaScript for Counter, Button, and Bus stop locations -->
       <script type="text/javascript">
         const timerText = document.getElementById("counter");
         const buttonStart = document.getElementById("buttons");
@@ -65,15 +81,64 @@
             timerText.textContent = count;
           }, 1000);
         });
+
+
+        function onlyUnique(value, index, self) {
+          return self.indexOf(value) === index;
+        }
+
+        fetch("https://api.devhub.virginia.edu/v1/transit/bus-stops")
+          .then(r => r.json())
+          .then(data => {
+            console.log(data);
+            var a = data.stops.map(bus => bus.name);
+            a = a.filter(onlyUnique);
+            document.getElementById("Busses").innerHTML = a;
+          });
       </script>
 
+      <!-- JavaScript to create bus visuals
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+        google.charts.load('current', {
+          'packages': ['table']
+        });
+        google.charts.setOnLoadCallback(drawTable);
+
+        function drawTable() {
+          var dataC = new google.visualization.DataTable();
+          data.addColumn('string', 'Bus Stop Location');
+          data.addColumn('number', '# Busses that Stop');
+          const freqList = [][];
+          fetch("https://api.devhub.virginia.edu/v1/transit/bus-stops")
+            .then(r => r.json())
+            .then(data => {
+              let places = data.stops.map(bus => bus.name);
+              const freq = {};
+              for (const num of places) {
+                freq[num] = freq[num] ? freq[num] + 1 : 1;
+              }
+              for (const num of places) {
+                dataC.addRows([num, freq[num]]);
+              }
+            });
+          var table = new google.visualization.Table(document.getElementById('Busses'));
+
+          table.draw(dataC, {
+            showRowNumber: true,
+            width: '100%',
+            height: '100%'
+          });
+        }
+      </script> -->
+
       <!-- Closing statement -->
-      <div class="item4">
+      <div class="item5">
         <h3> If you would like to see any of my other projects, feel free to check out my <a href="https://ajk3158.github.io/"> <b>personal professional website</b></a>! </h3>
       </div>
 
       <!-- Cute GIF -->
-      <div class="item5">
+      <div class="item6">
         <iframe src="https://giphy.com/embed/PnNvw5i7NYkujfCNh2" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
         <p><a href="https://giphy.com/stickers/appa-the-last-airbender-avatar-PnNvw5i7NYkujfCNh2">Cute Appa</a></p>
       </div>
