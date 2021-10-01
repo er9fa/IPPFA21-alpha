@@ -44,6 +44,14 @@
       width="300"
       height="200">
 
+      <table style="width:100%">
+    <tr>
+      <th><div id="stops"></div></th>
+    </tr>
+  </table>
+
+
+
   </div>
 
 
@@ -66,7 +74,7 @@
     .img1 {
       position: absolute;
       left: 100px;
-      top: 300px;
+      top: 200px;
     }
 
     .img2 {
@@ -77,8 +85,16 @@
 
     .img3 {
       position: absolute;
-      bottom: 50px;
-      left: 700px;
+      top: 100px;
+      right: 60px;
+    }
+
+    table, th {
+    border:1px solid white;
+    position: absolute;
+    left: 20px;
+    bottom: 50px;
+    color: white;
     }
 
   </style>
@@ -103,6 +119,13 @@
     fetch("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=bc695b6b-f4b5-438b-9fab-88f108aead7f").then(r => r.json()).then(data => {
       document.getElementById("BTC_facts").innerHTML = data.data[0].quote.USD.price;
     })
+
+    fetch("https://api.devhub.virginia.edu/v1/transit/bus-stops")
+    .then(r => r.json())
+    .then(data => {
+        console.log(data);
+        document.getElementById("stops").innerHTML = data.stops.map(stops => stops.id).toString();
+    });
   </script>
 
 </body>
