@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include ('../partials/header') %>
+  </head>
+  <style>
+    table,
+    th,
+    td {
+      border: solid 1px #ddd;
+      border-collapse: collapse;
+      padding: 2px 3px;
+      text-align: center;
+    }
+  </style>
+
+  <body>
+    <%- include ('../partials/nav') %>
+
+    <div style="text-align: center">
+      <div id="vehicles"></div>
+    </div>
+
+    <script>
+      function createTableFromJSON() {
+        fetch("https://api.devhub.virginia.edu/v1/transit/vehicles")
+          .then((r) => r.json())
+          .then((data) => {
+            let vehicles = data.vehicles;
+            let rows = [];
+            for (vehicle of vehicles) {
+              rows.push([vehicle.id, vehicle.next_stop, vehicle.speed]);
+            }
+
+            let table = document.createElement("table");
+
+            for (let i = 0; i < vehicles.length; i++) {
+              let tr = table.insertRow(-1);
+              for (let j = 0; j < 3; j++) {
+                let tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = rows[i][j];
+              }
+            }
+
+            let divContainer = document.getElementById("vehicles");
+            divContainer.innerHTML = "";
+            divContainer.appendChild(table);
+          });
+      }
+
+      createTableFromJSON();
+    </script>
+  </body>
+</html>
