@@ -44,6 +44,18 @@
       <h3 id="counter_here"></h3>
     </div>
 
+    <div class="item6">
+      <p> Bus Route API </p>
+      <h5 id="routes"></h5>
+    </div>
+
+
+    <%- include ('../partials/nav') %>
+
+        <div style="text-align: center">
+          <div id="vehicles"></div>
+        </div>
+
       <script>
         var i = 0;
         setInterval(() => {
@@ -51,6 +63,37 @@
           document.getElementById("counter_here").innerHTML = i;
           i+=6;
         }, 1000);
+
+        function createTableFromJSON() {
+        fetch("https://api.devhub.virginia.edu/v1/transit/vehicles")
+                  .then((r) => r.json())
+                  .then((data) => {
+                    let vehicles = data.vehicles;
+                    let rows = [];
+                    for (vehicle of vehicles) {
+                      rows.push([vehicle.id, vehicle.next_stop, vehicle.speed]);
+                    }
+                    let table = document.createElement("table");
+                    for (let i = 0; i < vehicles.length; i++) {
+                      let tr = table.insertRow(-1);
+                      for (let j = 0; j < 3; j++) {
+                        let tabCell = tr.insertCell(-1);
+                        tabCell.innerHTML = rows[i][j];
+                      }
+                    }
+                    let divContainer = document.getElementById("vehicles");
+                    divContainer.innerHTML = "";
+                    divContainer.appendChild(table);
+                  });
+              }
+              createTableFromJSON();
+
+      // fetch("https://api.devhub.virginia.edu/v1/transit/bus-stops")
+      // .then(r => r.json())
+      // .then(data => {
+      //   console.log(data);
+      //   document.getElementById("routes").innerHTML = data.routes.map(route => route.id).toString();
+      // });
       </script>
 
 <title>Allison's Page!</title>
@@ -62,6 +105,7 @@
 .item3 {grid-area: button;}
 .item4 {grid-area: header;}
 .item5 {grid-area: counter;}
+.item6 {grid-area: api;}
 
 .grid-container {
   display: grid;
@@ -70,7 +114,8 @@
     'bio bio bio bio'
     'button button button button'
     'header header header header'
-    'counter counter counter counter';
+    'counter counter counter counter'
+    'api api api api';
   grid-gap: 1px;
   padding: 1px;
 }
@@ -109,6 +154,12 @@ h4 {
   border: 2px solid white;
   background-color:  #0BE0F7;
   margin: 2px 650px 2px 650px;
+}
+
+h5 {
+  color: white;
+  font-size: 200%;
+  background-color: #0BE0F7;
 }
 
 body {
