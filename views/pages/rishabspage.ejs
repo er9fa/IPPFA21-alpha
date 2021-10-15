@@ -44,11 +44,11 @@
       width="300"
       height="200">
 
-      <table style="width:100%">
-    <tr>
-      <th><div id="stops"></div></th>
-    </tr>
-  </table>
+    <table>
+      <tr>
+        <td id="bus-stops"></td>
+      </tr>
+    </table>
 
 
 
@@ -89,13 +89,26 @@
       right: 60px;
     }
 
-    table, th {
-    border:1px solid white;
-    position: absolute;
-    left: 20px;
-    bottom: 50px;
-    color: white;
-    }
+    th, td, p, input {
+            font:14px Verdana;
+        }
+
+        table {
+          position: absolute;
+          top: 700px;
+          right: 850px;
+        }
+
+        th, td
+        {
+            border: solid 1px #DDD;
+            border-collapse: collapse;
+            padding: 2px 3px;
+            text-align: center;
+        }
+        th {
+            font-weight:bold;
+        }
 
   </style>
 
@@ -120,12 +133,29 @@
       document.getElementById("BTC_facts").innerHTML = data.data[0].quote.USD.price;
     })
 
-    fetch("https://api.devhub.virginia.edu/v1/transit/bus-stops")
-    .then(r => r.json())
-    .then(data => {
-        console.log(data);
-        document.getElementById("stops").innerHTML = data.stops.map(stops => stops.id).toString();
-    });
+    function createTableFromJSON() {
+        fetch("https://api.devhub.virginia.edu/v1/transit/bus-stops")
+          .then((r) => r.json())
+          .then((data) => {
+            let stops = data.stops;
+            let rows = [];
+            for (stop of stops) {
+              rows.push([stop.name, stop.id, stop.code]);
+            }
+            let table = document.createElement("table");
+            for (let i = 0; i < stops.length; i++) {
+              let tr = table.insertRow(-1);
+              for (let j = 0; j < 3; j++) {
+                let tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = rows[i][j];
+              }
+            }
+            let stopsDivContainer = document.getElementById("bus-stops");
+            stopsDivContainer.innerHTML = "";
+            stopsDivContainer.appendChild(table);
+          });
+      }
+      createTableFromJSON();
   </script>
 
 </body>
