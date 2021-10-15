@@ -25,15 +25,16 @@
 
     </p>
 
-    <h2>
-    	UVA Bus Stops
-    </h2>
-
-  </div>
-
-  <div style="text-align: center">
-    <div id="stops"></div>
-  </div>
+    <div>
+            <table>
+              <tr>
+                  <th>UVA Bus Stops</th>
+              </tr>
+              <tr>
+                  <td id="stops"></td>
+              </tr>
+            </table>
+        </div>
 
   <script>
     function createTableFromJSON() {
@@ -97,9 +98,31 @@ p {
   background-color: #ef7f2d
 }
 
-script{
+table{
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #b7d7e8
+  border: solid 1px;
+  border-color: black;
+text-align: center
+}
+
+th{
+  font-size: 150%;
   text-align: center;
-  background-color: #ef7f2d
+  border: solid 1px;
+  border-color: black;
+  background-color: #b7d7e8
+}
+
+tr{
+  margin-left: auto;
+  margin-right: auto;
+  column-gap: normal;
+  border-color: black;
+  border: solid 1px;
+  background-color: #b7d7e8
+
 }
 
 </style>
