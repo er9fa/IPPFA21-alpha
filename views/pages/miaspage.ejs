@@ -27,44 +27,28 @@
       very excited to work with everyone this semester!
 
     </p>
+
+    <h3>
+    	Data extracted from External JSON file.
+    </h3>
+
   </div>
 
-<!-- <h2>Stops (top row) and Routes (bottom row):</h2> -->
 
-<table>
-  <thead>
-    <tr>
-      <th> Stops </th>
-      <th> Routes </th>
-    </tr>
-  </thead>
-  <!-- <div id="stops"></div>
-<div id="routes"></div> -->
-
- <tbody>
-   <tr>
-     <td id ="stops"></td>
-     <td id="routes"></td>
-   </tr>
- </tbody>
-</table>
-
+<div id='showData'> </div>
 
   <script>
+var oXHR = new XMLHttpRequest();
 
-    fetch("https://api.devhub.virginia.edu/v1/transit/bus-stops")
-    .then(r => r.json())
-    .then(data => {
-        console.log(data);
-        document.getElementById("stops").innerHTML = data.stops.map(stops => stops.id).toString();
-    });
+oXHR.onreadystatechange = reportStatus;
+oXHR.open("GET", "C:\Users\miaev\OneDrive\Documents\GitHub\response.json", true);
+oXHR.send();
 
-    fetch("https://api.devhub.virginia.edu/v1/transit/bus-stops")
-    .then(r => r.json())
-    .then(data => {
-        console.log(data);
-        document.getElementById("routes").innerHTML = data.routes.map(routes => routes.id).toString();
-    });
+function reportStatus() {
+  if (oXHR.readyState == XMLHttpRequest.DONE) {
+    document.getElementById('showData').innerHTML = this.responseText;
+  }
+}
   </script>
 
 <style>
