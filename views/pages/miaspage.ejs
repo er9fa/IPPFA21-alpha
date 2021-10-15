@@ -12,9 +12,6 @@
     <h1>Hi IPP, I am Mia Varghese!</h1>
   </div>
 
-  <m>
-        <img align = "right" width="420" height="600" src="https://lh3.googleusercontent.com/pw/AM-JKLW1mQqN999E0h3ZgzAjz1WhWsoKJ34VZE35gbejTmdHuaJcVsFFmO5ihbqevEtqJSA7Gj70hXIagt-Bc2iRMLEvhHo_XJWEEGitl6KcyJz2qP3xjZ97BxLRRR9cGnCSVSWVDMcP75CcyZO91WEpCjKZ0g=w650-h866-no?authuser=0"/>
-      </m>
 
   <div class="body">
     <p>
@@ -28,46 +25,49 @@
 
     </p>
 
-    <h3>
-    	Bus Stops
-    </h3>
+    <h2>
+    	UVA Bus Stops
+    </h2>
 
   </div>
 
-
-<div id='showData'> </div>
+  <div style="text-align: center">
+    <div id="stops"></div>
+  </div>
 
   <script>
-    function createTable() {
-      fetch("https://api.devhub.virginia.edu/v1/transit/vehicles")
-      .then(r=>r.json())
-      .then((data) => {
-             let stops = data.stops;
-             let arrData = [];
-             var name = "Bus Stop Names";
-             var id = "Bus Stop IDs";
-             arrData.push([name.bold(), id.bold()]);
+    function createTableFromJSON() {
+      fetch("https://api.devhub.virginia.edu/v1/transit/bus-stops")
+        .then((r) => r.json())
+        .then((data) => {
+          let stops = data.stops;
+          let rows = [];
+          var title1 = "Name";
+          var title2 = "Code";
+          var title3 = "Coordinates";
+          var title4 = "Type";
+              rows.push([title1.bold().fontsize(4), title2.bold().fontsize(4), title3.bold().fontsize(4), title4.bold().fontsize(4)]);
+          for (stop of stops) {
+            rows.push([stop.name, stop.code, stop.position, stop.location_type]);
+          }
 
-      for (stop of stops) {
-        arrData.push([stop.name, stop.id]);
-      }
+          let table = document.createElement("table");
 
-    let busStops = document.createElement("table");
-    for (let x = 0; x < stops.length; x++) {
-      let tr = busStops.insertRow(-1);
-        for (let y = 0; y < 3; y++) {
-        let tableCell = tr.insertCell(-1);
-        tableCell.innerHTML = rows[x][y];
+          for (let i = 0; i < stops.length; i++) {
+            let tr = table.insertRow(-1);
+            for (let j = 0; j < 4; j++) {
+              let tabCell = tr.insertCell(-1);
+              tabCell.innerHTML = rows[i][j];
+            }
+          }
+
+          let divContainer = document.getElementById("stops");
+          divContainer.innerHTML = "";
+          divContainer.appendChild(table);
+        });
     }
-  }
 
-let busStopDiv = document.getElementById("busstops");
-busStopDiv.innerHTML = "";
-busStopDiv.appendChild(busStops);
-});
-}//
-createTable()
-
+    createTableFromJSON();
   </script>
 
 <style>
@@ -80,26 +80,11 @@ h1{
   background-color: #002e63
 }
 
-/* h2{
+h2{
   color: black;
-  text-align: left;
-  margin-bottom: 20px;
-} */
-
-table {
-  border: dotted;
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-bottom: 50px;
+  text-align: center;
 }
 
-thead{
-  background-color: #6cc644
-}
-
-tbody{
-  background-color: #9CDAF1
-}
 
 p {
   color: black;
@@ -109,6 +94,11 @@ p {
   margin-right: 100px;
   margin-top: 20px;
   margin-bottom: 20px;
+  background-color: #ef7f2d
+}
+
+script{
+  text-align: center;
   background-color: #ef7f2d
 }
 
