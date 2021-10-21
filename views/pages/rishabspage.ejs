@@ -44,6 +44,19 @@
       width="300"
       height="200">
 
+    <!--
+    <table>
+      <tr>
+        <td id="bus-stops"></td>
+      </tr>
+    </table>
+  -->
+
+    <div class="container">
+      <table class="table">
+        <tr id="bus-stops"></tr>
+      </table>
+    </div>
   </div>
 
 
@@ -66,7 +79,7 @@
     .img1 {
       position: absolute;
       left: 100px;
-      top: 300px;
+      top: 200px;
     }
 
     .img2 {
@@ -77,9 +90,25 @@
 
     .img3 {
       position: absolute;
-      bottom: 50px;
-      left: 700px;
+      top: 100px;
+      right: 60px;
     }
+
+    th, td, p, input {
+            font:14px Verdana;
+            color: white;
+        }
+
+        table, td, th {
+          border: 1px solid white;
+        }
+
+      table {
+        border-collapse: collapse;
+        width: 50%;
+        position: relative;
+        top: 255px;
+        }
 
   </style>
 
@@ -103,6 +132,58 @@
     fetch("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=bc695b6b-f4b5-438b-9fab-88f108aead7f").then(r => r.json()).then(data => {
       document.getElementById("BTC_facts").innerHTML = data.data[0].quote.USD.price;
     })
+
+
+    function createTableFromJSON() {
+        fetch("https://api.devhub.virginia.edu/v1/transit/bus-stops")
+          .then((r) => r.json())
+          .then((data) => {
+            let stops = data.stops;
+            let rows = [];
+            var idCol = "Bus Stop Name"
+            var nameCol = "Bus Stop ID"
+            var codeCol = "Bus Stop Code"
+              rows.push([idCol.fontsize(2), nameCol.fontsize(2), codeCol.fontsize(2)]);
+            for (stop of stops) {
+              rows.push([stop.name, stop.id, stop.code]);
+            }
+            let table = document.createElement("table");
+            for (let i = 0; i < stops.length; i++) {
+              let tr = table.insertRow(-1);
+              for (let j = 0; j < 3; j++) {
+                let tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = rows[i][j];
+              }
+            }
+            let stopsDivContainer = document.getElementById("bus-stops");
+            stopsDivContainer.innerHTML = "";
+            stopsDivContainer.appendChild(table);
+          });
+      }
+      createTableFromJSON();
+
+/*
+  fetch("https://api.devhub.virginia.edu/v1/transit/bus-stops").then(
+  res => {
+    res.json().then(
+      data => {
+        console.log(data.data);
+        if (data.data.length > 0) {
+
+          var stops = "";
+          data.data.forEach((stop) => {
+            stops += "<tr>";
+            stops += "<td>" + stop.id + "</td>";
+            stops += "<td>" + stop.name + "</td>";
+            stops += "<td>" + stop.code + "</td></tr>";
+          });
+          document.getElementById('busStops').innerHTML = stops;
+        }
+      }
+    )
+  }
+)
+*/
   </script>
 
 </body>
