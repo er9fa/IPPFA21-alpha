@@ -1,8 +1,14 @@
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 5000;
+const app = express();
 
-express()
+var cors = require('cors');
+
+// use it before all route definitions
+app.use(cors({origin: 'http://localhost:5000'}));
+
+app
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
