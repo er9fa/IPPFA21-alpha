@@ -6,7 +6,7 @@ const app = express();
 var cors = require('cors');
 
 // use it before all route definitions
-app.use(cors({origin: 'http://localhost:5000'}));
+app.use(cors());
 
 app
   .use(express.static(path.join(__dirname, 'public')))
@@ -15,10 +15,10 @@ app
   .get('/', (req, res) => res.render('pages/index'))
   .get('/nedspage', (req, res) => res.render('pages/nedspage'))
   .get('/rishabspage', (req, res) => res.render('pages/rishabspage'))
+  .get('/aboutpage', (req, res) => res.render('pages/aboutpage'))
   .get('/miaspage', (req, res) => res.render('pages/miaspage'))
   .get('/allisonspage', (req, res) => res.render('pages/allisonspage'))
   .get('/alexspage', (req, res) => res.render('pages/alexspage'))
   .get('/db', (req, res) => res.render('pages/db'))
   .get('/building', (req, res) => res.render('pages/building'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
-
