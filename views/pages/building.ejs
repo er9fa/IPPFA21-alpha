@@ -35,28 +35,28 @@
       fetch("https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities")
         .then((r) => r.json())
         .then((data) => {
-          let stops = data.data;
+          let data = data.data;
           let rows = [];
           var title1 = "Name";
           var title2 = "Address";
-          var title3 = "Year Built";
-          var title4 = "Category";
+          // var title3 = "Year Built";
+          // var title4 = "Category";
               rows.push([title1.bold().fontsize(4), title2.bold().fontsize(4), title3.bold().fontsize(4), title4.bold().fontsize(4)]);
           for (dat of data) {
-            rows.push([dat.Name, dat.Address, dat.YearBuilt, dat.Category]);
+            rows.push([dat.BuildingId, dat.Name]);
           }
 
           let table = document.createElement("table");
 
           for (let i = 0; i < data.length; i++) {
             let tr = table.insertRow(-1);
-            for (let j = 0; j < 4; j++) {
+            for (let j = 0; j < 2; j++) {
               let tabCell = tr.insertCell(-1);
               tabCell.innerHTML = rows[i][j];
             }
           }
 
-          let divContainer = document.getElementById("data");
+          let divContainer = document.getElementById("buildings");
           divContainer.innerHTML = "";
           divContainer.appendChild(table);
         });
@@ -67,7 +67,7 @@
 
 <style>
 body {
-  background-image: url('https://cdn.shopify.com/s/files/1/2262/5909/products/UVA01VSabreonWhiteStep_Repeat_1024x1024@2x.png?v=1626925418')
+  background-color: yellow;
 }
 
 h1{
@@ -92,7 +92,7 @@ p {
   background-color: #ef7f2d
 }
 
-table{
+ table{
   margin-left: auto;
   margin-right: auto;
   background-color: #b7d7e8;
