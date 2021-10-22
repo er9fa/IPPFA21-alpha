@@ -43,12 +43,12 @@
           var title4 = "Category";
               rows.push([title1.bold().fontsize(4), title2.bold().fontsize(4), title3.bold().fontsize(4), title4.bold().fontsize(4)]);
           for (dat of data) {
-            rows.push([dat.Name, stop.Address, stop.YearBuilt, stop.Category]);
+            rows.push([dat.Name, dat.Address, dat.YearBuilt, dat.Category]);
           }
 
           let table = document.createElement("table");
 
-          for (let i = 0; i < stops.length; i++) {
+          for (let i = 0; i < data.length; i++) {
             let tr = table.insertRow(-1);
             for (let j = 0; j < 4; j++) {
               let tabCell = tr.insertCell(-1);
