@@ -1,0 +1,291 @@
+<!-- Allison Fowle - UVA DevHub - acf6nb -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+<body>
+
+  <div class="grid-container">
+    <div class="item1">
+      <h1>Allison</h1>
+    </div>
+
+
+    <div class="item2">
+      <p>
+        Hi! My name is Allison but I also go by Allie! I'm a third-year BACS major,
+        and I'm also working towards a focal path in Cybersecurity. I transferred my second-year from Northern Virginia Community College
+        and I stayed home my first semester due to COVID. So this year is my first 'real' year at UVA. When I was at NOVA, I took some ITE classes that taught me
+        HTML, CSS, and JavaScript. I worked with a group to create a website about a fake entrepreneurship using only HTML and CSS and I really enjoyed it. I'm glad that
+        I have experience in this coding language that I can apply in this internship. I also know Java, Python, and C++ coding languages.
+        I also took extra courses on Coursera in SQL, so I have some experience in that. I sometimes enjoy coding when I can actually make the code work.
+        There is something satisying about fixing something that you've been spending hours
+        on...otherwise it's the most stressful thing I have ever done.
+
+        <br>This is my first internship with IPP,
+        and first internship ever. I'm really excited to work with all of you and learn more about software development.
+        I am Vice President of She's the First at UVA, a club sponsoring awareness of girls' rights and education.
+        I'm an early riser which allows me to have a job that I go to in the early hours of the morning (5:45 AM).
+      </p>
+    </div>
+
+
+    <div class="item3">
+      <button type="button" onclick="document.getElementById('button').innerHTML = Date()">Click for Clock.</button>
+      <h2 id="button"></h2>
+    </div>
+
+    <div class="item4">
+      <h3 id="counter_here"></h3>
+    </div>
+
+        <div class="item5">
+          <table>
+            <tr>
+                <th>Bus Stops</th>
+            </tr>
+            <tr>
+                <td id="busstops"></td>
+            </tr>
+          </table>
+      </div>
+
+      <div class="item6">
+        <table>
+          <tr>
+            <th>Vehicles</th>
+          </tr>
+          <tr>
+            <td id="vehicles"></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="item7">
+        <table>
+          <tr>
+            <th>Announcements</th>
+          </tr>
+          <tr>
+            <td id="announcements"></td>
+          </tr>
+        </table>
+      </div>
+
+<!-- end div class styling -->
+
+<!-- JavaScript for Counter and API -->
+      <script>
+//counter by 6 code
+        var i = 0;
+        setInterval(() => {
+          console.log(i);
+          document.getElementById("counter_here").innerHTML = i;
+          i+=6;
+        }, 1000);
+
+// start Bus Stop table
+      function busStop() {
+        fetch("https://api.devhub.virginia.edu/v1/transit/bus-stops")
+           .then((r) => r.json())
+           .then((data) => {
+             let stops = data.stops;
+             let rows = [];
+             var column1 = "Bus Stop Name";
+             var column2 = "Bus Stop ID";
+             var column3 = "Bus Stop Coordinates";
+             rows.push([column1.bold().fontsize(4), column2.bold().fontsize(4), column3.bold().fontsize(4)]);
+
+             for(stop of stops) {
+               rows.push([stop.name, stop.id, stop.position]);
+             }
+            let stopTable = document.createElement("table");
+              for (let x = 0; x < stops.length; x++) {
+                let tr = stopTable.insertRow(-1);
+                for (let y = 0; y < 3; y++) {
+                  let tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = rows[x][y];
+                }
+              }
+
+      let busStopDiv = document.getElementById("busstops");
+      busStopDiv.innerHTML = "";
+      busStopDiv.appendChild(stopTable);
+      });
+    }//end Bus Stop table
+
+    function vehicleTable() {
+      fetch("https://api.devhub.virginia.edu/v1/transit/vehicles")
+        .then((r) => r.json())
+        .then((data) => {
+          let vehicles = data.vehicles;
+          let row = [];
+          var column1 = "Vehicle ID";
+          var column2 = "Vehicle Service Status";
+          var column3 = "Vehicle Speed";
+          var column4 = "Vehicle Arrival Status"
+          row.push([column1.bold().fontsize(4), column2.bold().fontsize(4), column3.bold().fontsize(4), column4.bold().fontsize(4) ]);
+
+          for (vehicle of vehicles) {
+            row.push([vehicle.id, vehicle.service_status, vehicle.speed, vehicle.arrival_status]);
+          }
+          let vecTable = document.createElement("table");
+            for (let a = 0; a < vehicles.length; a++) {
+              let tr1 = vecTable.insertRow(-1);
+              for (let b = 0; b < 4; b++) {
+                let tabCell1 = tr1.insertCell(-1);
+                tabCell1.innerHTML = row[a][b];
+              }
+            }
+        let vehicleDiv = document.getElementById("vehicles");
+        vehicleDiv.innerHTML = "";
+        vehicleDiv.appendChild(vecTable);
+      });
+    }
+
+    function announceTable() {
+      fetch("https://api.devhub.virginia.edu/v1/transit/announcements")
+        .then((r) => r.json())
+        .then((data) => {
+          let announcements = data.announcements;
+          let row = [];
+          var column1 = "Agency ID";
+          var column2 = "Date";
+          var column3 = "Announcement";
+          row.push([column1.bold().fontsize(4), column2.bold().fontsize(4), column3.bold().fontsize(4)]);
+
+          for (announcement of announcements) {
+            row.push([announcement.agency_id, announcement.date, announcement.html]);
+          }
+          let announceTable = document.createElement("table");
+            for (let x = 0; x < announcements.length; x++) {
+              let tr = announceTable.insertRow(-1);
+              for (let y = 0; y < 3; y++) {
+                let tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = row[x][y];
+              }
+            }
+        let announceDiv = document.getElementById("announcements");
+        announceDiv.innerHTML = "";
+        announceDiv.appendChild(announceTable);
+      });
+    }
+// call functions for tables
+    busStop();
+    vehicleTable();
+    announceTable();
+
+      </script>
+// <!-- end JavaScript -->
+
+
+<title>Allison's Page!</title>
+<!-- End Body -->
+</div>
+</body>
+
+
+<!-- Style for grid of page, header and body style -->
+<style>
+.item1 {grid-area: bioname;}
+.item2 {grid-area: bio;}
+.item3 {grid-area: button;}
+.item4 {grid-area: counter;}
+.item5 {grid-area: stop;}
+.item6 {grid-area: vehicle;}
+.item7 {grid-area: announce;}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'bioname bioname bioname bioname'
+    'bio bio bio bio'
+    'button button button button'
+    'counter counter counter counter'
+    'stop stop stop stop'
+    'vehicle vehicle vehicle vehicle'
+    'announce announce announce announce';
+  grid-gap: 1px;
+  padding: 1px;
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 1px 0;
+  font-size: 12px;
+}
+
+.item5 {
+  text-align: center;
+}
+
+table {
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  color: white;
+  font-size: 200%;
+  background-color:  #0BE0F7;
+  border: 2px solid white;
+  text-align: center;
+}
+
+td {
+  text-align: center;
+  font-size: 20px;
+  background-color:  #0BE0F7;
+  border: 2px solid white;
+  color: white;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 400%;
+  border: 2px solid white;
+  background-color: #0BE0F7;
+  margin: 2px 650px 2px 650px;
+}
+
+h2 {
+    color: white;
+    font-size: 170%
+}
+
+h3 {
+  color: white;
+  font-size: 200%;
+  background-color:  #0BE0F7;
+  border: 2px solid white;
+  margin: 2px 700px 2px 700px;
+}
+
+h4 {
+  color: white;
+  font-size: 300%;
+  border: 2px solid white;
+  background-color:  #0BE0F7;
+  margin: 2px 650px 2px 650px;
+}
+
+body {
+  background-image: url(https://news.virginia.edu/sites/default/files/zoom_bg_logo_l2.jpg);
+}
+
+p {
+  color: white;
+  font-size: 200%;
+  border: 2px solid white;
+  background-color: #0BE0F7;
+}
+
+</style>
+
+
+</html>
