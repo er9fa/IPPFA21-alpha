@@ -13,6 +13,7 @@
   </div>
 
 
+
   <div class="body">
     <p>
       UVA Buildings Below!
@@ -36,43 +37,19 @@
             </table>
         </div>
 
+        <div>
+          <a>
+            <img src="https://lightandshadowsphotography.files.wordpress.com/2014/08/uva-rice-hall.jpg" class="rounded img-fluid" image-resolution:
+              from-image alt="Responsive image" />
+          </a>
+
+          <b>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/University_of_Virginia_Rotunda_2006.jpg" class="rounded img-fluid" image-resolution:
+              from-image alt="Responsive image" />
+          </b>
+        </div>
+
   <script>
-
-
-    // function createTableFromJSON() {
-    //   fetch("https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities")
-    //     .then((r) => r.json())
-    //     .then((response_json_obj) => {
-    //       //console.log("test");
-    //       data = response_json_obj.data; //pull out list (of values) from entire json object by referencing data key
-    //       let rows = [];
-    //       var title1 = "Name";
-    //       var title2 = "Address";
-    //       var title3 = "Year Built";
-    //       var title4 = "Category";
-    //       rows.push([title1.bold().fontsize(4), title2.bold().fontsize(4), title3.bold().fontsize(4), title4.bold().fontsize(4)]);
-
-    //       for (dat of data) {
-    //         rows.push([dat.Name, dat.Address, dat.YearBuilt, dat.Category]);
-    //       }
-    //       let table = document.createElement("table");
-
-    //       for (let i = 0; i < data.length; i++) {
-    //         let tr = table.insertRow(-1);
-    //         for (let j = 0; j < 4; j++) {
-    //           let tabCell = tr.insertCell(-1);
-    //           tabCell.innerHTML = rows[i][j];
-    //         }
-    //       }
-    //       let divContainer = document.getElementById("data");
-    //       divContainer.innerHTML = "";
-    //       divContainer.appendChild(table);
-    //     });
-    // }
-    // createTableFromJSON();
-
-
-
 
     function createTableFromJSON() {
       fetch("https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities")
@@ -128,9 +105,6 @@
   font-size: 12px;
 }
 
-body {
-  background-image: url('https://cdn.shopify.com/s/files/1/2262/5909/products/UVA01VSabreonWhiteStep_Repeat_1024x1024@2x.png?v=1626925418')
-}
 h1{
   color: white;
   background-color: #002e63
