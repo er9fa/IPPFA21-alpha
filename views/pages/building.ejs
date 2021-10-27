@@ -29,27 +29,6 @@
       </table>
     </div>
 
-    <div>
-      <a>
-        <img
-          src="https://lightandshadowsphotography.files.wordpress.com/2014/08/uva-rice-hall.jpg"
-          class="rounded img-fluid"
-          image-resolution:
-          from-image
-          alt="Responsive image"
-        />
-      </a>
-
-      <b>
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/a/ae/University_of_Virginia_Rotunda_2006.jpg"
-          class="rounded img-fluid"
-          image-resolution:
-          from-image
-          alt="Responsive image"
-        />
-      </b>
-    </div>
 
     <script>
       function createTableFromJSON() {
@@ -61,11 +40,13 @@
             console.log("test");
             let data = response_json_obj.data; //pull out list (of values) from entire json object by refere
             let rows = [];
+            var title = "Building ID"
             var title1 = "Name";
             var title2 = "Address";
             var title3 = "Year Built";
             var title4 = "Category";
             rows.push([
+              title.bold().fontsize(4),
               title1.bold().fontsize(4),
               title2.bold().fontsize(4),
               title3.bold().fontsize(4),
@@ -73,11 +54,11 @@
             ]);
 
             for (dat of data) {
-              rows.push([dat.Name, dat.Address, dat.YearBuilt, dat.Category]);
+              rows.push([dat.BuildingId, dat.Name, dat.Address, dat.YearBuilt, dat.Category]);
             }
             let table = document.createElement("table");
             let firstRow = table.insertRow(-1);
-            for (let column = 0; column < 4; column++) {
+            for (let column = 0; column < 5; column++) {
               let cell = firstRow.insertCell(-1);
               cell.innerHTML = rows[0][column];
             }
@@ -85,7 +66,7 @@
               let tr = table.insertRow(-1);
               let linkCell = tr.insertCell(-1);
               linkCell.innerHTML = `<a href="/building/${rows[i][0]}">${rows[i][0]}</a>`;
-              for (let j = 1; j < 4; j++) {
+              for (let j = 1; j < 5; j++) {
                 let tabCell = tr.insertCell(-1);
                 tabCell.innerHTML = rows[i][j];
               }
