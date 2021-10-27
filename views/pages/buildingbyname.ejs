@@ -5,6 +5,61 @@
   </head>
 
   <body>
+    <div>
     <h1><%= name %></h1>
+  </div>
+
+
+  <div class="body">
+    <p>UVA Buildings Below!</p>
+
+    <div class="grid-container"></div>
+
+    <div style="text-align: center;">
+      <div id="BuildingId"></div>
+    </div>
+
+
+  <script>
+
+  fetch("https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities").then(r => r.json()).then(data => {
+    document.getElementById("BuildingId").innerHTML = data.BuildingId];
+  })
+
+  </script>
+
+  <style>
+    .item1 {
+      grid-area: picture;
+    }
+    .item2 {
+      grid-area: apitable;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+        "picture picture apitable apitable"
+        "picture picture apitable apitable"
+        "picture picture apitable apitable"
+        "picture picture apitable apitable";
+      grid-gap: 1px;
+      padding: 1px;
+    }
+
+    .grid-container > div {
+      text-align: center;
+      padding: 1px 0;
+      font-size: 12px;
+    }
+
+    h1 {
+      color: white;
+      background-color: #002e63;
+    }
+
+
+  </style>
+
   </body>
 </html>
