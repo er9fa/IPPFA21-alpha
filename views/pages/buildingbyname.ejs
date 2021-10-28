@@ -21,14 +21,18 @@
       <div id = "data"></div>
       <div id = "demo"></div>
       <div id = "x"></div>
+      <div id = "y"></div>
     </div>
 
 
   <script>
-
-  fetch(
-    "https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities"
-  )
+  // fetch(
+  //   "https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities"
+  // )
+  //   .then((r) => r.json())
+  //   .then((response_json_obj) => {
+  //     console.log(data);
+  //     let data = response_json_obj.data;
 
   document.getElementById("demo").innerHTML =
   "Page path is: " + window.location.pathname;
@@ -41,7 +45,6 @@
       img.style.width = '600px';
       img.style.height = '600px';
       var src = document.getElementById("x");
-
       src.appendChild(img);
     }
 
@@ -141,21 +144,6 @@
     }
   });
 
-  // var obj = JSON.parse(facilities.json);
-  // var keys = Object.keys(obj);
-  // for (var i = 0; i < keys.length; i++) {
-  //   console.log(obj[keys[i]]);
-  // }
-  //
-  // fetch("https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities").then(r => r.json()).then(data => {
-  //   document.getElementById("BuildingId").innerHTML = data.BuildingId];
-  //   let text = `Welcome ${data.BuildingId}`
-  //   document.getElementById("demo").innerHTML = text;
-  //
-  //   function displayUser() {}
-  //     const id = document.querySelector
-  //
-  // })
 
   </script>
 
