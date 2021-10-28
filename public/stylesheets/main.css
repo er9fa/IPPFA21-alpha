@@ -1,7 +1,8 @@
 .jumbotron {
-  background: #1E8DFF;
+  background-image: url(/UVABackground.jpeg);
+  background-size:cover;
   color: white;
-  padding-bottom: 80px;
+  padding-bottom: 20px;
 }
 
 .jumbotron .btn-primary {
@@ -16,11 +17,11 @@
 .jumbotron p {
   color: white;
   max-width: 75%;
-  margin: 1em auto 2em;
+  margin: 1em auto 1em;
 }
 
 .navbar+.jumbotron {
-  margin-top: -20px;
+  margin-top: -40px;
 }
 
 .jumbotron .lang-logo {
@@ -56,6 +57,19 @@
   overflow: hidden;
 }
 
+.big-background{
+  background-image: url("/mainbackgroundIPP.png");
+}
+
+.main-background{
+  background-color: rgb(255, 166, 88);
+}
+
+.head-background{
+  padding-top: 24px;
+  background-color: rgb(30,141,255);
+}
+
 .building .building-item .building-item-caption {
   position: absolute;
   top: 0;
@@ -74,7 +88,10 @@
 }
 
 .building .building-item .building-item-caption .building-item-caption-content {
-  font-size: 2rem;
+  font-size: 5rem;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
 }
 
 .col-md-6 {
