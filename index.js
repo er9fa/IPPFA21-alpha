@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 5000;
 const app = express();
-
+const fs = require('fs');
 var cors = require("cors");
 
 // use it before all route definitions
@@ -24,4 +24,5 @@ app
   .get("/building/:name", (req, res) => {
     res.render("pages/buildingbyname", { name: req.params.name });
   })
+
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
