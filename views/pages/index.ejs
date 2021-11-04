@@ -5,37 +5,47 @@
   <%- include ('../partials/header') %>
 </head>
 
-<body>
+<body class = "font">
 
-  <%- include ('../partials/nav') %>
 
 <!-- Website Header -->
   <div class="jumbotron text-center">
-    <div class="container head-background">
-      <a href="/" class="lang-logo">
-        <img src="/uvadevLogo.png" width="200" height="200" class="rounded img-fluid" image-resolution: from-image alt="Responsive image">
+
+    <!-- Website Navigation bar -->
+    <div class="nav-contain justify-content-center">
+      <div class ="topnav">
+      <a class="active" href="/"><img src="/uvadevLogo.png" width="70" height="40" class="rounded img-fluid" image-resolution: from-image alt="Responsive image"></a>
+      <a href="/aboutpage"><span class="glyphicon glyphicon-user"></span> About Us</a>
+    </div>
+    </div>
+
+    <!-- UVA logo and Title-->
+    <div class="container">
+      <a class="lang-logo">
+        <img src="/uvadevLogo.png" width="200" height="150" class="rounded img-fluid" image-resolution: from-image alt="Responsive image">
       </a>
-      <h1> <u>Cavalier Buildings!</u></h1>
-      <p> This is a web application that simplifies information about UVA's buildings. The objective is to create a simple user interface with universal readability in terms of usage data and other general information.</p>
+      <h1><u>UVA BUILDINGS</u></h1>
     </div>
   </div>
 
 <!-- Start of interactive building interface -->
-  <section class="page-section big-background building" id="building">
-    <div class="container text-center main-background">
-      <h1 class="page-section-heading text-uppercase"><u>UVA Buildings</u></h1>
-      <h3 class="mb-5"> Click on a building to learn more information about it!</h3>
+  <section class="page-section big-background building">
+    <div class="container text-center">
+      <div style="color: black;">
+      <h1 class="page-section-heading text-uppercase"><u>Buildings on grounds</u></h1>
+      <h2 class="mb-5" style="margin-right: -30px; margin-left: -30px;"> "... architecture is my delight, and putting up, and pulling down, one of my favourite amusements." -Thomas Jefferson</h2>
+    </div>
       <div class="row justify-content-center">
 
 <!-- Rotunda Building Panel -->
         <div class="col-md-6 mb-5">
           <a href="http://localhost:5000/building/1">
             <div class="building-item mx-auto">
+              <img class = "building-item" src="/RotundaDevHub.jpeg" />
               <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div class="building-item-caption-content text-center" style="color: white;"><b>
                     Rotunda</b> <br> <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style = "text-decoration-color: white;">1826 University Ave </u></p> </div>
               </div>
-              <img class="img-thumbnail" src="/RotundaDevHub.jpeg" />
             </div>
           </a>
         </div>
@@ -44,11 +54,11 @@
         <div class="col-md-6 mb-5">
           <a href="http://localhost:5000/building/62">
             <div class="building-item mx-auto">
+              <img class="building-item" src="/AmphiUvaDev.jpeg" />
               <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div class="building-item-caption-content text-center" style="color: white;"><b>
                     Amphitheater</b> <br> <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style = "text-decoration-color: white;">151 Amphitheater Way </u></p> </div>
               </div>
-              <img class="img-thumbnail" src="/AmphiUvaDev.jpeg" />
             </div>
           </a>
         </div>
@@ -57,11 +67,11 @@
         <div class="col-md-6 mb-5">
           <a href="http://localhost:5000/building/256">
             <div class="building-item mx-auto">
+              <img class="building-item" src="/ChemUvaDev.jpeg" />
               <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div class="building-item-caption-content text-center" style="color: white;"><b>
                     Chemistry Building</b> <br> <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style = "text-decoration-color: white;"> 409 McCormick Rd</u></p> </div>
               </div>
-              <img class="img-thumbnail" src="/ChemUvaDev.jpeg" />
             </div>
           </a>
         </div>
@@ -70,11 +80,11 @@
         <div class="col-md-6 mb-5">
           <a href="http://localhost:5000/building/438">
             <div class="building-item mx-auto">
+              <img class="building-item" src="/CampUvaDev.jpeg" />
               <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div class="building-item-caption-content text-center" style="color: white;"><b>
                     Campbell Hall</b> <br> <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style = "text-decoration-color: white;">Bayly Dr</u></p> </div>
               </div>
-              <img class="img-thumbnail" src="/CampUvaDev.jpeg" />
             </div>
           </a>
         </div>
@@ -83,11 +93,11 @@
         <div class="col-md-6 mb-5">
           <a href="http://localhost:5000/building/5087">
             <div class="building-item mx-auto">
+              <img class="building-item" src="/MemUvaDev.jpeg" />
               <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div class="building-item-caption-content text-center" style="color: white;"><b>
                     Memorial Gymnasium</b> <br> <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style = "text-decoration-color: white;">210 Emmet St South </u></p> </div>
               </div>
-              <img class="img-thumbnail" src="/MemUvaDev.jpeg" />
             </div>
           </a>
         </div>
@@ -96,11 +106,11 @@
         <div class="col-md-6 mb-5">
           <a href="http://localhost:5000/building/59">
             <div class="building-item mx-auto">
+                <img class="building-item" src="/OldUvaDev.jpeg" />
               <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div class="building-item-caption-content text-center" style="color: white;"><b>
                     Old Cabell Hall</b> <br> <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style = "text-decoration-color: white;"> Old Cabell Hall</u></p> </div>
               </div>
-              <img class="img-thumbnail" src="/OldUvaDev.jpeg" />
             </div>
           </a>
         </div>
@@ -109,11 +119,11 @@
         <div class="col-md-6 mb-5">
           <a href="http://localhost:5000/building/60">
             <div class="building-item mx-auto">
+              <img class="building-item" src="/NewUvaDev.jpeg" />
               <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div class="building-item-caption-content text-center" style="color: white;"><b>
                     New Cabell Hall</b> <br> <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style = "text-decoration-color: white;"> Cabell Hall </u></p> </div>
               </div>
-              <img class="img-thumbnail" src="/NewUvaDev.jpeg" />
             </div>
           </a>
         </div>
@@ -122,11 +132,11 @@
         <div class="col-md-6 mb-5">
           <a href="http://localhost:5000/building/56">
             <div class="building-item mx-auto">
+              <img class="building-item" src="/VarUvaDev.jpeg" />
               <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div class="building-item-caption-content text-center" style="color: white;"><b>
                     Varsity Hall</b>  <br> <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style = "text-decoration-color: white;"> Varsity Hall </u></p> </div>
               </div>
-              <img class="img-thumbnail" src="/VarUvaDev.jpeg" />
             </div>
           </a>
         </div>
@@ -135,11 +145,11 @@
         <div class="col-md-6 mb-5">
           <a href="http://localhost:5000/building/66">
             <div class="building-item mx-auto">
+              <img class="building-item" src="/MauryUvaDev.jpeg" />
               <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div class="building-item-caption-content text-center" style="color: white;"><b>
                     Maury Hall</b> <br> <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style = "text-decoration-color: white;"> 1512 Jefferson Park Ave </u></p> </div>
               </div>
-              <img class="img-thumbnail" src="/MauryUvaDev.jpeg" />
             </div>
           </a>
         </div>
@@ -148,11 +158,11 @@
         <div class="col-md-6 mb-5">
           <a href="http://localhost:5000/building/68">
             <div class="building-item mx-auto">
+              <img class="building-item" src="/ClarkUvaDev.jpeg" />
               <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div class="building-item-caption-content text-center" style="color: white;"><b>
                     Clark Hall</b> <br> <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style = "text-decoration-color: white;"> 291 McCormick Rd </u></p> </div>
               </div>
-              <img class="img-thumbnail" src="/ClarkUvaDev.jpeg" />
             </div>
           </a>
         </div>
@@ -160,6 +170,12 @@
     </div>
   </section>
 
+
+  <div class="footer text-center">
+    <div class="container">
+      <h2> This is a web application that simplifies information about UVA's buildings. The objective is to create a simple user interface with universal readability in terms of usage data and other general information.</h2>
+    </div>
+  </div>
 </body>
 
 </html>
