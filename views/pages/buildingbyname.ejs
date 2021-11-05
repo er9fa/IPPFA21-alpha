@@ -9,7 +9,7 @@
 
   <body>
     <div>
-    <h1>Building Name</h1>
+    <h1> <div id="build"> </div></h1>
   </div>
 
 <div>
@@ -43,6 +43,7 @@ fetch(
   .then((response_json_obj) => {
     console.log("test");
     let data = response_json_obj.data;
+    document.getElementById("build").innerHTML = data.data.map(building => building.Name).toString();
 });
 
 
