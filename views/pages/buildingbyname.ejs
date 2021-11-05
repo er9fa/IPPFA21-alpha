@@ -33,50 +33,15 @@
 
   <script>
 
-  function createTableFromJSON() {
+  function fetchData() {
          fetch(`https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities/id/<%= id %>`
-        )
-           .then((r) => r.json())
-           .then((response_json_obj) => {
-             console.log("test");
-             let data = response_json_obj.data; //pull out list (of values) from entire json object by refere
-             let rows = [];
-             var title = "Building ID"
-             var title1 = "Name";
-             var title2 = "Address";
-             var title3 = "Year Built";
-             var title4 = "Category";
-             rows.push([
-               title.bold().fontsize(4),
-               title1.bold().fontsize(4),
-               title2.bold().fontsize(4),
-               title3.bold().fontsize(4),
-               title4.bold().fontsize(4),
-             ]);
-             for (dat of data) {
-               rows.push([dat.BuildingId, dat.Name, dat.Address, dat.YearBuilt, dat.Category]);
-             }
-             let table = document.createElement("table");
-             let firstRow = table.insertRow(-1);
-             for (let column = 0; column < 5; column++) {
-               let cell = firstRow.insertCell(-1);
-               cell.innerHTML = rows[0][column];
-             }
-             for (let i = 1; i < data.length; i++) {
-               let tr = table.insertRow(-1);
-               let linkCell = tr.insertCell(-1);
-               linkCell.innerHTML = `<a href="/building/${rows[i][0]}">${rows[i][0]}</a>`;
-               for (let j = 1; j < 5; j++) {
-                 let tabCell = tr.insertCell(-1);
-                 tabCell.innerHTML = rows[i][j];
-               }
-             }
-             let divContainer = document.getElementById("build");
-             divContainer.innerHTML = "";
-             divContainer.appendChild(table);
-           });
-       }
-       createTableFromJSON();
+        ).then(response => {
+          const data = response.json();
+          console.log(data);
+        })
+      }
+      fetchData();
+
 
 //  document.getElementById("demo").innerHTML = "Page path is: " + window.location.pathname;
 
