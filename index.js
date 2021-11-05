@@ -21,8 +21,8 @@ app
   .get("/alexspage", (req, res) => res.render("pages/alexspage"))
   .get("/db", (req, res) => res.render("pages/db"))
   .get("/building", (req, res) => res.render("pages/building"))
-  .get("/building/:name", (req, res) => {
-    res.render("pages/buildingbyname", { name: req.params.name });
+  .get("/building/:id", (req, res) => {
+    res.render("pages/buildingbyname", { id: req.params.id });
   })
 
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
