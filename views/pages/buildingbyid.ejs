@@ -43,11 +43,12 @@
           const html = data.data.map(building => {
             return `${building.Name}`
           })
+          // how to determine if building is historic: if Y, print yes, else no.
           const html2 = data.data.map(building => {
             return `This building is located on ${building.Address}.
             It was built in ${building.YearBuilt}. It is a ${building.Category}
-            type building, with a square footage of ${building.SquareFootage}.
-            It's coordinates are [${building.Longitude}, ${building.Latitude}].`
+            type building, with a square footage of ${building.SquareFootage} ft<sup>2</sup>.
+            Its coordinates are [${building.Longitude}, ${building.Latitude}].`
           })
           console.log(html)
           document.querySelector(`#build`).innerHTML = html
@@ -122,13 +123,15 @@
 
     // download images for local access (go and find an image, prob alex's, put them in static/images folder
     // rename them to id#, can access by plugging in info about particular building.) PRO: GOOGLE IMAGES API
-    
+
     //Clark Hall
     if (window.location.href.indexOf("68") > -1) {
       var img = document.createElement("img");
       img.src = "https://upload.wikimedia.org/wikipedia/commons/b/ba/UVA_Clark_Hall.JPG";
       img.style.width = '600px';
       img.style.height = '600px';
+      img.style.borderRadius = '25px';
+      img.style.fontFamily = 'Times New Roman';
       var src = document.getElementById("x");
       src.appendChild(img);
     }
@@ -139,6 +142,7 @@
       img.src = "https://cdnassets.hw.net/19/d5/4f58a1884d2c87a2558cf66b7b5f/rotunda-interior-design-renovation-glave-and-holmes-southlawnextclosedusk.jpg";
       img.style.width = '800px';
       img.style.height = '600px';
+      img.style.borderRadius = '25px';
       var src = document.getElementById("x");
 
       src.appendChild(img);
@@ -150,6 +154,7 @@
       img.src = "https://upload.wikimedia.org/wikipedia/commons/7/76/McIntire_Amphitheater.JPG";
       img.style.width = '700px';
       img.style.height = '600px';
+      img.style.borderRadius = '25px';
       var src = document.getElementById("x");
 
       src.appendChild(img);
@@ -160,7 +165,7 @@
       var img = document.createElement("img");
       img.src = "https://www.bryanpollardphotos.com/img/s/v-10/p2029172359-3.jpg";
       var src = document.getElementById("x");
-
+      img.style.borderRadius = '25px';
       src.appendChild(img);
     }
 
@@ -170,6 +175,7 @@
       img.src = "https://www.arch.virginia.edu/gallery/img/bp-campbell-hall-ss-header-3-2.jpg";
       img.style.width = '700px';
       img.style.height = '600px';
+      img.style.borderRadius = '25px';
       var src = document.getElementById("x");
 
       src.appendChild(img);
@@ -181,6 +187,7 @@
       img.src = "https://images.squarespace-cdn.com/content/v1/59f8a97e29f187d68cd21025/1516213382027-2SFQJ15V5OZXLR6WB6D1/UVAGym_3722-01_Image2.jpg";
       img.style.width = '700px';
       img.style.height = '600px';
+      img.style.borderRadius = '25px';
       var src = document.getElementById("x");
 
       src.appendChild(img);
@@ -192,6 +199,7 @@
       img.src = "https://music.virginia.edu/sites/music.virginia.edu/files/oldcabellhall-front-of-building.jpg";
       img.style.width = '700px';
       img.style.height = '600px';
+      img.style.borderRadius = '25px';
       var src = document.getElementById("x");
 
       src.appendChild(img);
@@ -203,6 +211,7 @@
       img.src = "https://www.goodyclancy.com/wp-content/uploads/2014/05/UVA_New-Cabell-Hall-Ext-Front_Facade_Goody-Clancy-900x615.jpg";
       img.style.width = '700px';
       img.style.height = '600px';
+      img.style.borderRadius = '25px';
       var src = document.getElementById("x");
 
       src.appendChild(img);
@@ -213,7 +222,7 @@
       var img = document.createElement("img");
       img.src = "https://www.martinhorn.com/wp-content/uploads/2013/09/UVA_varsity_hall_front_SS_710x468.jpg";
       var src = document.getElementById("x");
-
+      img.style.borderRadius = '25px';
       src.appendChild(img);
     }
 
@@ -223,6 +232,7 @@
       img.src = "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/1-maury-hall-at-uva-bryan-pollard.jpg";
       img.style.width = '700px';
       img.style.height = '600px';
+      img.style.borderRadius = '25px';
       var src = document.getElementById("x");
 
       src.appendChild(img);
