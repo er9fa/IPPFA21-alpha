@@ -43,7 +43,7 @@ fetch(
   .then((response_json_obj) => {
     console.log("test");
     let data = response_json_obj.data;
-    document.getElementById("demo").innerHTML = data.data.map(building => building.Name).toString();
+    document.write(data);
 });
 
 
