@@ -44,7 +44,10 @@
             return `${building.Name}`
           })
           const html2 = data.data.map(building => {
-            return `${building.Address}`
+            return `This building is located on ${building.Address}.
+            It was built in ${building.YearBuilt}. It is a ${building.Category}
+            type building, with a square footage of ${building.SquareFootage}.
+            It's coordinates are [${building.Longitude}, ${building.Latitude}].`
           })
           console.log(html)
           document.querySelector(`#build`).innerHTML = html
