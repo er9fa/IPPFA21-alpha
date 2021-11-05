@@ -45,7 +45,7 @@
             return `<p>${building.Name}</p>`
           })
           console.log(html)
-          document.querySelector(`#build`).innerHTML = `hello`
+          document.querySelector(`#build`).innerHTML = html
         }).catch(error => {
           console.log(error)
         });
