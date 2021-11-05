@@ -14,6 +14,13 @@
       background-image: url('https://lh3.googleusercontent.com/KMzQj8SaLSoVAm6dfSjjfkFqQhhidZwcxc2THdryZkHq3lgYT1kWrCfFI_Eh958qf6reE9G7Te39QYUbayJdVOEbUEuki1l1gxTDC-FS9o9yIUKKgiellyRPApzAs9AYLC0hgiJD4Q=w2400?source=screenshot.guru');
       color: white;
       font-family: Times New Roman;
+      text-align: center;
+    }
+    td{
+      border: solid 3px #ddd;
+      border-collapse: collapse;
+      padding: 1px 3px;
+      text-align: center;
     }
   </style>
   <!-- Setting up grid container to ensure proper formatting -->
@@ -21,7 +28,7 @@
     <div style="text-align: center;">
       <div class="item1">
         <!-- Header text -->
-        <h1> <b> <u>Alex Joon Kim </u></b> </h1>
+        <h1> <b> <u>Alex Joon Kim</u></b> </h1>
       </div>
 
       <!-- Primary image for page -->
@@ -53,7 +60,46 @@
         <button id="buttons" style="color: black; height: 60px; width: 120px;"> Start Counter </button>
       </div>
 
-      <!-- JavaScript for Counter and Button -->
+      <!-- Bus Information/text-->
+      <div class="item5" style="text-align: center; font-family: courier;">
+        <table style="margin: 0px auto;">
+          <thead>
+            <tr>
+              <th style="text-align: center; font-size:40px;"> <u> Bus Routes </u> </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id = "buss"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="clear:both;"></div>
+
+      <div class="item5" style="text-align: center; font-family: courier;">
+        <table style="margin: 0px auto;">
+          <thead>
+            <tr>
+              <th style="text-align: center; font-size:40px;"> <u> Bus Stops </u> </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="Busses"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!--Disclaimer for Table-->
+      <div class="item6" style="text-align: center;">
+        <h4>DISCLAIMER: Duplicate locations are due to stops located within the same street.</h4>
+      </div>
+
+
+      <!-- JavaScript for Counter, Button, and Bus stop locations -->
       <script type="text/javascript">
         const timerText = document.getElementById("counter");
         const buttonStart = document.getElementById("buttons");
@@ -65,15 +111,87 @@
             timerText.textContent = count;
           }, 1000);
         });
+
+
+        function onlyUnique(value, index, self) {
+          return self.indexOf(value) === index;
+        }
+
+        function createTable1(){
+          fetch("https://api.devhub.virginia.edu/v1/transit/bus-stops")
+            .then(r => r.json())
+            .then(data => {
+              let routes = data.routes;
+              let row = [];
+              var titleG = "Bus ID";
+              var titleG1 = "Stop IDs";
+              row.push([titleG.bold().fontsize(5), titleG1.bold().fontsize(5)]);
+
+              for(route of routes){
+                row.push([route.id, route.stops]);
+              }
+
+            let table1 = document.createElement("table");
+
+              for (let x = 0; x < routes.length; x++) {
+                let tr1 = table1.insertRow(-1);
+                for (let y = 0; y < 2; y++) {
+                  let tabCell1 = tr1.insertCell(-1);
+                  tabCell1.innerHTML = row[x][y];
+                }
+              }
+
+              let divContainer1 = document.getElementById("buss");
+              divContainer1.innerHTML = "";
+              divContainer1.appendChild(table1);
+
+            });
+        }
+
+        function createTable() {
+          fetch("https://api.devhub.virginia.edu/v1/transit/bus-stops")
+            .then(r => r.json())
+            .then(data => {
+              let stops = data.stops;
+              let rows = [];
+
+              var title = "Bus Stop Name";
+              var title2 = "Bus Stop ID";
+              var title3 = "Bus Stop Coordinates";
+
+              rows.push([title.bold().fontsize(5), title2.bold().fontsize(5), title3.bold().fontsize(5)]);
+
+            for(stop of stops){
+              rows.push([stop.name, stop.id, stop.position]);
+            }
+
+              let table = document.createElement("table");
+
+              for (let x = 0; x < stops.length; x++) {
+                let tr = table.insertRow(-1);
+                for (let y = 0; y < 3; y++) {
+                  let tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = rows[x][y];
+                }
+              }
+
+              let divContainer = document.getElementById("Busses");
+              divContainer.innerHTML = "";
+              divContainer.appendChild(table);
+            });
+        }
+        createTable1();
+        createTable();
+
       </script>
 
       <!-- Closing statement -->
-      <div class="item4">
+      <div class="item7">
         <h3> If you would like to see any of my other projects, feel free to check out my <a href="https://ajk3158.github.io/"> <b>personal professional website</b></a>! </h3>
       </div>
 
       <!-- Cute GIF -->
-      <div class="item5">
+      <div class="item8">
         <iframe src="https://giphy.com/embed/PnNvw5i7NYkujfCNh2" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
         <p><a href="https://giphy.com/stickers/appa-the-last-airbender-avatar-PnNvw5i7NYkujfCNh2">Cute Appa</a></p>
       </div>

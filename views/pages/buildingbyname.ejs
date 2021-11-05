@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include ('../partials/header') %>
+</head>
+
+
+  <body>
+    <div>
+    <h1> <div id="build"> </div></h1>
+  </div>
+
+<div>
+<p> <div id = "body"> </div></p>
+</div>
+
+
+  <div class="body">
+
+    <div class="grid-container"></div>
+
+    <div style="text-align: center;">
+      <div id="BuildingId"></div>
+      <div id="myData"></div>
+      <div id = "data"></div>
+      <div id = "demo"></div>
+      <div id = "x"></div>
+    </div>
+
+
+  <script>
+
+  function fetchData() {
+         fetch(`https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities/id/<%= id %>`
+        )
+        .then(response => {
+          return response.json();
+        })
+        .then(data => {
+          console.log(data.data);
+          const html = data.data.map(building => {
+            return `${building.Name}`
+          })
+          const html2 = data.data.map(building => {
+            return `This building is located on ${building.Address}.
+            It was built in ${building.YearBuilt}. It is a ${building.Category}
+            type building, with a square footage of ${building.SquareFootage}.
+            It's coordinates are [${building.Longitude}, ${building.Latitude}].`
+          })
+          console.log(html)
+          document.querySelector(`#build`).innerHTML = html
+          document.querySelector(`#body`).innerHTML = html2
+        }).catch(error => {
+          console.log(error)
+        });
+      }
+      fetchData();
+
+
+//  document.getElementById("demo").innerHTML = "Page path is: " + window.location.pathname;
+
+
+// fetch(
+//   `https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities/id/<%= id %>`
+// )
+//   .then((r) => r.json())
+//   .then((response_json_obj) => {
+//     console.log("test");
+//     let data = response_json_obj.data;
+//
+// });
+
+
+  // fetch('https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities')
+  //   .then((response) => {
+  //     return response.json();
+  //   })
+  //   .then((myJson) => {
+  //     console.log(myJson);
+  //     document.write(response_json_obj);
+  //   });
+
+  // fetch('facilities.json')
+  //   .then(function (response) {
+  //     return response.json();
+  // })
+  //   .then(function (data) {
+  //     appendData(data);
+  // })
+  //   .catch(function (err) {
+  //     console.log(err);
+  // });
+  //
+  // function appendData(data) {
+  //   var mainContainer = document.getElementById("myData");
+  //   for (var i = 0; i < data.length; i++) {
+  //     var div = document.createElement("div");
+  //     div.innerHTML = 'Name: ';
+  //     mainContainer.appendChild(div);
+  //   }
+  // }
+
+
+//  });
+  // async function getData() {
+  //   const response = await fetch('https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities');
+  //   const dat = await response.json();
+  //   const {data, Historic} = dat;
+  //   document.getElementById('lat').innerText = data;
+  //   document.getElementById('lon').innerText = Historic;
+  //   console.log(data);
+  //   console.log(Historic);
+  //
+  // }
+  //
+  // getData();
+
+
+  $(document).ready(function() {
+
+    //Clark Hall
+    if (window.location.href.indexOf("68") > -1) {
+      var img = document.createElement("img");
+      img.src = "https://upload.wikimedia.org/wikipedia/commons/b/ba/UVA_Clark_Hall.JPG";
+      img.style.width = '600px';
+      img.style.height = '600px';
+      var src = document.getElementById("x");
+      src.appendChild(img);
+    }
+
+    //Rotunda
+    if (window.location.href.indexOf("1") > -1) {
+      var img = document.createElement("img");
+      img.src = "https://cdnassets.hw.net/19/d5/4f58a1884d2c87a2558cf66b7b5f/rotunda-interior-design-renovation-glave-and-holmes-southlawnextclosedusk.jpg";
+      img.style.width = '800px';
+      img.style.height = '600px';
+      var src = document.getElementById("x");
+
+      src.appendChild(img);
+    }
+
+    //Amphitheater
+    if (window.location.href.indexOf("62") > -1) {
+      var img = document.createElement("img");
+      img.src = "https://upload.wikimedia.org/wikipedia/commons/7/76/McIntire_Amphitheater.JPG";
+      img.style.width = '700px';
+      img.style.height = '600px';
+      var src = document.getElementById("x");
+
+      src.appendChild(img);
+    }
+
+    //Chemistry Building
+    if (window.location.href.indexOf("256") > -1) {
+      var img = document.createElement("img");
+      img.src = "https://www.bryanpollardphotos.com/img/s/v-10/p2029172359-3.jpg";
+      var src = document.getElementById("x");
+
+      src.appendChild(img);
+    }
+
+    //Campbell Hall
+    if (window.location.href.indexOf("438") > -1) {
+      var img = document.createElement("img");
+      img.src = "https://www.arch.virginia.edu/gallery/img/bp-campbell-hall-ss-header-3-2.jpg";
+      img.style.width = '700px';
+      img.style.height = '600px';
+      var src = document.getElementById("x");
+
+      src.appendChild(img);
+    }
+
+    //Mem Gym
+    if (window.location.href.indexOf("5087") > -1) {
+      var img = document.createElement("img");
+      img.src = "https://images.squarespace-cdn.com/content/v1/59f8a97e29f187d68cd21025/1516213382027-2SFQJ15V5OZXLR6WB6D1/UVAGym_3722-01_Image2.jpg";
+      img.style.width = '700px';
+      img.style.height = '600px';
+      var src = document.getElementById("x");
+
+      src.appendChild(img);
+    }
+
+    //Old Cabell
+    if (window.location.href.indexOf("59") > -1) {
+      var img = document.createElement("img");
+      img.src = "https://music.virginia.edu/sites/music.virginia.edu/files/oldcabellhall-front-of-building.jpg";
+      img.style.width = '700px';
+      img.style.height = '600px';
+      var src = document.getElementById("x");
+
+      src.appendChild(img);
+    }
+
+    //New Cabell
+    if (window.location.href.indexOf("60") > -1) {
+      var img = document.createElement("img");
+      img.src = "https://www.goodyclancy.com/wp-content/uploads/2014/05/UVA_New-Cabell-Hall-Ext-Front_Facade_Goody-Clancy-900x615.jpg";
+      img.style.width = '700px';
+      img.style.height = '600px';
+      var src = document.getElementById("x");
+
+      src.appendChild(img);
+    }
+
+    //Varsity Hall
+    if (window.location.href.indexOf("56") > -1) {
+      var img = document.createElement("img");
+      img.src = "https://www.martinhorn.com/wp-content/uploads/2013/09/UVA_varsity_hall_front_SS_710x468.jpg";
+      var src = document.getElementById("x");
+
+      src.appendChild(img);
+    }
+
+    //Maury Hall
+    if (window.location.href.indexOf("66") > -1) {
+      var img = document.createElement("img");
+      img.src = "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/1-maury-hall-at-uva-bryan-pollard.jpg";
+      img.style.width = '700px';
+      img.style.height = '600px';
+      var src = document.getElementById("x");
+
+      src.appendChild(img);
+    }
+  });
+
+
+  </script>
+
+
+  <style>
+    .item1 {
+      grid-area: picture;
+    }
+    .item2 {
+      grid-area: apitable;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+        "picture picture apitable apitable"
+        "picture picture apitable apitable"
+        "picture picture apitable apitable"
+        "picture picture apitable apitable";
+      grid-gap: 1px;
+      padding: 1px;
+    }
+
+    .grid-container > div {
+      text-align: center;
+      padding: 1px 0;
+      font-size: 12px;
+    }
+
+    h1 {
+      color: white;
+      background-color: #002e63;
+      text-align: center;
+    }
+
+    body {
+      text-align: center;
+      font-style: oblique;
+      background-color: black;
+      color: white;
+    }
+
+
+  </style>
+  </body>
+</html>

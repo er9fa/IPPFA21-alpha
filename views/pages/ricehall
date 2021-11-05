@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include ('../partials/header') %>
+</head>
+
+<body>
+
+  <%- include ('../partials/nav') %>
+
+  <div style="text-align: center;">
+    <h1>UVA Buildings</h1>
+  </div>
