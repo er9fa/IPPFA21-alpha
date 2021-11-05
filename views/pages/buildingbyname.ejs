@@ -33,7 +33,7 @@
 
   <script>
 
-  document.getElementById("demo").innerHTML = "Page path is: " + window.location.pathname;
+//  document.getElementById("demo").innerHTML = "Page path is: " + window.location.pathname;
 
 
 fetch(
@@ -43,7 +43,7 @@ fetch(
   .then((response_json_obj) => {
     console.log("test");
     let data = response_json_obj.data;
-    document.getElementById("build").innerHTML = data.data.map(building => building.Name).toString();
+    document.getElementById("demo").innerHTML = data.data.map(building => building.Name).toString();
 });
 
 
