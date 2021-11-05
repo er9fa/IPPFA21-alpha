@@ -13,8 +13,7 @@
   </div>
 
 <div>
-<p>Information about the building: year it was built, address, latitude, longitude
-  square footage, category, and history!!</p>
+<p> <div id = "body"> </div></p>
 </div>
 
 
@@ -44,8 +43,12 @@
           const html = data.data.map(building => {
             return `${building.Name}`
           })
+          const html2 = data.data.map(building => {
+            return `${building.Address}`
+          })
           console.log(html)
           document.querySelector(`#build`).innerHTML = html
+          document.querySelector(`#body`).innerHTML = html2
         }).catch(error => {
           console.log(error)
         });
