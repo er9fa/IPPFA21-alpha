@@ -39,6 +39,9 @@
           return response.json();
         }).then(data => {
           console.log(data.data);
+          document.querySelector(`#build`).innerHTML = `hello`
+        }).catch(error => {
+          console.log(error)
         });
       }
       fetchData();
