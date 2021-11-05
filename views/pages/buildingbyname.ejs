@@ -35,10 +35,16 @@
 
   function fetchData() {
          fetch(`https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities/id/<%= id %>`
-        ).then(response => {
+        )
+        .then(response => {
           return response.json();
-        }).then(data => {
+        })
+        .then(data => {
           console.log(data.data);
+          const html = data.data.map(building => {
+            return `<p>${building.Name}</p>`
+          })
+          console.log(html)
           document.querySelector(`#build`).innerHTML = `hello`
         }).catch(error => {
           console.log(error)
