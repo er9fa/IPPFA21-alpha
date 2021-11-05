@@ -7,7 +7,7 @@ var cors = require("cors");
 
 // use it before all route definitions
 app.use(cors());
-
+// random comment :P
 app
   .use(express.static(path.join(__dirname, "public")))
   .set("views", path.join(__dirname, "views"))
@@ -22,7 +22,7 @@ app
   .get("/db", (req, res) => res.render("pages/db"))
   .get("/building", (req, res) => res.render("pages/building"))
   .get("/building/:id", (req, res) => {
-    res.render("pages/buildingbyname", { id: req.params.id });
+    res.render("pages/buildingbyid", { id: req.params.id });
   })
 
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
