@@ -36,9 +36,10 @@
   function fetchData() {
          fetch(`https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities/id/<%= id %>`
         ).then(response => {
-          const data = response.json();
+          return response.json();
+        }).then(data => {
           console.log(data);
-        })
+        });
       }
       fetchData();
 
