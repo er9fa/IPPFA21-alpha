@@ -8,8 +8,8 @@
 
   <body>
     <div>
-      <h1><div id="build"></div></h1>
-      <h2><div id="buildinfo"></div></h2>
+      <h1><div class="item1" id="buildname"></div></h1>
+      <h2><div class="item2" id="buildinfo"></div></h2>
     </div>
 
     <img id="buildingimg" src="" />
@@ -34,7 +34,7 @@
               Location: [${building.Longitude}, ${building.Latitude}]`;
 
             const imgsrc = `/img/buildingname/${html}.jpeg`;
-            document.querySelector(`#build`).innerHTML = html;
+            document.querySelector(`#buildname`).innerHTML = html;
             document.querySelector(`#buildinfo`).innerHTML = html2;
 
             const buildingimg = document.getElementById("buildingimg");
