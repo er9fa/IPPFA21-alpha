@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include ('../partials/header') %>
+  </head>
+
+  <body>
+    <div>
+      <h1><div id="build"></div></h1>
+      <h2><div id="buildinfo"></div></h2>
+    </div>
+
+    <img id="buildingimg" src="" />
+
+    <div style="text-align: center">
+      <div id="BuildingId"></div>
+      <div id="myData"></div>
+      <div id="data"></div>
+      <div id="demo"></div>
+    </div>
+
+    <script>
+      function fetchData() {
+        fetch(
+          `https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities/id/<%= id %>`
+        )
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            const building = data.data[0];
+            const html = building.Name;
+
+            // how to determine if building is historic: if Y, print yes, else no.
+            const html2 = `Address: ${building.Address}<br/>
+              Year Built: ${building.YearBuilt}<br/>
+              Square Footage: ${building.SquareFootage} ft<sup>2</sup> <br/>
+              Type of Building: ${building.Category}<br/>
+              Location: [${building.Longitude}, ${building.Latitude}]`;
+
+            const imgsrc = `/img/buildingname/${html}.jpeg`;
+            document.querySelector(`#build`).innerHTML = html;
+            document.querySelector(`#buildinfo`).innerHTML = html2;
+
+            const buildingimg = document.getElementById("buildingimg");
+            buildingimg.src = imgsrc;
+
+            img.style.width = "600px";
+            img.style.height = "600px";
+            img.style.borderRadius = "25px";
+            img.style.fontFamily = "Times New Roman";
+            //src.appendChild(img);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+      fetchData();
+    </script>
+
+    <style>
+      .item1 {
+        grid-area: img;
+      }
+      .item2 {
+        grid-area: apitable;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-areas:
+          "img img apitable apitable"
+          "img img apitable apitable"
+          "img img apitable apitable"
+          "img img apitable apitable";
+        grid-gap: 1px;
+        padding: 1px;
+      }
+
+      .grid-container > div {
+        text-align: center;
+        padding: 1px 0;
+        font-size: 12px;
+      }
+
+      h1 {
+        color: white;
+        background-color: #002e63;
+        text-align: center;
+        font-size: 70px;
+      }
+
+      body {
+        background-image: url("/cool-background.png");
+        background-size: 3000px 1000px;
+      }
+
+      h2 {
+        text-align: left;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: white;
+        font-size: 20px;
+      }
+    </style>
+  </body>
+</html>
