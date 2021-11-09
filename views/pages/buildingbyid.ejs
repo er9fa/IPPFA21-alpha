@@ -7,12 +7,13 @@
   </head>
 
   <body>
+    <div class="grid-container">
     <div>
       <h1><div class="item1" id="buildname"></div></h1>
       <h2><div class="item2" id="buildinfo"></div></h2>
     </div>
 
-    <img id="buildingimg" src="" />
+    <img class="item3" id="buildingimg" src="" />
 
     <script>
       function fetchData() {
@@ -40,10 +41,10 @@
             const buildingimg = document.getElementById("buildingimg");
             buildingimg.src = imgsrc;
 
-            img.style.width = "600px";
-            img.style.height = "600px";
-            img.style.borderRadius = "25px";
-            img.style.fontFamily = "Times New Roman";
+            buildingimg.style.width = "200px";
+            buildingimg.style.height = "100px";
+            buildingimg.style.borderRadius = "25px";
+            //img.style.fontFamily = "Times New Roman";
             //src.appendChild(img);
           })
           .catch((error) => {
@@ -53,23 +54,30 @@
       fetchData();
     </script>
 
+ </div> <!--end grid container -->
     <style>
       .item1 {
-        grid-area: img;
+        grid-area: buildname;
       }
       .item2 {
-        grid-area: h2;
+        grid-area: buildinfo;
+      }
+      .item3 {
+        grid-area: buildpic;
       }
 
       .grid-container {
         display: grid;
         grid-template-areas:
-          "img img h2 h2"
-          "img img h2 h2"
-          "img img h2 h2"
-          "img img h2 h2";
+          'buildname buildname buildname buildname buildname buildname'
+          'buildpic buildpic buildpic buildinfo buildinfo buildinfo'
+          'buildpic buildpic buildpic buildinfo buildinfo buildinfo'
+          'buildpic buildpic buildpic buildinfo buildinfo buildinfo'
+          'buildpic buildpic buildpic buildinfo buildinfo buildinfo';
         grid-gap: 1px;
-        padding: 1px;
+        padding: 1px; 
+        /* grid-template-columns: auto auto auto auto auto;
+        grid-template-rows: 100px 200px 200px 200px 200px; */
       }
 
       .grid-container > div {
@@ -77,8 +85,12 @@
         padding: 1px 0;
         font-size: 12px;
       }
+      .wrapper {
+        width: 100vw;
+        height: 100vh;
+      }
 
-      h1 {
+      h1 { /*building name*/
         color: white;
         background-color: #002e63;
         text-align: center; 
@@ -93,8 +105,8 @@
         padding-bottom: 10px;
       }
 
-      h2 {
-        text-align: left;
+      h2 { /*building info*/
+        text-align: right;
         font-family: 'Mate SC', serif;
         padding-top: 10px;
         padding-bottom: 10px;
