@@ -32,7 +32,7 @@
           .then((data) => {
             const building = data.data[0];
             const html = building.Name;
-
+            
             // how to determine if building is historic: if Y, print yes, else no.
             const html2 = `Address: ${building.Address}<br/>
               Year Built: ${building.YearBuilt}<br/>
