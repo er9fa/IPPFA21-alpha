@@ -1,120 +1,153 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%- include ('../partials/header') %>
-  </head>
 
-  <body>
-    <div class="grid-container">
-    <div>
-      <h1><div class="item1" id="buildname"></div></h1>
-      <h2><div class="item2" id="buildinfo"></div></h2>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%- include ('../partials/header') %>
+</head>
 
+<body>
+  <div class="grid-container">
+    <h1 class="item1" id="buildname"></h1>
     <img class="item3" id="buildingimg" src="" />
+    <h2 class="item2" id="buildinfo"></h2>
+  </div>
 
-    <script>
-      function fetchData() {
-        fetch(
-          `https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities/id/<%= id %>`
-        )
-          .then((response) => {
-            return response.json();
-          })
-          .then((data) => {
-            const building = data.data[0];
-            const html = building.Name;
 
-            // how to determine if building is historic: if Y, print yes, else no.
-            const html2 = `Address: ${building.Address}<br/>
+
+  <script>
+    function fetchData() {
+      fetch(
+        `https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities/id/<%= id %>`
+      )
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          const building = data.data[0];
+          const html = building.Name;
+
+          // how to determine if building is historic: if Y, print yes, else no.
+          const html2 = `Address: ${building.Address}<br/>
               Year Built: ${building.YearBuilt}<br/>
               Square Footage: ${building.SquareFootage} ft<sup>2</sup> <br/>
               Type of Building: ${building.Category}<br/>
-              Location: [${building.Longitude}, ${building.Latitude}]`;
+              Location: [${building.Longitude}, ${building.Latitude}] <br/>
+              Historic? ${building.Historic} <br/>`;
 
-            const imgsrc = `/img/buildingname/${html}.jpeg`;
-            document.querySelector(`#buildname`).innerHTML = html;
-            document.querySelector(`#buildinfo`).innerHTML = html2;
+          const imgsrc = `/img/buildingname/${html}.jpeg`;
+          document.querySelector(`#buildname`).innerHTML = html;
+          document.querySelector(`#buildinfo`).innerHTML = html2;
 
-            const buildingimg = document.getElementById("buildingimg");
-            buildingimg.src = imgsrc;
+          const buildingimg = document.getElementById("buildingimg");
+          buildingimg.src = imgsrc;
 
-            buildingimg.style.width = "200px";
-            buildingimg.style.height = "100px";
-            buildingimg.style.borderRadius = "25px";
-            //img.style.fontFamily = "Times New Roman";
-            //src.appendChild(img);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      }
-      fetchData();
-    </script>
+          buildingimg.style.width = "600px";
+          buildingimg.style.height = "400px";
+          buildingimg.style.borderRadius = "25px";
+          buildingimg.style.marginLeft = "25px";
+          //img.style.fontFamily = "Times New Roman";
+          //src.appendChild(img);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+    fetchData();
 
- </div> <!--end grid container -->
-    <style>
-      .item1 {
-        grid-area: buildname;
-      }
-      .item2 {
-        grid-area: buildinfo;
-      }
-      .item3 {
-        grid-area: buildpic;
-      }
 
-      .grid-container {
-        display: grid;
-        grid-template-areas:
-          'buildname buildname buildname buildname buildname buildname'
-          'buildpic buildpic buildpic buildinfo buildinfo buildinfo'
-          'buildpic buildpic buildpic buildinfo buildinfo buildinfo'
-          'buildpic buildpic buildpic buildinfo buildinfo buildinfo'
-          'buildpic buildpic buildpic buildinfo buildinfo buildinfo';
-        grid-gap: 1px;
-        padding: 1px; 
-        /* grid-template-columns: auto auto auto auto auto;
+    window.onload = function buildingimg() {
+      window.setTimeout(buildingimg, 2000);
+    }
+
+    function buidingimg() {
+      document.getElementById('buildingimg').style.opacity = '1';
+    }
+
+    window.onload = function buildinfo() {
+      window.setTimeout(buildinfo, 2000);
+    }
+
+    function buildinfo() {
+      document.getElementById('buildinfo').style.opacity = '1';
+    }
+
+  </script>
+
+
+  <style>
+    @font-face {
+      font-family: futured;
+      src: url("/Futured.woff");
+    }
+
+    .item1 {
+      grid-area: buildname;
+    }
+
+    .item2 {
+      grid-area: buildinfo;
+    }
+
+    .item3 {
+      grid-area: buildingimg;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+        'buildname buildname'
+        'buildingimg buildinfo'
+        'buildingimg buildinfo'
+        'buildingimg buildinfo';
+      grid-gap: 1px;
+      padding: 0px;
+
+      /* grid-template-columns: auto auto auto auto auto;
         grid-template-rows: 100px 200px 200px 200px 200px; */
-      }
+    }
 
-      .grid-container > div {
-        text-align: center;
-        padding: 1px 0;
-        font-size: 12px;
-      }
-      .wrapper {
-        width: 100vw;
-        height: 100vh;
-      }
+    .grid-container>div {
+      text-align: left;
+      padding: 1px 0;
+      font-size: 12px;
 
-      h1 { /*building name*/
-        color: white;
-        background-color: #002e63;
-        text-align: center; 
-        font-family: 'Poiret One';
-        font-size: 70px; 
-      }
+    }
 
-      body {
-        background-image: url("/cool-background.png");
-        background-size: cover;
-        padding-top: 10px;
-        padding-bottom: 10px;
-      }
+    .wrapper {
+      width: 100vw;
+      height: 100vh;
+    }
 
-      h2 { /*building info*/
-        text-align: right;
-        font-family: 'Mate SC', serif;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        color: rgb(5, 19, 83);
-        font-size: 40px;
-      }
+    h1 {
+      /*building name*/
+      color: white;
+      background-color: #002e63;
+      text-align: center;
+      font-family: 'futured';
+      font-size: 70px;
+      margin-top: 0px;
+    }
 
+    body {
+      background-image: url("/coolerbackground.webp");
+      background-size: cover;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
 
-    </style>
-  </body>
+    h2 {
+      /*building info*/
+      text-align: left;
+      font-family: 'futured';
+      font-weight: 900;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      color: rgb(227, 230, 241);
+      font-size: 40px;
+    }
+  </style>
+</body>
+
 </html>
