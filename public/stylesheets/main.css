@@ -161,3 +161,26 @@
 .text-center {
   text-align: center !important;
 }
+
+#buildingimg{
+  opacity: 0;
+  transition: 1s opacity;
+  animation: fadeIn 1s ease-in both; 
+}
+
+#buildinfo{
+  opacity: 0;
+  transition: 1s opacity;
+  animation: fadeIn 1s ease-in both;
+} 
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -10%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
