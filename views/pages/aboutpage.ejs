@@ -4,7 +4,6 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-
     @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
 
     body {
@@ -18,7 +17,9 @@
       box-sizing: border-box;
     }
 
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: inherit;
     }
 
@@ -47,7 +48,8 @@
       padding: 0 16px;
     }
 
-    .container::after, .row::after {
+    .container::after,
+    .row::after {
       content: "";
       clear: both;
       display: table;
@@ -118,92 +120,93 @@
 
 <body>
   <%- include ('../partials/nav') %>
-  <div style="text-align: center;">
-    <title> About Page </title>
-  </div>
-
-  <div class="about-section">
-    <div class="topnav">
-      <a href="#home">Home</a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
-      <a href="#buildings">Buildings</a>
+    <div style="text-align: center;">
+      <title> About Page </title>
     </div>
-    <h1>About Us</h1>
-  </div>
 
-  <h2 class="team" style="text-align:center">Our Team</h2>
+    <div class="about-section">
+      <div class="topnav">
+        <a href="#home">Home</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="#buildings">Buildings</a>
+      </div>
+      <h1>About Us</h1>
+    </div>
 
-  <div class="row" style="position:fixed;left:1.25%;">
-    <div class="column">
-      <div class="card">
-        <img src="/img/Alex.jpg" alt="Alex" style="width:100%">
-        <div class="container">
-          <h2>Alex Kim</h2>
-          <p class="title">Software Developer</p>
-          <p><button class="button">Learn More</button></p>
+    <h2 class="team" style="text-align:center">Our Team</h2>
+
+    <div class="row" style="position:fixed;left:1.25%;">
+      <div class="column">
+        <div class="card">
+          <img src="/img/Alex.jpg" alt="Alex" style="width:100%">
+          <div class="container">
+            <h2>Alex Kim</h2>
+            <p class="title">Software Developer</p>
+            <p><button class="button">Learn More</button></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="/img/Allie.jpg" alt="Allie" style="width:100%">
+          <div class="container">
+            <h2>Allison Fowle</h2>
+            <p class="title">Software Developer</p>
+            <p><button class="button">Learn More</button></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="/img/Mia.jpg" alt="Mia" style="width:100%">
+          <div class="container">
+            <h2>Mia Varghese</h2>
+            <p class="title">Software Developer</p>
+            <p><button class="button">Learn More</button></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="/img/Rishab.jpg" alt="Rishab" style="width:100%">
+          <div class="container">
+            <h2>Rishab Gopisetti</h2>
+            <p class="title">Software Developer</p>
+            <p><button class="button">Learn More</button></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="/img/Ethan.jpg" alt="Ethan" style="width:100%">
+          <div class="container">
+            <h2>Ethan Gham</h2>
+            <p class="title">Team Leader</p>
+            <p><button class="button">Learn More</button></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="/img/Ned.jpeg" alt="Ned" style="width:100%">
+          <div class="container">
+            <h2>Edward Rossman</h2>
+            <p class="title">Team Leader</p>
+            <p><button class="button">Learn More</button></p>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="column">
-      <div class="card">
-        <img src="/img/Allie.jpg" alt="Allie" style="width:100%">
-        <div class="container">
-          <h2>Allison Fowle</h2>
-          <p class="title">Software Developer</p>
-          <p><button class="button">Learn More</button></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <img src="/img/Mia.jpg" alt="Mia" style="width:100%">
-        <div class="container">
-          <h2>Mia Varghese</h2>
-          <p class="title">Software Developer</p>
-          <p><button class="button">Learn More</button></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <img src="/img/Rishab.jpg" alt="Rishab" style="width:100%">
-        <div class="container">
-          <h2>Rishab Gopisetti</h2>
-          <p class="title">Software Developer</p>
-          <p><button class="button">Learn More</button></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <img src="/img/Ethan.jpg" alt="Ethan" style="width:100%">
-        <div class="container">
-          <h2>Ethan Gham</h2>
-          <p class="title">Team Leader</p>
-          <p><button class="button">Learn More</button></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <img src="/img/Ned.jpeg" alt="Ned" style="width:100%">
-        <div class="container">
-          <h2>Edward Rossman</h2>
-          <p class="title">Team Leader</p>
-          <p><button class="button">Learn More</button></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <a href="http://www.devhub.virginia.edu/index" target="_blank"><img src="https://cdn-images-1.medium.com/max/277/1*FSpxii4dxAJRqSUDPlk_9g@2x.png"
-    alt="Link to DevHub" style="position:fixed;right:0.25%;bottom:2.5%;width:5%;height:8%;"></a>
+    <a href="http://www.devhub.virginia.edu/index" target="_blank"><img
+        src="https://cdn-images-1.medium.com/max/277/1*FSpxii4dxAJRqSUDPlk_9g@2x.png" alt="Link to DevHub"
+        style="position:fixed;right:0.25%;bottom:2.5%;width:5%;height:8%;"></a>
 
 </body>
 
