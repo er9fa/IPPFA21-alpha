@@ -12,6 +12,7 @@
     <h1 class="item1" id="buildname"></h1>
     <img class="item3" id="buildingimg" src="" />
     <h2 class="item2" id="buildinfo"></h2>
+    <h3 class="item4" id="buildinfo2"></h3>
   </div>
 
 
@@ -29,16 +30,32 @@
           const html = building.Name;
 
           // how to determine if building is historic: if Y, print yes, else no.
-          const html2 = `Address: ${building.Address}<br/>
-              Year Built: ${building.YearBuilt}<br/>
-              Square Footage: ${building.SquareFootage} ft<sup>2</sup> <br/>
-              Type of Building: ${building.Category}<br/>
-              Location: [${building.Longitude}, ${building.Latitude}] <br/>
-              Historic? ${building.Historic} <br/>`;
+
+          const html3 = `Address: <br/>
+              Year Built: <br/>
+              Square Footage: <br/>
+              Type of Building: <br/>
+              Location: <br/>
+              Historic?: <br/>`;
+
+          const html2 = `${building.Address}<br/>
+              ${building.YearBuilt}<br/>
+              ${building.SquareFootage} ft<sup>2</sup> <br/>
+              ${building.Category}<br/>
+              [${building.Longitude}, ${building.Latitude}] <br/>
+              ${building.Historic} <br/>`;
+
+          // const html2 = `Address: ${building.Address}<br/>
+          //     Year Built: ${building.YearBuilt}<br/>
+          //     Square Footage: ${building.SquareFootage} ft<sup>2</sup> <br/>
+          //     Type of Building: ${building.Category}<br/>
+          //     Location: [${building.Longitude}, ${building.Latitude}] <br/>
+          //     Historic? ${building.Historic} <br/>`;
 
           const imgsrc = `/img/buildingname/${html}.jpeg`;
           document.querySelector(`#buildname`).innerHTML = html;
           document.querySelector(`#buildinfo`).innerHTML = html2;
+          document.querySelector(`#buildinfo2`).innerHTML = html3;
 
           const buildingimg = document.getElementById("buildingimg");
           buildingimg.src = imgsrc;
@@ -97,10 +114,10 @@
     .grid-container {
       display: grid;
       grid-template-areas:
-        'buildname buildname'
-        'buildingimg buildinfo'
-        'buildingimg buildinfo'
-        'buildingimg buildinfo';
+        'buildname buildname buildname'
+        'buildingimg buildinfo buildinfo2'
+        'buildingimg buildinfo buildinfo2'
+        'buildingimg buildinfo buildinfo2';
       grid-gap: 1px;
       padding: 0px;
 
