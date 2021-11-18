@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <%- include ('../partials/header') %>
 </head>
@@ -8,124 +9,122 @@
 
   <%- include ('../partials/nav') %>
 
-  <div style="text-align: center;">
-    <h1>Hi IPP, I am Mia Varghese!</h1>
-  </div>
+    <div style="text-align: center;">
+      <h1>Hi IPP, I am Mia Varghese!</h1>
+    </div>
 
 
-  <div class="body">
-    <p>
-      I'm a second year Systems Engineering major from Richmond, VA with an
-      interest in data science/finance. At UVA, I'm involved in the Data Science
-      and Analytics club, WUVA News (videography and journalism), and Theta Tau.
-      My hobbies include Bollywood dance, basketball, and hiking. I also enjoy
-      traveling and creating videos wherever I go. Lastly, I also have a
-      beagador (beagle + labrador) named Coco who I love to spend time with! I am
-      very excited to work with everyone this semester!
+    <div class="body">
+      <p>
+        I'm a second year Systems Engineering major from Richmond, VA with an
+        interest in data science/finance. At UVA, I'm involved in the Data Science
+        and Analytics club, WUVA News (videography and journalism), and Theta Tau.
+        My hobbies include Bollywood dance, basketball, and hiking. I also enjoy
+        traveling and creating videos wherever I go. Lastly, I also have a
+        beagador (beagle + labrador) named Coco who I love to spend time with! I am
+        very excited to work with everyone this semester!
 
-    </p>
+      </p>
 
-    <div>
-            <table>
-              <tr>
-                  <th>UVA Bus Stops</th>
-              </tr>
-              <tr>
-                  <td id="stops"></td>
-              </tr>
-            </table>
-        </div>
+      <div>
+        <table>
+          <tr>
+            <th>UVA Bus Stops</th>
+          </tr>
+          <tr>
+            <td id="stops"></td>
+          </tr>
+        </table>
+      </div>
 
-  <script>
-    function createTableFromJSON() {
-      fetch("https://api.devhub.virginia.edu/v1/transit/bus-stops")
-        .then((r) => r.json())
-        .then((data) => {
-          let stops = data.stops;
-          let rows = [];
-          var title1 = "Name";
-          var title2 = "Code";
-          var title3 = "Coordinates";
-          var title4 = "Type";
+      <script>
+        function createTableFromJSON() {
+          fetch("https://api.devhub.virginia.edu/v1/transit/bus-stops")
+            .then((r) => r.json())
+            .then((data) => {
+              let stops = data.stops;
+              let rows = [];
+              var title1 = "Name";
+              var title2 = "Code";
+              var title3 = "Coordinates";
+              var title4 = "Type";
               rows.push([title1.bold().fontsize(4), title2.bold().fontsize(4), title3.bold().fontsize(4), title4.bold().fontsize(4)]);
-          for (stop of stops) {
-            rows.push([stop.name, stop.code, stop.position, stop.location_type]);
-          }
+              for (stop of stops) {
+                rows.push([stop.name, stop.code, stop.position, stop.location_type]);
+              }
 
-          let table = document.createElement("table");
+              let table = document.createElement("table");
 
-          for (let i = 0; i < stops.length; i++) {
-            let tr = table.insertRow(-1);
-            for (let j = 0; j < 4; j++) {
-              let tabCell = tr.insertCell(-1);
-              tabCell.innerHTML = rows[i][j];
-            }
-          }
+              for (let i = 0; i < stops.length; i++) {
+                let tr = table.insertRow(-1);
+                for (let j = 0; j < 4; j++) {
+                  let tabCell = tr.insertCell(-1);
+                  tabCell.innerHTML = rows[i][j];
+                }
+              }
 
-          let divContainer = document.getElementById("stops");
-          divContainer.innerHTML = "";
-          divContainer.appendChild(table);
-        });
-    }
+              let divContainer = document.getElementById("stops");
+              divContainer.innerHTML = "";
+              divContainer.appendChild(table);
+            });
+        }
 
-    createTableFromJSON();
-  </script>
+        createTableFromJSON();
+      </script>
 
-<style>
-body {
-  background-image: url('https://cdn.shopify.com/s/files/1/2262/5909/products/UVA01VSabreonWhiteStep_Repeat_1024x1024@2x.png?v=1626925418')
-}
+      <style>
+        body {
+          background-image: url('https://cdn.shopify.com/s/files/1/2262/5909/products/UVA01VSabreonWhiteStep_Repeat_1024x1024@2x.png?v=1626925418')
+        }
 
-h1{
-  color: white;
-  background-color: #002e63
-}
+        h1 {
+          color: white;
+          background-color: #002e63
+        }
 
-h2{
-  color: black;
-  text-align: center;
-}
+        h2 {
+          color: black;
+          text-align: center;
+        }
 
 
-p {
-  color: black;
-  text-align: center;
-  font-size: 150%;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background-color: #ef7f2d
-}
+        p {
+          color: black;
+          text-align: center;
+          font-size: 150%;
+          margin-left: 100px;
+          margin-right: 100px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          background-color: #ef7f2d
+        }
 
-table{
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #b7d7e8;
-  border: solid 1px;
-  border-color: black;
-  text-align: center
-}
+        table {
+          margin-left: auto;
+          margin-right: auto;
+          background-color: #b7d7e8;
+          border: solid 1px;
+          border-color: black;
+          text-align: center
+        }
 
-th{
-  font-size: 150%;
-  text-align: center;
-  border: solid 1px;
-  border-color: black;
-  background-color: #b7d7e8
-}
+        th {
+          font-size: 150%;
+          text-align: center;
+          border: solid 1px;
+          border-color: black;
+          background-color: #b7d7e8
+        }
 
-tr{
-  margin-left: auto;
-  margin-right: auto;
-  column-gap: normal;
-  border-color: black;
-  border: solid 1px;
-  background-color: #b7d7e8
-
-}
-
-</style>
+        tr {
+          margin-left: auto;
+          margin-right: auto;
+          column-gap: normal;
+          border-color: black;
+          border: solid 1px;
+          background-color: #b7d7e8
+        }
+      </style>
 
 </body>
 
