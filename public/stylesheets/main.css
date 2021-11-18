@@ -162,6 +162,11 @@
   text-align: center !important;
 }
 
+#map {
+  height: 400px;
+  width: 100%;
+}
+
 #buildingimg{
   opacity: 0;
   transition: 1s opacity;
