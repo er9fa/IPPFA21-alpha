@@ -90,6 +90,14 @@
       document.getElementById('buildinfo').style.opacity = '1';
     }
 
+    window.onload = function buildinfo2() {
+      window.setTimeout(buildinfo2, 2000);
+    }
+
+    function buildinfo2() {
+      document.getElementById('buildinfo2').style.opacity = '1';
+    }
+
   </script>
 
 
@@ -115,9 +123,9 @@
       display: grid;
       grid-template-areas:
         'buildname buildname buildname'
-        'buildingimg buildinfo buildinfo2'
-        'buildingimg buildinfo buildinfo2'
-        'buildingimg buildinfo buildinfo2';
+        'buildingimg buildinfo2 buildinfo'
+        'buildingimg buildinfo2 buildinfo'
+        'buildingimg buildinfo2 buildinfo';
       grid-gap: 1px;
       padding: 0px;
 
@@ -163,6 +171,18 @@
       padding-bottom: 10px;
       color: rgb(227, 230, 241);
       font-size: 35px;
+    }
+
+    h3 {
+      /*building info*/
+      text-align: left;
+      font-family: 'futured';
+      font-weight: 900;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      color: #002e63;
+      font-size: 35px;
+
     }
   </style>
 </body>
