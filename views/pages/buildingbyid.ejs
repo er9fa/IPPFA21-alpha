@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%- include ('../partials/header') %>
+</head>
+
+<body>
+  <div class="grid-container">
+    <h1 class="item1" id="buildname"></h1>
+    <img class="item2" id="buildingimg" src="" />
+    <h2 class="item3" id="buildinfo"></h2>
+    <h3 class="item4" id="buildinfo2"></h3>
+    <map class="item5" id="map"></map>
+
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script>
+      let map;
+
+      function initMap() {
+        fetch(
+          `https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities/id/<%= id %>`
+        )
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            const building = data.data[0];
+            map = new google.maps.Map(document.getElementById("map"), {
+              center: { lat: building.Latitude, lng: building.Longitude },
+              zoom: 18,
+            });
+            const marker = new google.maps.Marker({
+              position: { lat: building.Latitude, lng: building.Longitude },
+              map: map,
+            });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBd0JLC8MX7RImxZdQRGWjsC-Dv_7kZXVE&callback=initMap&v=weekly"
+      async></script>
+
+  </div>
+
+
+
+
+  <script>
+    function fetchData() {
+      fetch(
+        `https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities/id/<%= id %>`
+      )
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          const building = data.data[0];
+          const html = building.Name;
+
+          // how to determine if building is historic: if Y, print yes, else no.
+
+          const html3 = `Address: <br/>
+              Year Built: <br/>
+              Square Footage: <br/>
+              Type of Building: <br/>
+              Location: <br/>
+              Historic?: <br/>`;
+
+          const html2 = `${building.Address}<br/>
+              ${building.YearBuilt}<br/>
+              ${building.SquareFootage} ft<sup>2</sup> <br/>
+              ${building.Category}<br/>
+              [${building.Longitude}, ${building.Latitude}] <br/>
+              ${building.Historic} <br/>`;
+
+
+          const imgsrc = `/img/buildingname/${html}.jpeg`;
+          document.querySelector(`#buildname`).innerHTML = html;
+          document.querySelector(`#buildinfo`).innerHTML = html2;
+          document.querySelector(`#buildinfo2`).innerHTML = html3;
+
+          const buildingimg = document.getElementById("buildingimg");
+          buildingimg.src = imgsrc;
+
+          buildingimg.style.width = "600px";
+          buildingimg.style.height = "400px";
+          buildingimg.style.borderRadius = "25px";
+          buildingimg.style.marginLeft = "25px";
+
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+
+    }
+    fetchData();
+
+    window.onload = function buildingimg() {
+      window.setTimeout(buildingimg, 2000);
+    }
+
+    function buidingimg() {
+      document.getElementById('buildingimg').style.opacity = '1';
+    }
+
+    window.onload = function buildinfo() {
+      window.setTimeout(buildinfo, 2000);
+    }
+
+    function buildinfo() {
+      document.getElementById('buildinfo').style.opacity = '1';
+    }
+
+    window.onload = function buildinfo2() {
+      window.setTimeout(buildinfo2, 2000);
+    }
+
+    function buildinfo2() {
+      document.getElementById('buildinfo2').style.opacity = '1';
+    }
+
+  </script>
+
+
+  <style>
+    @font-face {
+      font-family: futured;
+      src: url("/Futured.woff");
+    }
+
+    .item1 {
+      grid-area: buildname;
+    }
+
+    .item2 {
+      grid-area: buildingimg;
+    }
+
+    .item3 {
+      grid-area: buildinfo;
+    }
+
+    .item4 {
+      grid-area: buildinfo2;
+    }
+
+    .item5 {
+      grid-area: map;
+    }
+
+
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+        'buildname buildname buildname'
+        'buildingimg buildinfo2 buildinfo'
+        'buildingimg buildinfo2 buildinfo'
+        'buildingimg buildinfo2 buildinfo'
+        'map map map';
+      grid-gap: 1px;
+      padding: 0px;
+
+      /* grid-template-columns: auto auto auto auto auto;
+        grid-template-rows: 100px 200px 200px 200px 200px; */
+    }
+
+    .grid-container>div {
+      text-align: left;
+      padding: 1px 0;
+      font-size: 12px;
+
+    }
+
+    .wrapper {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    h1 {
+      /*building name*/
+      color: white;
+      background-color: #002e63;
+      text-align: center;
+      font-family: 'futured';
+      font-size: 70px;
+      margin-top: 0px;
+    }
+
+    body {
+      background-image: url("/coolerbackground2.jfif");
+      background-size: cover;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    h2 {
+      /*building info*/
+      text-align: left;
+      font-family: 'futured';
+      font-weight: 900;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      color: #002e63;
+      font-size: 35px;
+    }
+
+    h3 {
+      /*building info*/
+      text-align: left;
+      font-family: 'futured';
+      font-weight: 900;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      color: white;
+      font-size: 35px;
+
+    }
+
+    map {
+      margin-top: 2%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</body>
+
+</html>

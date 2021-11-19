@@ -1,27 +1,207 @@
 .jumbotron {
-  background: #532F8C;
+  background-image: url(/UVABackground.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
-  padding-bottom: 80px; }
-  .jumbotron .btn-primary {
-    background: #845ac7;
-    border-color: #845ac7; }
-    .jumbotron .btn-primary:hover {
-      background: #7646c1; }
-  .jumbotron p {
-    color: #d9ccee;
-    max-width: 75%;
-    margin: 1em auto 2em; }
-  .navbar + .jumbotron {
-    margin-top: -20px; }
-  .jumbotron .lang-logo {
-    display: block;
-    background: #B01302;
-    border-radius: 50%;
-    overflow: hidden;
-    width: 100px;
-    height: 100px;
-    margin: auto;
-    border: 2px solid white; }
-    .jumbotron .lang-logo img {
-      max-width: 100%; }
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.font{
+  font-family: "Times New Roman", Times, serif;
+}
+
+.footer{
+  background-image: url(/footerback.jpeg);
+  background-size:contain;
+  color: white;
+}
+
+.jumbotron .btn-primary {
+  background: #845ac7;
+  border-color: #845ac7;
+}
+
+.jumbotron .btn-primary:hover {
+  background: #7646c1;
+}
+
+.jumbotron p {
+  color: white;
+  max-width: 75%;
+  margin: 1em auto 1em;
+}
+
+.jumbotron {
+  margin-top: -40px;
+  margin-bottom: 0px;
+}
+
+.jumbotron .lang-logo {
+  margin: auto;
+  background: none;
+  overflow: hidden;
+}
+
+.jumbotron .lang-logo img {
+  max-width: 100%;
+}
+.nav-contain{
+  position: absolute;
+  margin: 20px;
+  width: auto;
+}
+
+.topnav{
+  overflow: hidden;
+  background-color: #E67E22;
+}
+
+.topnav a{
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px 22px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.topnav a:hover {
+  background-color: #D35400;
+  color: black;
+}
+
+.active {
+  background-color: #F0B27A;
+}
+
+.h-100 {
+  height: 100% !important;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.building .building-item {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 50rem;
+  max-height: 50rem;
+  height: 337px;
+  overflow: hidden;
+  border-radius: 50px;
+}
+
+.big-background{
+  background-image: url("/cool-background.png");
+  background-size: cover;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.main-background{
+  background-color: rgb(255, 166, 88);
+  border-radius: 25px;
+}
+
+.head-background{
+  padding-top: 24px;
+  background-color: rgb(30,141,255);
+}
+
+.building .building-item .building-item-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  background-color: rgba(55, 101, 528, 0.5);
+}
+
+.building .building-item .building-item-caption:hover {
+  opacity: 1;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.building .building-item .building-item-caption .building-item-caption-content {
+  font-size: 5rem;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
+.col-md-6 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+
+.mx-auto {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.mb-5 {
+  margin-bottom: 3rem !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+#map {
+  height: 400px;
+  width: 80%;
+}
+
+#buildingimg{
+  opacity: 0;
+  transition: 1s opacity;
+  animation: fadeIn 1s ease-in both; 
+}
+
+#buildinfo{
+  opacity: 0;
+  transition: 1s opacity;
+  animation: fadeDown 2.5s ease-in both;
+} 
+
+#buildinfo2{
+  opacity: 0;
+  transition: 1s opacity;
+  animation: fadeDown 2s ease-in both;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeDown {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -10%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
 

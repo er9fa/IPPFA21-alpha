@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% include ../partials/header.ejs %>
+  <%- include ('../partials/header') %>
 </head>
 
 <body>
 
-  <% include ../partials/nav.ejs %>
+  <%- include ('../partials/nav') %>
 
   <div style="text-align: center;">
-    <h1>hi ipp, I am Ned Rossman</h1>
+    <h1>hi ipp, I am Ned Rossman. I can't wait to play golf.</h1>
     <div id="variable_here"></div>
     <div id="cat_fact"></div>
+    <div id="vehicles"></div>
   </div>
 
   <script>
@@ -21,10 +22,16 @@
       document.getElementById("variable_here").innerHTML = i;
       i++;
     }, 1000);
-
     fetch("https://meowfacts.herokuapp.com/").then(r => r.json()).then(data => {
       document.getElementById("cat_fact").innerHTML = data.data[0];
     })
+
+    fetch("https://api.devhub.virginia.edu/v1/transit/vehicles")
+    .then(r => r.json())
+    .then(data => {
+        console.log(data);
+        document.getElementById("vehicles").innerHTML = data.vehicles.map(vehicle => vehicle.id).toString();
+    });
   </script>
 
 </body>
