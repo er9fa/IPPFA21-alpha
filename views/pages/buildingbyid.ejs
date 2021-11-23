@@ -10,9 +10,47 @@
 <body>
   <div class="grid-container">
     <h1 class="item1" id="buildname"></h1>
-    <img class="item3" id="buildingimg" src="" />
-    <h2 class="item2" id="buildinfo"></h2>
+    <img class="item2" id="buildingimg" src="" />
+    <h2 class="item3" id="buildinfo"></h2>
+    <h3 class="item4" id="buildinfo2"></h3>
+    <map class="item5" id="map"></map>
+
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script>
+      let map;
+
+      function initMap() {
+        fetch(
+          `https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities/id/<%= id %>`
+        )
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            const building = data.data[0];
+            map = new google.maps.Map(document.getElementById("map"), {
+              center: { lat: building.Latitude, lng: building.Longitude },
+              zoom: 18,
+            });
+            const marker = new google.maps.Marker({
+              position: { lat: building.Latitude, lng: building.Longitude },
+              map: map,
+            });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDV73Th9So-50JtmEeGn91xpnXLw5tLwLY&callback=initMap&v=weekly"
+      async></script>
+
   </div>
+
 
 
 
@@ -29,16 +67,26 @@
           const html = building.Name;
 
           // how to determine if building is historic: if Y, print yes, else no.
-          const html2 = `Address: ${building.Address}<br/>
-              Year Built: ${building.YearBuilt}<br/>
-              Square Footage: ${building.SquareFootage} ft<sup>2</sup> <br/>
-              Type of Building: ${building.Category}<br/>
-              Location: [${building.Longitude}, ${building.Latitude}] <br/>
-              Historic? ${building.Historic} <br/>`;
+
+          const html3 = `Address: <br/>
+              Year Built: <br/>
+              Square Footage: <br/>
+              Type of Building: <br/>
+              Location: <br/>
+              Historic?: <br/>`;
+
+          const html2 = `${building.Address}<br/>
+              ${building.YearBuilt}<br/>
+              ${building.SquareFootage} ft<sup>2</sup> <br/>
+              ${building.Category}<br/>
+              [${building.Longitude}, ${building.Latitude}] <br/>
+              ${building.Historic} <br/>`;
+
 
           const imgsrc = `/img/buildingname/${html}.jpeg`;
           document.querySelector(`#buildname`).innerHTML = html;
           document.querySelector(`#buildinfo`).innerHTML = html2;
+          document.querySelector(`#buildinfo2`).innerHTML = html3;
 
           const buildingimg = document.getElementById("buildingimg");
           buildingimg.src = imgsrc;
@@ -47,15 +95,14 @@
           buildingimg.style.height = "400px";
           buildingimg.style.borderRadius = "25px";
           buildingimg.style.marginLeft = "25px";
-          //img.style.fontFamily = "Times New Roman";
-          //src.appendChild(img);
+
         })
         .catch((error) => {
           console.log(error);
         });
+
     }
     fetchData();
-
 
     window.onload = function buildingimg() {
       window.setTimeout(buildingimg, 2000);
@@ -73,6 +120,14 @@
       document.getElementById('buildinfo').style.opacity = '1';
     }
 
+    window.onload = function buildinfo2() {
+      window.setTimeout(buildinfo2, 2000);
+    }
+
+    function buildinfo2() {
+      document.getElementById('buildinfo2').style.opacity = '1';
+    }
+
   </script>
 
 
@@ -87,20 +142,30 @@
     }
 
     .item2 {
-      grid-area: buildinfo;
+      grid-area: buildingimg;
     }
 
     .item3 {
-      grid-area: buildingimg;
+      grid-area: buildinfo;
     }
+
+    .item4 {
+      grid-area: buildinfo2;
+    }
+
+    .item5 {
+      grid-area: map;
+    }
+
 
     .grid-container {
       display: grid;
       grid-template-areas:
-        'buildname buildname'
-        'buildingimg buildinfo'
-        'buildingimg buildinfo'
-        'buildingimg buildinfo';
+        'buildname buildname buildname'
+        'buildingimg buildinfo2 buildinfo'
+        'buildingimg buildinfo2 buildinfo'
+        'buildingimg buildinfo2 buildinfo'
+        'map map map';
       grid-gap: 1px;
       padding: 0px;
 
@@ -131,7 +196,7 @@
     }
 
     body {
-      background-image: url("/coolerbackground.webp");
+      background-image: url("/coolerbackground2.jfif");
       background-size: cover;
       padding-top: 10px;
       padding-bottom: 10px;
@@ -144,8 +209,26 @@
       font-weight: 900;
       padding-top: 10px;
       padding-bottom: 10px;
-      color: rgb(227, 230, 241);
+      color: #002e63;
       font-size: 35px;
+    }
+
+    h3 {
+      /*building info*/
+      text-align: left;
+      font-family: 'futured';
+      font-weight: 900;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      color: white;
+      font-size: 35px;
+
+    }
+
+    map {
+      margin-top: 2%;
+      margin-left: auto;
+      margin-right: auto;
     }
   </style>
 </body>
