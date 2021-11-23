@@ -8,8 +8,17 @@
   position: relative;
 }
 
+@font-face {
+  font-family: futured;
+  src: url('/Futured.woff') format("woff");
+}
+
 .font{
-  font-family: "Times New Roman", Times, serif;
+  font-family: "futured";
+}
+
+.font2{
+  font-family: 'Merriweather', serif;
 }
 
 .footer{
@@ -48,7 +57,7 @@
   max-width: 100%;
 }
 .nav-contain{
-  position: absolute;
+  position: fixed;
   margin: 20px;
   width: auto;
 }
@@ -71,6 +80,34 @@
   background-color: #D35400;
   color: black;
 }
+
+.topnav2{
+  overflow: hidden;
+  background-color: #E67E22;
+}
+
+.topnav2 input[type=text] {
+  float: center;
+  padding: 10px;
+  border: none;
+  margin: 20px;
+  font-size: 17px;
+}
+
+.wrapper {
+  position: fixed;
+  right: 20px;
+  margin: 20px;
+  width: auto;
+  display:flex;
+}
+
+.search {
+  border: 1px solid #009688;
+  background-color: white;
+  color:black;
+}
+
 
 .active {
   background-color: #F0B27A;
@@ -132,7 +169,7 @@
 .building .building-item .building-item-caption .building-item-caption-content {
   font-size: 5rem;
   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
 
@@ -165,14 +202,14 @@
 #buildingimg{
   opacity: 0;
   transition: 1s opacity;
-  animation: fadeIn 1s ease-in both; 
+  animation: fadeIn 1s ease-in both;
 }
 
 #buildinfo{
   opacity: 0;
   transition: 1s opacity;
   animation: fadeIn 1s ease-in both;
-} 
+}
 
 @keyframes fadeIn {
 	from {
