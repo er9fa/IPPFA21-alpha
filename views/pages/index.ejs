@@ -43,8 +43,7 @@
       </div>
       <div class="row justify-content-center">
 
-        <!-- Rotunda Building Panel -->
-
+        <!-- Building/Button Boxes -->
         <ul id="buildingList"></ul>
         <button id ="prev" class="button">previous</button>
         <button id ="next" class="button">next</button>
@@ -53,6 +52,7 @@
       </div>
       </div>
 
+<!-- Footer -->
   <div class="footer text-center font">
     <div class="container">
       <h2> This is a web application that simplifies information about UVA's buildings. The objective is to create a simple user interface with universal readability in terms of usage data and other general information.</h2>
@@ -61,12 +61,14 @@
 
 
   <script type="text/javascript">
+  //initializing variables
   let buildinghere = [];
   let htmlString = [];
   let htmlStrings = [];
   let i = 0;
   let s = i + 10;
 
+  //Search Bar JavaScript
   Search.addEventListener('keyup', (e) => {
     const searchString = e.target.value.toLowerCase();
     const filteredBuildings = buildinghere.filter((building) => {
@@ -78,6 +80,7 @@
     displayBuildings(filteredBuildings);
   });
 
+  //Loads buildings array from API
     const loadBuildings = async () => {
       try {
         const res = await fetch('https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities');
@@ -89,6 +92,7 @@
       }
     };
 
+    //Displays the buildings onto the page
     const displayBuildings = (buildings) => {
       htmlString = buildings.map((building) => {
         return `
@@ -123,6 +127,7 @@
     };
     loadBuildings();
 
+    //Button JavaScript
     document.getElementById("prev").addEventListener("click", prev);
     document.getElementById("next").addEventListener("click", next);
 
@@ -150,8 +155,6 @@
     }
 
   </script>
-
-
 
 </body>
 
