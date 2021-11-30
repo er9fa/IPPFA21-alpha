@@ -1,8 +1,8 @@
 .jumbotron {
   background-image: url(/UVABackground.jpeg);
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: repeat;
+  background-size: contain;
   color: white;
   padding-bottom: 10px;
   position: relative;
@@ -121,6 +121,17 @@
   width: 100% !important;
 }
 
+.button{
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 15rem;
+  height: 100px;
+  border-radius: 50px;
+  font-size: 25px;
+  background-color: rgb(102,178,255);
+}
+
 .building .building-item {
   cursor: pointer;
   position: relative;
@@ -137,6 +148,11 @@
   background-size: cover;
   padding-top: 10px;
   padding-bottom: 10px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  margin-left: 200px;
+  margin-right: 200px;
+  border-radius: 25px;
 }
 
 .main-background{
@@ -214,7 +230,7 @@
   opacity: 0;
   transition: 1s opacity;
   animation: fadeDown 2.5s ease-in both;
-} 
+}
 
 #buildinfo2{
   opacity: 0;
@@ -241,4 +257,3 @@
 		transform: translate3d(0, 0, 0);
 	}
 }
-
