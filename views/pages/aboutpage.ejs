@@ -3,12 +3,22 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <style>
+<<<<<<< HEAD
+    @import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+=======
     @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+>>>>>>> main
 
     body {
-      font-family: 'Julius Sans One', sans-serif;
+      font-family: 'Quantico', sans-serif;
       margin: 0;
+<<<<<<< HEAD
+      background-image: url(https://i.pinimg.com/originals/7b/f9/0b/7bf90b49f75aa5f50ca1e72974b91eff.png);
+      background-size: 100%;
+=======
       background-image: url('img/opaqueBackground.png');
       background-size: 200%;
     }
@@ -33,16 +43,18 @@
       margin: 8px;
       width: 87%;
       background-color: white;
+>>>>>>> main
     }
 
     .about-section {
-      padding: 3%;
       text-align: center;
       background-color: #474e5d;
       color: white;
-      background-image: url(https://www.virginia.edu/sites/default/files/styles/hero_desktop/public/hero/hero_fall_foliage_left_0.jpg?itok=KTC97Fkn&timestamp=1636471674);
+      background-image: url(https://media.istockphoto.com/photos/abstract-blue-background-geometric-texture-picture-id1207999365?k=20&m=1207999365&s=170667a&w=0&h=FyAmp5Dm6n_AuvwtyAuKMqaOILOZs6QB0epnptIjrtE=);
       background-size: 100%;
     }
+<<<<<<< HEAD
+=======
 
     .container {
       padding: 0 16px;
@@ -115,11 +127,146 @@
       background-color: #ddd;
       color: black;
     }
+>>>>>>> main
   </style>
 </head>
 
 <body>
   <%- include ('../partials/nav') %>
+<<<<<<< HEAD
+  <div style="text-align: center;">
+    <title> About Page </title>
+  </div>
+
+  <!-- navbar -->
+
+  <!-- title banner-->
+  <section id="title banner">
+    <div class="about-section">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color:LightSteelBlue">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="http://www.devhub.virginia.edu/index" target="_blank">
+            <img src="https://cdn-images-1.medium.com/max/277/1*FSpxii4dxAJRqSUDPlk_9g@2x.png" width="45" height="36">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" href="#">About Us</a>
+              <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:LightSteelBlue">
+                  Buildings
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#">Rotunda</a></li>
+                  <li><a class="dropdown-item" href="#">Rice Hall</a></li>
+                  <li><a class="dropdown-item" href="#">Newcomb Hall</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-dark" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      <div class="container p-5">
+        <div class="row justify-content-center">
+          <div class+"col-md-4 text-center text-md-start">
+            <h1>
+              <div class="display-3">About Us</div>
+            </h1>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- our team title -->
+  <section id="main body title">
+    <div class="container p-2">
+      <div class="row justify-content-center">
+        <div class="col-md-4 text-center text-md-start">
+          <h1>
+            <div class="display-5">Our Team</div>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- image/description cards -->
+  <section id="cards">
+    <div class="container-md m-5">
+
+      <div class="row justify-content-center p-1">
+
+        <div class="col-md-2 text-start text-md-start">
+          <div class="card">
+            <img src="/img/Alex.jpg" class="card-img-top" alt="Alex">
+            <div class="card-body">
+              <h5 class="card-title">Alex Kim</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Software Developer</h6>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2 text-start text-md-start">
+          <div class="card">
+            <img src="/img/Allie.jpg" class="card-img-top" alt="Allison">
+            <div class="card-body">
+              <h5 class="card-title">Allison Fowle</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Software Developer</h6>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2 text-start text-md-start">
+          <div class="card">
+            <img src="/img/Mia.jpg" class="card-img-top" alt="Mia">
+            <div class="card-body">
+              <h5 class="card-title">Mia Varghese</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Software Developer</h6>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2 text-start text-md-start">
+          <div class="card">
+            <img src="/img/Rishab.jpg" class="card-img-top" alt="Rishab">
+            <div class="card-body">
+              <h5 class="card-title">Rishab Gopisetti</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Software Developer</h6>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2 text-start text-md-start">
+          <div class="card">
+            <img src="/img/Ethan.jpg" class="card-img-top" alt="Ethan">
+            <div class="card-body">
+              <h5 class="card-title">Ethan Gham</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Software Developer</h6>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2 text-start text-md-start">
+          <div class="card">
+            <img src="/img/Ned.jpeg" class="card-img-top" alt="Ned">
+            <div class="card-body">
+              <h5 class="card-title">Edward Rossman</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Software Developer</h6>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+=======
     <div style="text-align: center;">
       <title> About Page </title>
     </div>
@@ -199,14 +346,24 @@
             <h2>Edward Rossman</h2>
             <p class="title">Team Leader</p>
             <p><button class="button">Learn More</button></p>
+>>>>>>> main
           </div>
         </div>
+
       </div>
+
     </div>
+<<<<<<< HEAD
+    </section>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+=======
 
     <a href="http://www.devhub.virginia.edu/index" target="_blank"><img
         src="https://cdn-images-1.medium.com/max/277/1*FSpxii4dxAJRqSUDPlk_9g@2x.png" alt="Link to DevHub"
         style="position:fixed;right:0.25%;bottom:2.5%;width:5%;height:8%;"></a>
+>>>>>>> main
 
 </body>
 

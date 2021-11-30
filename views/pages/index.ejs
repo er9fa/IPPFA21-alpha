@@ -5,18 +5,24 @@
   <%- include ('../partials/header') %>
 </head>
 
-<body class = "font">
-
-
-<!-- Website Header -->
+<body>
+<div class="font">
+  <!-- Website Header -->
   <div class="jumbotron text-center">
 
     <!-- Website Navigation bar -->
-    <div class="nav-contain justify-content-center">
-      <div class ="topnav">
-      <a class="active" href="/"><img src="/uvadevLogo.png" width="70" height="40" class="rounded img-fluid" image-resolution: from-image alt="Responsive image"></a>
-      <a href="/aboutpage"><span class="glyphicon glyphicon-user"></span> About Us</a>
+    <div class="nav-contain justify-content-center text-center">
+      <div class="topnav">
+        <a class="active" href="/"><img src="/uvadevLogo.png" width="70" height="40" class="rounded img-fluid" image-resolution: from-image alt="Responsive image"></a>
+        <a href="/aboutpage"><span class="glyphicon glyphicon-user"></span> About Us</a>
+      </div>
     </div>
+
+
+    <div class="wrapper justify-content-center text-center">
+      <div class="topnav2">
+        <input type="text" name="Search" id="Search" placeholder="Search" class="search">
+      </div>
     </div>
 
     <!-- UVA logo and Title-->
@@ -26,156 +32,132 @@
       </a>
       <h1><u>UVA BUILDINGS</u></h1>
     </div>
-  </div>
 
-<!-- Start of interactive building interface -->
-  <section class="page-section big-background building">
+
+  <!-- Start of interactive building interface -->
+  <section class="big-background building">
     <div class="container text-center">
       <div style="color: black;">
-      <h1 class="page-section-heading text-uppercase"><u>Buildings on grounds</u></h1>
-      <h2 class="mb-5" style="margin-right: -30px; margin-left: -30px;"> "... architecture is my delight, and putting up, and pulling down, one of my favourite amusements." -Thomas Jefferson</h2>
-    </div>
+
+        <h2 class="mb-5" style="margin-right: -30px; margin-left: -30px;"> "... architecture is my delight, and putting up, and pulling down, one of my favorite amusements." -Thomas Jefferson</h2>
+      </div>
       <div class="row justify-content-center">
 
-<!-- Rotunda Building Panel -->
-        <div class="col-md-6 mb-5">
-          <a href="http://localhost:5000/building/1">
-            <div class="building-item mx-auto">
-              <img class = "building-item" src="/RotundaDevHub.jpeg" />
-              <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                <div class="building-item-caption-content text-center" style="color: white;"><b>
-                    Rotunda</b> <br> <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style = "text-decoration-color: white;">1826 University Ave </u></p> </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-<!-- Amphitheater Building Panel -->
-        <div class="col-md-6 mb-5">
-          <a href="http://localhost:5000/building/62">
-            <div class="building-item mx-auto">
-              <img class="building-item" src="/AmphiUvaDev.jpeg" />
-              <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                <div class="building-item-caption-content text-center" style="color: white;"><b>
-                    Amphitheater</b> <br> <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style = "text-decoration-color: white;">151 Amphitheater Way </u></p> </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-<!-- Chemistry Building Panel -->
-        <div class="col-md-6 mb-5">
-          <a href="http://localhost:5000/building/256">
-            <div class="building-item mx-auto">
-              <img class="building-item" src="/ChemUvaDev.jpeg" />
-              <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                <div class="building-item-caption-content text-center" style="color: white;"><b>
-                    Chemistry Building</b> <br> <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style = "text-decoration-color: white;"> 409 McCormick Rd</u></p> </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-<!-- Campbell Hall Panel -->
-        <div class="col-md-6 mb-5">
-          <a href="http://localhost:5000/building/438">
-            <div class="building-item mx-auto">
-              <img class="building-item" src="/CampUvaDev.jpeg" />
-              <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                <div class="building-item-caption-content text-center" style="color: white;"><b>
-                    Campbell Hall</b> <br> <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style = "text-decoration-color: white;">Bayly Dr</u></p> </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-<!-- Memorial Gymansium Panel -->
-        <div class="col-md-6 mb-5">
-          <a href="http://localhost:5000/building/5087">
-            <div class="building-item mx-auto">
-              <img class="building-item" src="/MemUvaDev.jpeg" />
-              <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                <div class="building-item-caption-content text-center" style="color: white;"><b>
-                    Memorial Gymnasium</b> <br> <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style = "text-decoration-color: white;">210 Emmet St South </u></p> </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-<!-- Old Cabell Hall Panel -->
-        <div class="col-md-6 mb-5">
-          <a href="http://localhost:5000/building/59">
-            <div class="building-item mx-auto">
-                <img class="building-item" src="/OldUvaDev.jpeg" />
-              <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                <div class="building-item-caption-content text-center" style="color: white;"><b>
-                    Old Cabell Hall</b> <br> <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style = "text-decoration-color: white;"> Old Cabell Hall</u></p> </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-<!-- New Cabell Hall Panel -->
-        <div class="col-md-6 mb-5">
-          <a href="http://localhost:5000/building/60">
-            <div class="building-item mx-auto">
-              <img class="building-item" src="/NewUvaDev.jpeg" />
-              <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                <div class="building-item-caption-content text-center" style="color: white;"><b>
-                    New Cabell Hall</b> <br> <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style = "text-decoration-color: white;"> Cabell Hall </u></p> </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-<!-- Varsity Hall Panel -->
-        <div class="col-md-6 mb-5">
-          <a href="http://localhost:5000/building/56">
-            <div class="building-item mx-auto">
-              <img class="building-item" src="/VarUvaDev.jpeg" />
-              <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                <div class="building-item-caption-content text-center" style="color: white;"><b>
-                    Varsity Hall</b>  <br> <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style = "text-decoration-color: white;"> Varsity Hall </u></p> </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-<!-- Maury Hall Panel -->
-        <div class="col-md-6 mb-5">
-          <a href="http://localhost:5000/building/66">
-            <div class="building-item mx-auto">
-              <img class="building-item" src="/MauryUvaDev.jpeg" />
-              <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                <div class="building-item-caption-content text-center" style="color: white;"><b>
-                    Maury Hall</b> <br> <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style = "text-decoration-color: white;"> 1512 Jefferson Park Ave </u></p> </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-<!-- Clark Hall Panel -->
-        <div class="col-md-6 mb-5">
-          <a href="http://localhost:5000/building/68">
-            <div class="building-item mx-auto">
-              <img class="building-item" src="/ClarkUvaDev.jpeg" />
-              <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                <div class="building-item-caption-content text-center" style="color: white;"><b>
-                    Clark Hall</b> <br> <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style = "text-decoration-color: white;"> 291 McCormick Rd </u></p> </div>
-              </div>
-            </div>
-          </a>
-        </div>
+        <!-- Building/Button Panel -->
+        <ul id="buildingList"></ul>
+        <button id ="prev" class="button">previous</button>
+        <button id ="next" class="button">next</button>
       </div>
-    </div>
-  </section>
+      </div>
+      </div>
+      </div>
 
-
-  <div class="footer text-center">
+<!-- Page Footer -->
+  <div class="footer text-center font">
     <div class="container">
       <h2> This is a web application that simplifies information about UVA's buildings. The objective is to create a simple user interface with universal readability in terms of usage data and other general information.</h2>
     </div>
   </div>
+
+
+  <script type="text/javascript">
+  //initializing necessary variables
+  let buildinghere = [];
+  let htmlString = [];
+  let htmlStrings = [];
+  let i = 0;
+  let s = i + 10;
+
+//Search Bar JavaScript
+  Search.addEventListener('keyup', (e) => {
+    const searchString = e.target.value.toLowerCase();
+    const filteredBuildings = buildinghere.filter((building) => {
+      return(
+        building.Name.toLowerCase().includes(searchString) ||
+        building.Address.toLowerCase().includes(searchString)
+      );
+    });
+    displayBuildings(filteredBuildings);
+  });
+
+//Loads building information into array from API
+    const loadBuildings = async () => {
+      try {
+        const res = await fetch('https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities');
+        buildinghere = await res.json();
+        buildinghere = buildinghere.data;
+        displayBuildings(buildinghere);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+//Displays buildings on page
+    const displayBuildings = (buildings) => {
+      htmlString = buildings.map((building) => {
+        return `
+        <li class="col-md-6 mb-5 font2" style="list-style:none;">
+          <a href="/building/${building.BuildingId}">
+            <div class="building-item mx-auto">
+              <img class="building-item" src="/${building.Name}.jpeg" onerror="this.src='UVABackground.jpeg'"/>
+              <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                <div class="building-item-caption-content text-center" style="color: white;"><b>
+                    ${building.Name}</b> <br>
+                  <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style="text-decoration-color: white;"> ${building.Address} </u></p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+        `;
+      });
+      console.log(i);
+      y = s;
+      for(let x = i; x < y; x++){
+        console.log(htmlString[x]);
+        if(x >=0 && x <= 9){
+          htmlStrings[x] = htmlString[x];
+        }
+        else{
+          htmlStrings[x - i] = htmlString[x];
+        }
+      }
+      buildingList.innerHTML = htmlStrings.join('');
+
+    };
+    loadBuildings();
+
+//Button JavaScript
+    document.getElementById("prev").addEventListener("click", prev);
+    document.getElementById("next").addEventListener("click", next);
+
+    function prev() {
+      if(i == 0){
+        ;
+      }
+      else{
+        i -= 10;
+        s -= 10;
+        displayBuildings(buildinghere);
+      }
+    }
+
+    function next() {
+      console.log(buildinghere);
+      if(i == htmlString.length - 10){
+        ;
+      }
+      else{
+        i += 10;
+        s += 10;
+        displayBuildings(buildinghere);
+      }
+    }
+
+  </script>
+
+
+
 </body>
 
 </html>
