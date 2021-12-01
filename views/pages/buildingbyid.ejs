@@ -18,14 +18,10 @@
 
 
 
-
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link rel="stylesheet" type="text/css" href="./style.css" />
-
-    <!-- JavaScript for Google Map API -->
     <script>
       let map;
-
 
       function initMap() {
         fetch(
@@ -59,7 +55,7 @@
 
 
 
-  <!-- JavaScript for Building Info and Img -->
+
   <script>
     function fetchData() {
       fetch(
@@ -89,7 +85,7 @@
               ${building.Historic} <br/>`;
 
 
-          const imgsrc = `/img/buildingname/${html}.jpg`;
+          const imgsrc = `/img/buildingname/${html}.jpeg`;
           document.querySelector(`#buildname`).innerHTML = html;
           document.querySelector(`#buildinfo`).innerHTML = html2;
           document.querySelector(`#buildinfo2`).innerHTML = html3;
@@ -103,6 +99,7 @@
           buildingimg.style.marginLeft = "25px";
           buildingimg.style.border = "5px solid white";
           buildingimg.style.boxShadow = "0 14px 18px 0 rgba(0, 0, 0, 0.2), 0 60px 40px 0 rgba(0, 0, 0, 0.19)";
+
         })
         .catch((error) => {
           console.log(error);
@@ -169,7 +166,6 @@
     }
 
 
-
     .grid-container {
       display: grid;
       grid-template-areas:
@@ -209,8 +205,8 @@
       text-align: center;
       font-family: 'futured';
       font-size: 70px;
+      /* margin-top: 0px; */
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
-        /* margin-top: 0px; */
     }
 
     body {
@@ -229,6 +225,7 @@
       padding-bottom: 10px;
       color: #002e63;
       font-size: 34px;
+
     }
 
     h3 {
