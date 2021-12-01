@@ -18,10 +18,14 @@
 
 
 
+
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link rel="stylesheet" type="text/css" href="./style.css" />
+
+    <!-- JavaScript for Google Map API -->
     <script>
       let map;
+
 
       function initMap() {
         fetch(
@@ -55,7 +59,7 @@
 
 
 
-
+  <!-- JavaScript for Building Info and Img -->
   <script>
     function fetchData() {
       fetch(
@@ -85,7 +89,7 @@
               ${building.Historic} <br/>`;
 
 
-          const imgsrc = `/img/buildingname/${html}.jpeg`;
+          const imgsrc = `/img/buildingname/${html}.jpg`;
           document.querySelector(`#buildname`).innerHTML = html;
           document.querySelector(`#buildinfo`).innerHTML = html2;
           document.querySelector(`#buildinfo2`).innerHTML = html3;
@@ -97,7 +101,8 @@
           buildingimg.style.height = "400px";
           buildingimg.style.borderRadius = "25px";
           buildingimg.style.marginLeft = "25px";
-
+          buildingimg.style.border = "5px solid white";
+          buildingimg.style.boxShadow = "0 14px 18px 0 rgba(0, 0, 0, 0.2), 0 60px 40px 0 rgba(0, 0, 0, 0.19)";
         })
         .catch((error) => {
           console.log(error);
@@ -164,6 +169,7 @@
     }
 
 
+
     .grid-container {
       display: grid;
       grid-template-areas:
@@ -194,12 +200,17 @@
 
     h1 {
       /*building name*/
+      display: table;
+      margin: 0px auto 0px auto;
+      border-radius: 25px;
+      padding: 10px;
       color: white;
       background-color: #002e63;
       text-align: center;
       font-family: 'futured';
       font-size: 70px;
-      margin-top: 0px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+        /* margin-top: 0px; */
     }
 
     body {
@@ -217,7 +228,7 @@
       padding-top: 10px;
       padding-bottom: 10px;
       color: #002e63;
-      font-size: 35px;
+      font-size: 34px;
     }
 
     h3 {
@@ -228,7 +239,7 @@
       padding-top: 10px;
       padding-bottom: 10px;
       color: white;
-      font-size: 35px;
+      font-size: 34px;
 
     }
 
