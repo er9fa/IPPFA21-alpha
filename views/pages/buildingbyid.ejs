@@ -4,58 +4,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="main.css">
   <%- include ('../partials/header') %>
 </head>
 
 <body>
+
+
   <div class="grid-container">
     <h1 class="item1" id="buildname"></h1>
     <img class="item2" id="buildingimg" src="" />
-    <h2 class="item3" id="buildinfo"></h2>
-    <h3 class="item4" id="buildinfo2"></h3>
-    <map class="item5" id="map"></map>
-    <div class="item6" id="related"></div>
 
+    <div class="tabContainer">
+      <div class="buttonContainer">
+        <button onclick="showPanel(0,'#002e63')">Building Information</button>
+        <button onclick="showPanel(1,'#002e63')">Map</button>
+      </div>
+      <div class="tabPanel" id="buildinfo"></div>
+      <div class="tabPanel" id="map"></div>
+    </div>
 
+    <div class="imageContainer">
+      <img class="image" id="buildingimg2" src="" />
+      <img class="image" id="buildingimg3" src="" />
+    </div>
+    <div class="imageContainer2">
+      <img class="imageContainer2" id="buildingimg4" src="" />
+      <img class="imageContainer2" id="buildingimg5" src="" />
+    </div>
 
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script>
-      let map;
-
-      function initMap() {
-        fetch(
-          `https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities/id/<%= id %>`
-        )
-          .then((response) => {
-            return response.json();
-          })
-          .then((data) => {
-            const building = data.data[0];
-            map = new google.maps.Map(document.getElementById("map"), {
-              center: { lat: building.Latitude, lng: building.Longitude },
-              zoom: 18,
-            });
-            const marker = new google.maps.Marker({
-              position: { lat: building.Latitude, lng: building.Longitude },
-              map: map,
-            });
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      }
-
-    </script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDV73Th9So-50JtmEeGn91xpnXLw5tLwLY&callback=initMap&v=weekly"
-      async></script>
-
+    <!-- <h1 class="item6">Related Buildings</h1> -->
   </div>
 
 
 
+  <script>
+    var tabButtons = document.querySelectorAll(".tabContainer .buttonContainer button");
+    var tabPanels = document.querySelectorAll(".tabContainer .tabPanel");
 
+    function showPanel(panelIndex, colorCode) {
+      tabButtons.forEach(function (node) {
+        node.style.backgroundColor = "";
+        node.style.color = "";
+      });
+      tabButtons[panelIndex].style.backgroundColor = colorCode;
+      tabButtons[panelIndex].style.color = "white";
+
+
+
+      tabPanels.forEach(function (node) {
+        node.style.display = "none";
+      });
+      tabPanels[panelIndex].style.display = "block";
+      tabPanels[panelIndex].style.backgroundColor = colorCode;
+    }
+
+    showPanel(0, '#002e63');
+  </script>
+
+
+
+
+  <!-- Google Maps API -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+  <script>
+    let map;
+
+    function initMap() {
+      fetch(
+        `https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities/id/<%= id %>`
+      )
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          const building = data.data[0];
+          map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: building.Latitude, lng: building.Longitude },
+            zoom: 18,
+          });
+          const marker = new google.maps.Marker({
+            position: { lat: building.Latitude, lng: building.Longitude },
+            map: map,
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+
+  </script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDV73Th9So-50JtmEeGn91xpnXLw5tLwLY&callback=initMap&v=weekly"
+    async></script>
+
+
+  <!-- Fetching Data for Building Info -->
   <script>
     function fetchData() {
       fetch(
@@ -84,14 +129,41 @@
               [${building.Longitude}, ${building.Latitude}] <br/>
               ${building.Historic} <br/>`;
 
+          const html4 = `Address: ${building.Address}<br/>
+          <br/>
+              Year Built: ${building.YearBuilt}<br/>
+              <br/>
+              Square Footage: ${building.SquareFootage} ft<sup>2</sup> <br/>
+              <br/>
+              Type of Building: ${building.Category}<br/>
+              <br/>
+              Location: [${building.Longitude}, ${building.Latitude}] <br/>
+              <br/>
+              Historic?: ${building.Historic} <br/>`;
+
 
           const imgsrc = `/img/buildingname/${html}.jpg`;
           document.querySelector(`#buildname`).innerHTML = html;
-          document.querySelector(`#buildinfo`).innerHTML = html2;
-          document.querySelector(`#buildinfo2`).innerHTML = html3;
+          document.querySelector(`#buildinfo`).innerHTML = html4;
 
           const buildingimg = document.getElementById("buildingimg");
           buildingimg.src = imgsrc;
+
+          const imgsrc2 = `/img/buildingname/${html}.jpg`;
+          const buildingimg2 = document.getElementById("buildingimg2");
+          buildingimg2.src = imgsrc2;
+
+          const imgsrc3 = `/img/buildingname/${html}.jpg`;
+          const buildingimg3 = document.getElementById("buildingimg3");
+          buildingimg3.src = imgsrc3;
+
+          const imgsrc4 = `/img/buildingname/${html}.jpg`;
+          const buildingimg4 = document.getElementById("buildingimg4");
+          buildingimg4.src = imgsrc4;
+
+          const imgsrc5 = `/img/buildingname/${html}.jpg`;
+          const buildingimg5 = document.getElementById("buildingimg5");
+          buildingimg5.src = imgsrc5;
 
           buildingimg.style.width = "600px";
           buildingimg.style.height = "400px";
@@ -100,6 +172,18 @@
           buildingimg.style.border = "5px solid white";
           buildingimg.style.boxShadow = "0 14px 18px 0 rgba(0, 0, 0, 0.2), 0 60px 40px 0 rgba(0, 0, 0, 0.19)";
 
+
+          buildingimg2.style.width = "300px";
+          buildingimg2.style.height = "200px";
+
+          buildingimg3.style.width = "300px";
+          buildingimg3.style.height = "200px";
+
+          buildingimg4.style.width = "300px";
+          buildingimg4.style.height = "200px";
+
+          buildingimg5.style.width = "300px";
+          buildingimg5.style.height = "200px";
         })
         .catch((error) => {
           console.log(error);
@@ -124,21 +208,14 @@
       document.getElementById('buildinfo').style.opacity = '1';
     }
 
-    window.onload = function buildinfo2() {
-      window.setTimeout(buildinfo2, 2000);
-    }
-
-    function buildinfo2() {
-      document.getElementById('buildinfo2').style.opacity = '1';
-    }
 
   </script>
 
 
   <style>
     @font-face {
-      font-family: futured;
-      src: url("/Futured.woff");
+      font-family: mrtech;
+      src: url("/MrTech.ttf");
     }
 
     .item1 {
@@ -150,36 +227,33 @@
     }
 
     .item3 {
-      grid-area: buildinfo;
+      grid-area: tabContainer;
     }
 
     .item4 {
-      grid-area: buildinfo2;
+      grid-area: imageContainer;
     }
 
     .item5 {
-      grid-area: map;
+      grid-area: imageContainer2;
     }
 
     .item6 {
-      grid-area: related;
+      grid-area: span;
     }
 
 
     .grid-container {
       display: grid;
       grid-template-areas:
-        'buildname buildname buildname'
-        'buildingimg buildinfo2 buildinfo'
-        'buildingimg buildinfo2 buildinfo'
-        'buildingimg buildinfo2 buildinfo'
-        'map map map'
-        'related related related';
-      grid-gap: 1px;
-      padding: 0px;
+        'buildname buildname'
+        'buildingimg tabContainer'
+        'imageContainer imageContainer2'
+      ;
 
-      /* grid-template-columns: auto auto auto auto auto;
-        grid-template-rows: 100px 200px 200px 200px 200px; */
+      grid-gap: 1px;
+      padding: 2px;
+
     }
 
     .grid-container>div {
@@ -203,8 +277,8 @@
       color: white;
       background-color: #002e63;
       text-align: center;
-      font-family: 'futured';
-      font-size: 70px;
+      font-family: 'mrtech';
+      font-size: 60px;
       /* margin-top: 0px; */
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
     }
@@ -219,7 +293,7 @@
     h2 {
       /*building info*/
       text-align: left;
-      font-family: 'futured';
+      font-family: 'mrtech';
       font-weight: 900;
       padding-top: 10px;
       padding-bottom: 10px;
@@ -231,12 +305,12 @@
     h3 {
       /*building info*/
       text-align: left;
-      font-family: 'futured';
+      font-family: 'mrtech';
       font-weight: 900;
       padding-top: 10px;
       padding-bottom: 10px;
       color: white;
-      font-size: 34px;
+      font-size: 30px;
 
     }
 
