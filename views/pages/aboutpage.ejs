@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
   integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
 
@@ -17,12 +18,13 @@
 
     .card {
       background-color: LightSalmon;
-      border-radius: 25px;
       border-color: Navy;
+      border-radius: 25px;
     }
 
     .card-img-top {
-      border-radius: 25px 25px 0px 0px;
+      border-top-right-radius: 25px;
+      border-top-left-radius: 25px;
     }
 
         /* relevant styles */
@@ -60,6 +62,38 @@
       transform: translateY(0);
     }
 
+    .fa-instagram {
+      background: #125688;
+      border-radius: 25px;
+      color: white;
+    }
+
+    .fa-linkedin {
+      background: #007bb5;
+      border-radius: 25px;
+      color: white;
+    }
+
+    .fa-github {
+      background: black;
+      border-radius: 25px;
+      color: white;
+    }
+
+    .fa {
+      margin-top: 8%;
+      padding-top: 6%;
+      padding-bottom: 6%;
+      font-size: 150%;
+      width: 25%;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .fa:hover {
+      opacity: 0.7;
+    }
+
   </style>
 </head>
 
@@ -76,7 +110,7 @@
       <div class="container p-5">
         <div class="row justify-content-center">
           <div class="col-md-3 text-center text-md-start">
-            <div class="card">
+            <div class="card" style="border-radius: 25px;">
               <div class="card-body">
                 <h1>About Us</h1>
               </div>
@@ -91,13 +125,13 @@
 
     <div class="container-md m-5">
 
-      <div class="card">
+      <div class="card" style="border-radius: 25px;">
         <div class="card-body">
 
       <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center p-1">
 
         <div class="col-md-2 text-start text-md-start">
-            <div class="card" style="background-color: Navy; border-color: white">
+            <div class="card" style="background-color: FloralWhite; border: none">
               <div class="img__wrap">
                 <img src="/img/Alex.jpg" class="card-img-top" alt="Alex">
                 <div class="img__description_layer">
@@ -105,14 +139,22 @@
                 </div>
               </div>
                 <div class="card-body">
-                  <h5 class="card-title text-light">Alex Kim</h5>
-                  <h6 class="card-subtitle mb-2 text-light">Software Developer</h6>
+                  <h4 class="card-title text-dark">Alex Kim</h4>
+                  <p class="card-subtitle mb-2 text-secondary">Software Developer</p>
+                  <a href = "mailto: ajk5qwb@virginia.edu">
+                    <button class="btn btn-dark" type="submit" style="border-radius: 20px;"> Email</button>
+                  </a>
+                  <div>
+                   <a href="#"><i class="fa fa-instagram"></i></a>
+                   <a href="#"><i class="fa fa-linkedin"></i></a>
+                   <a href="#"><i class="fa fa-github"></i></a>
+                 </div>
               </div>
             </div>
           </div>
 
         <div class="col-md-2 text-start text-md-start">
-          <div class="card" style="background-color: Navy; border-color: white">
+          <div class="card" style="background-color: FloralWhite; border: none">
             <div class="img__wrap">
               <img src="/img/Allie.jpg" class="card-img-top" alt="Allison">
               <div class="img__description_layer">
@@ -120,14 +162,22 @@
               </div>
             </div>
             <div class="card-body">
-              <h5 class="card-title text-light">Allison Fowle</h5>
-              <h6 class="card-subtitle mb-2 text-light">Software Developer</h6>
+              <h4 class="card-title text-Dark">Allison Fowle</h4>
+              <p class="card-subtitle mb-2 text-secondary">Software Developer</p>
+              <a href = "mailto: acf6nb@virginia.edu">
+                <button class="btn btn-dark" type="submit" style="border-radius: 20px;"> Email</button>
+              </a>
+              <div>
+               <a href="#"><i class="fa fa-instagram"></i></a>
+               <a href="#"><i class="fa fa-linkedin"></i></a>
+               <a href="#"><i class="fa fa-github"></i></a>
+             </div>
             </div>
           </div>
         </div>
 
         <div class="col-md-2 text-start text-md-start">
-          <div class="card" style="background-color: Navy; border-color: white">
+          <div class="card" style="background-color: FloralWhite; border: none">
             <div class="img__wrap">
               <img src="/img/Mia.jpg" class="card-img-top" alt="Mia">
               <div class="img__description_layer">
@@ -135,29 +185,47 @@
               </div>
             </div>
             <div class="card-body">
-              <h5 class="card-title text-light">Mia Varghese</h5>
-              <h6 class="card-subtitle mb-2 text-light">Software Developer</h6>
+              <h4 class="card-title text-dark">Mia Varghese</h4>
+              <p class="card-subtitle mb-2 text-secondary">Software Developer</p>
+              <a href = "mailto: mev5qf@virginia.edu">
+                <button class="btn btn-dark" type="submit" style="border-radius: 20px;"> Email</button>
+              </a>
+              <div>
+               <a href="#"><i class="fa fa-instagram"></i></a>
+               <a href="#"><i class="fa fa-linkedin"></i></a>
+               <a href="#"><i class="fa fa-github"></i></a>
+             </div>
             </div>
           </div>
         </div>
 
         <div class="col-md-2 text-start text-md-start">
-          <div class="card" style="background-color: Navy; border-color: white">
+          <div class="card" style="background-color: FloralWhite; border: none">
             <div class="img__wrap">
               <img src="/img/Rishab.jpg" class="card-img-top" alt="Rishab">
               <div class="img__description_layer">
-                <p class="img__description">Information</p>
+                <p class="img__description">
+                  Information
+                </p>
               </div>
             </div>
             <div class="card-body">
-              <h5 class="card-title text-light">Rishab Gopisetti</h5>
-              <h6 class="card-subtitle mb-2 text-light">Software Developer</h6>
+              <h4 class="card-title text-dark">Rishab Gopisetti</h4>
+              <p class="card-subtitle mb-2 text-secondary">Software Developer</p>
+              <a href = "mailto: rsg4esk@virginia.edu">
+                <button class="btn btn-dark" type="submit" style="border-radius: 20px;"> Email</button>
+              </a>
+              <div>
+               <a href="https://www.instagram.com/rishabg17/" target="_blank"><i class="fa fa-instagram"></i></a>
+               <a href="https://www.linkedin.com/in/rishab-gopisetti-602752223/" target="_blank"><i class="fa fa-linkedin"></i></a>
+               <a href="https://github.com/rishabg17" target="_blank"><i class="fa fa-github"></i></a>
+             </div>
             </div>
           </div>
         </div>
 
         <div class="col-md-2 text-start text-md-start">
-          <div class="card" style="background-color: Navy; border-color: white">
+          <div class="card" style="background-color: FloralWhite; border: none">
             <div class="img__wrap">
               <img src="/img/Ethan.jpg" class="card-img-top" alt="Ethan">
               <div class="img__description_layer">
@@ -165,14 +233,22 @@
               </div>
             </div>
             <div class="card-body">
-              <h5 class="card-title text-light">Ethan Gham</h5>
-              <h6 class="card-subtitle mb-2 text-light">Software Developer</h6>
+              <h4 class="card-title text-darkt">Ethan Gham</h4>
+              <p class="card-subtitle mb-2 text-secondary">Team Leader</p>
+              <a href = "mailto: ethangahm@gmail.com">
+                <button class="btn btn-dark" type="submit" style="border-radius: 20px;"> Email</button>
+              </a>
+              <div>
+               <a href="#"><i class="fa fa-instagram"></i></a>
+               <a href="#"><i class="fa fa-linkedin"></i></a>
+               <a href="#"><i class="fa fa-github"></i></a>
+             </div>
             </div>
           </div>
         </div>
 
         <div class="col-md-2 text-start text-md-start">
-          <div class="card" style="background-color: Navy; border-color: white">
+          <div class="card" style="background-color: FloralWhite; border: none">
             <div class="img__wrap">
               <img src="/img/Ned.jpeg" class="card-img-top" alt="Ned">
               <div class="img__description_layer">
@@ -180,8 +256,16 @@
               </div>
             </div>
             <div class="card-body">
-              <h5 class="card-title text-light">Edward Rossman</h5>
-              <h6 class="card-subtitle mb-2 text-light">Software Developer</h6>
+              <h4 class="card-title text-dark">Edward Rossman</h4>
+              <p class="card-subtitle mb-2 text-secondary">Team Leader</p>
+                <a href = "mailto: er9fa@virginia.edu">
+                  <button class="btn btn-dark" type="submit" style="border-radius: 20px;"> Email</button>
+                </a>
+              <div>
+               <a href="#"><i class="fa fa-instagram"></i></a>
+               <a href="#"><i class="fa fa-linkedin"></i></a>
+               <a href="#"><i class="fa fa-github"></i></a>
+             </div>
             </div>
           </div>
         </div>
