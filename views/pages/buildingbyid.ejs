@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -6,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="main.css">
   <%- include ('../partials/header') %>
+
 </head>
 
 <body>
-
 
   <div class="grid-container">
     <h1 class="item1" id="buildname"></h1>
@@ -92,6 +93,7 @@
         .catch((error) => {
           console.log(error);
         });
+
     }
 
   </script>
@@ -100,9 +102,12 @@
     async></script>
 
 
+
+
+
   <!-- Fetching Data for Building Info -->
   <script>
-    function fetchData() {
+    function fetchSingleBuildingData() {
       fetch(
         `https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities/id/<%= id %>`
       )
@@ -149,48 +154,77 @@
           const buildingimg = document.getElementById("buildingimg");
           buildingimg.src = imgsrc;
 
-          const imgsrc2 = `/img/buildingname/${html}.jpg`;
-          const buildingimg2 = document.getElementById("buildingimg2");
-          buildingimg2.src = imgsrc2;
+          renderRelatedBuildings(building.YearBuilt);
 
-          const imgsrc3 = `/img/buildingname/${html}.jpg`;
-          const buildingimg3 = document.getElementById("buildingimg3");
-          buildingimg3.src = imgsrc3;
-
-          const imgsrc4 = `/img/buildingname/${html}.jpg`;
-          const buildingimg4 = document.getElementById("buildingimg4");
-          buildingimg4.src = imgsrc4;
-
-          const imgsrc5 = `/img/buildingname/${html}.jpg`;
-          const buildingimg5 = document.getElementById("buildingimg5");
-          buildingimg5.src = imgsrc5;
-
-          buildingimg.style.width = "600px";
-          buildingimg.style.height = "400px";
-          buildingimg.style.borderRadius = "25px";
-          buildingimg.style.marginLeft = "25px";
-          buildingimg.style.border = "5px solid white";
-          buildingimg.style.boxShadow = "0 14px 18px 0 rgba(0, 0, 0, 0.2), 0 60px 40px 0 rgba(0, 0, 0, 0.19)";
-
-
-          buildingimg2.style.width = "300px";
-          buildingimg2.style.height = "200px";
-
-          buildingimg3.style.width = "300px";
-          buildingimg3.style.height = "200px";
-
-          buildingimg4.style.width = "300px";
-          buildingimg4.style.height = "200px";
-
-          buildingimg5.style.width = "300px";
-          buildingimg5.style.height = "200px";
         })
         .catch((error) => {
           console.log(error);
         });
 
+      function renderRelatedBuildings(YearBuilt) {
+        console.log("Year Built of Current Page", YearBuilt);
+
+        fetch(
+          `https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities`
+        )
+
+          .then((response) => {
+            return response.json();
+            // console.log(response.json());
+          })
+
+          .then((data) => {
+
+            let obj;
+            let obj2;
+            let obj3;
+            let obj4;
+            for (let i = 0; i < data.data.length; i++) {
+              if (YearBuilt == data.data[i].YearBuilt) {
+                obj = data.data[i + 1];
+                obj2 = data.data[i + 2];
+                obj3 = data.data[i + 3];
+                obj4 = data.data[i + 4];
+
+                // for (let j = 0; j < 4; j++) {
+                //   console.log(data.data[i]);
+                // }
+
+              }
+
+
+
+            }
+            console.log(obj)
+            console.log(obj2)
+            console.log(obj3)
+            console.log(obj4)
+
+            const imgsrc2 = `/img/buildingname/${obj.Name}.jpg`;
+            const buildingimg2 = document.getElementById("buildingimg2");
+            buildingimg2.src = imgsrc2;
+
+            const imgsrc3 = `/img/buildingname/${obj2.Name}.jpg`;
+            const buildingimg3 = document.getElementById("buildingimg3");
+            buildingimg3.src = imgsrc3;
+
+            const imgsrc4 = `/img/buildingname/${obj3.Name}.jpg`;
+            const buildingimg4 = document.getElementById("buildingimg4");
+            buildingimg4.src = imgsrc4;
+
+            const imgsrc5 = `/img/buildingname/${obj4.Name}.jpg`;
+            const buildingimg5 = document.getElementById("buildingimg5");
+            buildingimg5.src = imgsrc5;
+
+
+          })
+
+
+
+      }
+
     }
-    fetchData();
+    fetchSingleBuildingData();
 
     window.onload = function buildingimg() {
       window.setTimeout(buildingimg, 2000);
