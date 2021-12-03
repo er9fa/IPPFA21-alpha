@@ -240,23 +240,42 @@
   height: 200px;
   width: 300px;
   margin-right: 10px;
-  
+  border-radius: 25px;
+  cursor: pointer;
+  border: 5px solid rgb(207, 201, 201);
 }
 
 #buildingimg3{
   height: 200px;
   width: 300px;
+  border-radius: 25px;
+  cursor: pointer;
+  border: 5px solid rgb(207, 201, 201);
 }
 
 #buildingimg4{
   height: 200px;
   width: 300px;
   margin-right: 10px;
+  border-radius: 25px;
+  cursor: pointer;
+  border: 5px solid rgb(207, 201, 201);
 }
 
 #buildingimg5{
   height: 200px;
   width: 300px;
+  border-radius: 25px;
+  cursor: pointer;
+  border: 5px solid rgb(207, 201, 201);
+}
+
+.imageContainer .image:hover{
+  opacity: 70%;
+}
+
+.imageContainer2 .image2:hover{
+  opacity: 70%;
 }
 
 #buildinfo{
@@ -298,7 +317,7 @@
   width: auto;
   margin-left: 0;
   margin-right: 0;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .imageContainer2 {

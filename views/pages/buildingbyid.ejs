@@ -12,6 +12,7 @@
 
 <body>
 
+
   <div class="grid-container">
     <h1 class="item1" id="buildname"></h1>
     <img class="item2" id="buildingimg" src="" />
@@ -25,16 +26,16 @@
       <div class="tabPanel" id="map"></div>
     </div>
 
+    <h3 class="item6">Related Buildings</h3>
     <div class="imageContainer">
       <img class="image" id="buildingimg2" src="" />
       <img class="image" id="buildingimg3" src="" />
     </div>
     <div class="imageContainer2">
-      <img class="imageContainer2" id="buildingimg4" src="" />
-      <img class="imageContainer2" id="buildingimg5" src="" />
+      <img class="image2" id="buildingimg4" src="" />
+      <img class="image2" id="buildingimg5" src="" />
     </div>
 
-    <!-- <h1 class="item6">Related Buildings</h1> -->
   </div>
 
 
@@ -118,8 +119,6 @@
           const building = data.data[0];
           const html = building.Name;
 
-          // how to determine if building is historic: if Y, print yes, else no.
-
           const html3 = `Address: <br/>
               Year Built: <br/>
               Square Footage: <br/>
@@ -201,19 +200,31 @@
             console.log(obj4)
 
             const imgsrc2 = `/img/buildingname/${obj.Name}.jpg`;
-            const buildingimg2 = document.getElementById("buildingimg2");
+            const objlink = `http://localhost:5000/building/${obj.BuildingId}`;
+            document.getElementById("buildingimg2").onclick = function () {
+              window.open(objlink, "_blank");
+            }
             buildingimg2.src = imgsrc2;
 
             const imgsrc3 = `/img/buildingname/${obj2.Name}.jpg`;
-            const buildingimg3 = document.getElementById("buildingimg3");
+            const obj2link = `http://localhost:5000/building/${obj2.BuildingId}`;
+            document.getElementById("buildingimg3").onclick = function () {
+              window.open(obj2link, "_blank");
+            }
             buildingimg3.src = imgsrc3;
 
             const imgsrc4 = `/img/buildingname/${obj3.Name}.jpg`;
-            const buildingimg4 = document.getElementById("buildingimg4");
+            const obj3link = `http://localhost:5000/building/${obj3.BuildingId}`;
+            document.getElementById("buildingimg4").onclick = function () {
+              window.open(obj3link, "_blank");
+            }
             buildingimg4.src = imgsrc4;
 
             const imgsrc5 = `/img/buildingname/${obj4.Name}.jpg`;
-            const buildingimg5 = document.getElementById("buildingimg5");
+            const obj4link = `http://localhost:5000/building/${obj4.BuildingId}`;
+            document.getElementById("buildingimg5").onclick = function () {
+              window.open(obj4link, "_blank");
+            }
             buildingimg5.src = imgsrc5;
 
 
@@ -273,7 +284,7 @@
     }
 
     .item6 {
-      grid-area: span;
+      grid-area: h3;
     }
 
 
@@ -282,6 +293,7 @@
       grid-template-areas:
         'buildname buildname'
         'buildingimg tabContainer'
+        'h3 h3'
         'imageContainer imageContainer2'
       ;
 
@@ -338,12 +350,14 @@
 
     h3 {
       /*building info*/
+      text-indent: 4%;
       text-align: left;
       font-family: 'mrtech';
       font-weight: 900;
       padding-top: 10px;
       padding-bottom: 10px;
       color: white;
+      background-color: #042244;
       font-size: 30px;
 
     }
