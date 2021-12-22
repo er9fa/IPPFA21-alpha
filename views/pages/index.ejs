@@ -77,6 +77,8 @@
         building.Address.toLowerCase().includes(searchString)
       );
     });
+    i = 0;
+    s = i + 10;
     displayBuildings(filteredBuildings);
   });
 
@@ -111,7 +113,6 @@
         </li>
         `;
       });
-      console.log(i);
       y = s;
       for(let x = i; x < y; x++){
         console.log(htmlString[x]);
