@@ -5,135 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
   integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
-<<<<<<< HEAD
     @import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
-=======
-    @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
->>>>>>> main
 
     body {
       font-family: 'Quantico', sans-serif;
       margin: 0;
-<<<<<<< HEAD
-      background-image: url(https://i.pinimg.com/originals/7b/f9/0b/7bf90b49f75aa5f50ca1e72974b91eff.png);
+      background-image: url(https://news.virginia.edu/sites/default/files/uva_east_rotunda_sunset_0.jpg);
       background-size: 100%;
-=======
-      background-image: url('img/opaqueBackground.png');
-      background-size: 200%;
-    }
-
-    html {
-      box-sizing: border-box;
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: inherit;
-    }
-
-    .column {
-      float: left;
-      width: 16.66667%;
     }
 
     .card {
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      margin: 8px;
-      width: 87%;
-      background-color: white;
->>>>>>> main
+      background-color: LightSalmon;
+      border-color: Navy;
+      border-radius: 25px;
     }
 
-    .about-section {
-      text-align: center;
-      background-color: #474e5d;
+    .card-img-top {
+      border-top-right-radius: 25px;
+      border-top-left-radius: 25px;
+    }
+
+        /* relevant styles */
+    .img__wrap {
+      position: relative;
+    }
+
+    .img__description_layer {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: Navy;
+      color: #fff;
+      visibility: hidden;
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 25px 25px 0px 0px;
+    }
+
+    .img__wrap:hover .img__description_layer {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .img__description {
+      transition: .2s;
+      transform: translateY(1em);
+    }
+
+    .img__wrap:hover .img__description {
+      transform: translateY(0);
+    }
+
+    .fa-instagram {
+      background: #125688;
+      border-radius: 25px;
       color: white;
-      background-image: url(https://media.istockphoto.com/photos/abstract-blue-background-geometric-texture-picture-id1207999365?k=20&m=1207999365&s=170667a&w=0&h=FyAmp5Dm6n_AuvwtyAuKMqaOILOZs6QB0epnptIjrtE=);
-      background-size: 100%;
-    }
-<<<<<<< HEAD
-=======
-
-    .container {
-      padding: 0 16px;
     }
 
-    .container::after,
-    .row::after {
-      content: "";
-      clear: both;
-      display: table;
-    }
-
-    .title {
-      color: grey;
-    }
-
-    h1 {
-      font-size: 3.5em;
-    }
-
-    h2 {
-      font-size: 1.3em;
-      color: black;
-    }
-
-    .team {
-      font-size: 1.5em;
-    }
-
-    .button {
-      border: none;
-      outline: 0;
-      display: inline-block;
-      padding: 8px;
+    .fa-linkedin {
+      background: #007bb5;
+      border-radius: 25px;
       color: white;
-      background-color: #000;
+    }
+
+    .fa-github {
+      background: black;
+      border-radius: 25px;
+      color: white;
+    }
+
+    .fa {
+      margin-top: 8%;
+      padding-top: 6%;
+      padding-bottom: 6%;
+      font-size: 150%;
+      width: 25%;
       text-align: center;
-      cursor: pointer;
-      width: 100%;
-    }
-
-    .button:hover {
-      background-color: #555;
-    }
-
-    @media screen and (max-width: 650px) {
-      .column {
-        width: 100%;
-        display: block;
-      }
-    }
-
-    .topnav {
-      overflow: hidden;
-      background-color: #333;
-      position: fixed;
-      top: 1%;
-    }
-
-    .topnav a {
-      float: left;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 10px 10px;
       text-decoration: none;
-      font-size: 17px;
     }
 
-    .topnav a:hover {
-      background-color: #ddd;
-      color: black;
+    .fa:hover {
+      opacity: 0.7;
     }
->>>>>>> main
+
   </style>
 </head>
 
 <body>
   <%- include ('../partials/nav') %>
-<<<<<<< HEAD
   <div style="text-align: center;">
     <title> About Page </title>
   </div>
@@ -142,228 +107,180 @@
 
   <!-- title banner-->
   <section id="title banner">
-    <div class="about-section">
-      <nav class="navbar navbar-expand-lg navbar-light" style="background-color:LightSteelBlue">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="http://www.devhub.virginia.edu/index" target="_blank">
-            <img src="https://cdn-images-1.medium.com/max/277/1*FSpxii4dxAJRqSUDPlk_9g@2x.png" width="45" height="36">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link" aria-current="page" href="#">Home</a>
-              <a class="nav-link active" href="#">About Us</a>
-              <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:LightSteelBlue">
-                  Buildings
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Rotunda</a></li>
-                  <li><a class="dropdown-item" href="#">Rice Hall</a></li>
-                  <li><a class="dropdown-item" href="#">Newcomb Hall</a></li>
-                </ul>
+      <div class="container p-5">
+        <div class="row justify-content-center">
+          <div class="col-md-3 text-center text-md-start">
+            <div class="card" style="border-radius: 25px;">
+              <div class="card-body">
+                <h1>About Us</h1>
               </div>
             </div>
           </div>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-dark" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
-      <div class="container p-5">
-        <div class="row justify-content-center">
-          <div class+"col-md-4 text-center text-md-start">
-            <h1>
-              <div class="display-3">About Us</div>
-            </h1>
-          </div>
         </div>
       </div>
-  </section>
-
-  <!-- our team title -->
-  <section id="main body title">
-    <div class="container p-2">
-      <div class="row justify-content-center">
-        <div class="col-md-4 text-center text-md-start">
-          <h1>
-            <div class="display-5">Our Team</div>
-          </h1>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- image/description cards -->
-  <section id="cards">
+<section id="image cards">
+
     <div class="container-md m-5">
 
-      <div class="row justify-content-center p-1">
+      <div class="card" style="border-radius: 25px;">
+        <div class="card-body">
+
+      <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center p-1">
 
         <div class="col-md-2 text-start text-md-start">
-          <div class="card">
-            <img src="/img/Alex.jpg" class="card-img-top" alt="Alex">
+            <div class="card" style="background-color: FloralWhite; border: none">
+              <div class="img__wrap">
+                <img src="/img/Alex.jpg" class="card-img-top" alt="Alex">
+                <div class="img__description_layer">
+                  <p class="img__description">Information</p>
+                </div>
+              </div>
+                <div class="card-body">
+                  <h4 class="card-title text-dark">Alex Kim</h4>
+                  <p class="card-subtitle mb-2 text-secondary">Software Developer</p>
+                  <a href = "mailto: ajk5qwb@virginia.edu">
+                    <button class="btn btn-dark" type="submit" style="border-radius: 20px;"> Email</button>
+                  </a>
+                  <div>
+                   <a href="#"><i class="fa fa-instagram"></i></a>
+                   <a href="#"><i class="fa fa-linkedin"></i></a>
+                   <a href="#"><i class="fa fa-github"></i></a>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+        <div class="col-md-2 text-start text-md-start">
+          <div class="card" style="background-color: FloralWhite; border: none">
+            <div class="img__wrap">
+              <img src="/img/Allie.jpg" class="card-img-top" alt="Allison">
+              <div class="img__description_layer">
+                <p class="img__description">Information</p>
+              </div>
+            </div>
             <div class="card-body">
-              <h5 class="card-title">Alex Kim</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Software Developer</h6>
-              <a href="#" class="btn btn-primary">Learn More</a>
+              <h4 class="card-title text-Dark">Allison Fowle</h4>
+              <p class="card-subtitle mb-2 text-secondary">Software Developer</p>
+              <a href = "mailto: acf6nb@virginia.edu">
+                <button class="btn btn-dark" type="submit" style="border-radius: 20px;"> Email</button>
+              </a>
+              <div>
+               <a href="#"><i class="fa fa-instagram"></i></a>
+               <a href="#"><i class="fa fa-linkedin"></i></a>
+               <a href="#"><i class="fa fa-github"></i></a>
+             </div>
             </div>
           </div>
         </div>
 
         <div class="col-md-2 text-start text-md-start">
-          <div class="card">
-            <img src="/img/Allie.jpg" class="card-img-top" alt="Allison">
+          <div class="card" style="background-color: FloralWhite; border: none">
+            <div class="img__wrap">
+              <img src="/img/Mia.jpg" class="card-img-top" alt="Mia">
+              <div class="img__description_layer">
+                <p class="img__description">Information</p>
+              </div>
+            </div>
             <div class="card-body">
-              <h5 class="card-title">Allison Fowle</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Software Developer</h6>
-              <a href="#" class="btn btn-primary">Learn More</a>
+              <h4 class="card-title text-dark">Mia Varghese</h4>
+              <p class="card-subtitle mb-2 text-secondary">Software Developer</p>
+              <a href = "mailto: mev5qf@virginia.edu">
+                <button class="btn btn-dark" type="submit" style="border-radius: 20px;"> Email</button>
+              </a>
+              <div>
+               <a href="#"><i class="fa fa-instagram"></i></a>
+               <a href="#"><i class="fa fa-linkedin"></i></a>
+               <a href="#"><i class="fa fa-github"></i></a>
+             </div>
             </div>
           </div>
         </div>
 
         <div class="col-md-2 text-start text-md-start">
-          <div class="card">
-            <img src="/img/Mia.jpg" class="card-img-top" alt="Mia">
+          <div class="card" style="background-color: FloralWhite; border: none">
+            <div class="img__wrap">
+              <img src="/img/Rishab.jpg" class="card-img-top" alt="Rishab">
+              <div class="img__description_layer">
+                <p class="img__description">
+                  Information
+                </p>
+              </div>
+            </div>
             <div class="card-body">
-              <h5 class="card-title">Mia Varghese</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Software Developer</h6>
-              <a href="#" class="btn btn-primary">Learn More</a>
+              <h4 class="card-title text-dark">Rishab Gopisetti</h4>
+              <p class="card-subtitle mb-2 text-secondary">Software Developer</p>
+              <a href = "mailto: rsg4esk@virginia.edu">
+                <button class="btn btn-dark" type="submit" style="border-radius: 20px;"> Email</button>
+              </a>
+              <div>
+               <a href="https://www.instagram.com/rishabg17/" target="_blank"><i class="fa fa-instagram"></i></a>
+               <a href="https://www.linkedin.com/in/rishab-gopisetti-602752223/" target="_blank"><i class="fa fa-linkedin"></i></a>
+               <a href="https://github.com/rishabg17" target="_blank"><i class="fa fa-github"></i></a>
+             </div>
             </div>
           </div>
         </div>
 
         <div class="col-md-2 text-start text-md-start">
-          <div class="card">
-            <img src="/img/Rishab.jpg" class="card-img-top" alt="Rishab">
+          <div class="card" style="background-color: FloralWhite; border: none">
+            <div class="img__wrap">
+              <img src="/img/Ethan.jpg" class="card-img-top" alt="Ethan">
+              <div class="img__description_layer">
+                <p class="img__description">Information</p>
+              </div>
+            </div>
             <div class="card-body">
-              <h5 class="card-title">Rishab Gopisetti</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Software Developer</h6>
-              <a href="#" class="btn btn-primary">Learn More</a>
+              <h4 class="card-title text-darkt">Ethan Gham</h4>
+              <p class="card-subtitle mb-2 text-secondary">Team Leader</p>
+              <a href = "mailto: ethangahm@gmail.com">
+                <button class="btn btn-dark" type="submit" style="border-radius: 20px;"> Email</button>
+              </a>
+              <div>
+               <a href="#"><i class="fa fa-instagram"></i></a>
+               <a href="#"><i class="fa fa-linkedin"></i></a>
+               <a href="#"><i class="fa fa-github"></i></a>
+             </div>
             </div>
           </div>
         </div>
 
         <div class="col-md-2 text-start text-md-start">
-          <div class="card">
-            <img src="/img/Ethan.jpg" class="card-img-top" alt="Ethan">
-            <div class="card-body">
-              <h5 class="card-title">Ethan Gham</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Software Developer</h6>
-              <a href="#" class="btn btn-primary">Learn More</a>
+          <div class="card" style="background-color: FloralWhite; border: none">
+            <div class="img__wrap">
+              <img src="/img/Ned.jpeg" class="card-img-top" alt="Ned">
+              <div class="img__description_layer">
+                <p class="img__description">Information</p>
+              </div>
             </div>
-          </div>
-        </div>
-
-        <div class="col-md-2 text-start text-md-start">
-          <div class="card">
-            <img src="/img/Ned.jpeg" class="card-img-top" alt="Ned">
             <div class="card-body">
-              <h5 class="card-title">Edward Rossman</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Software Developer</h6>
-              <a href="#" class="btn btn-primary">Learn More</a>
+              <h4 class="card-title text-dark">Edward Rossman</h4>
+              <p class="card-subtitle mb-2 text-secondary">Team Leader</p>
+                <a href = "mailto: er9fa@virginia.edu">
+                  <button class="btn btn-dark" type="submit" style="border-radius: 20px;"> Email</button>
+                </a>
+              <div>
+               <a href="#"><i class="fa fa-instagram"></i></a>
+               <a href="#"><i class="fa fa-linkedin"></i></a>
+               <a href="#"><i class="fa fa-github"></i></a>
+             </div>
             </div>
-=======
-    <div style="text-align: center;">
-      <title> About Page </title>
-    </div>
-
-    <div class="about-section">
-      <div class="topnav">
-        <a href="#home">Home</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-        <a href="#buildings">Buildings</a>
-      </div>
-      <h1>About Us</h1>
-    </div>
-
-    <h2 class="team" style="text-align:center">Our Team</h2>
-
-    <div class="row" style="position:fixed;left:1.25%;">
-      <div class="column">
-        <div class="card">
-          <img src="/img/Alex.jpg" alt="Alex" style="width:100%">
-          <div class="container">
-            <h2>Alex Kim</h2>
-            <p class="title">Software Developer</p>
-            <p><button class="button">Learn More</button></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="column">
-        <div class="card">
-          <img src="/img/Allie.jpg" alt="Allie" style="width:100%">
-          <div class="container">
-            <h2>Allison Fowle</h2>
-            <p class="title">Software Developer</p>
-            <p><button class="button">Learn More</button></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="column">
-        <div class="card">
-          <img src="/img/Mia.jpg" alt="Mia" style="width:100%">
-          <div class="container">
-            <h2>Mia Varghese</h2>
-            <p class="title">Software Developer</p>
-            <p><button class="button">Learn More</button></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="column">
-        <div class="card">
-          <img src="/img/Rishab.jpg" alt="Rishab" style="width:100%">
-          <div class="container">
-            <h2>Rishab Gopisetti</h2>
-            <p class="title">Software Developer</p>
-            <p><button class="button">Learn More</button></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="column">
-        <div class="card">
-          <img src="/img/Ethan.jpg" alt="Ethan" style="width:100%">
-          <div class="container">
-            <h2>Ethan Gham</h2>
-            <p class="title">Team Leader</p>
-            <p><button class="button">Learn More</button></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="column">
-        <div class="card">
-          <img src="/img/Ned.jpeg" alt="Ned" style="width:100%">
-          <div class="container">
-            <h2>Edward Rossman</h2>
-            <p class="title">Team Leader</p>
-            <p><button class="button">Learn More</button></p>
->>>>>>> main
           </div>
         </div>
 
       </div>
 
     </div>
-<<<<<<< HEAD
-    </section>
+    </div>
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-=======
+    </div>
+</section>
 
-    <a href="http://www.devhub.virginia.edu/index" target="_blank"><img
-        src="https://cdn-images-1.medium.com/max/277/1*FSpxii4dxAJRqSUDPlk_9g@2x.png" alt="Link to DevHub"
-        style="position:fixed;right:0.25%;bottom:2.5%;width:5%;height:8%;"></a>
->>>>>>> main
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
 
 </body>
 

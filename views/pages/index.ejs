@@ -52,7 +52,8 @@
       </div>
       </div>
 
-<!-- Footer -->
+
+<!-- Page Footer -->
   <div class="footer text-center font">
     <div class="container">
       <h2> This is a web application that simplifies information about UVA's buildings. The objective is to create a simple user interface with universal readability in terms of usage data and other general information.</h2>
@@ -61,7 +62,8 @@
 
 
   <script type="text/javascript">
-  //initializing variables
+
+  //initializing necessary variables
   let buildinghere = [];
   let htmlString = [];
   let htmlStrings = [];
@@ -82,7 +84,8 @@
     displayBuildings(filteredBuildings);
   });
 
-  //Loads buildings array from API
+
+//Loads building information into array from API
     const loadBuildings = async () => {
       try {
         const res = await fetch('https://8hafn7cyqb.execute-api.us-east-1.amazonaws.com/v1/facilities');
@@ -94,7 +97,8 @@
       }
     };
 
-    //Displays the buildings onto the page
+
+//Displays buildings on page
     const displayBuildings = (buildings) => {
       htmlString = buildings.map((building) => {
         return `
@@ -128,7 +132,8 @@
     };
     loadBuildings();
 
-    //Button JavaScript
+
+//Button JavaScript
     document.getElementById("prev").addEventListener("click", prev);
     document.getElementById("next").addEventListener("click", next);
 
