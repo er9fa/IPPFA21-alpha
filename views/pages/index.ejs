@@ -43,7 +43,7 @@
       </div>
       <div class="row justify-content-center">
 
-        <!-- Building/Button Panel -->
+        <!-- Building/Button Boxes -->
         <ul id="buildingList"></ul>
         <button id ="prev" class="button">previous</button>
         <button id ="next" class="button">next</button>
@@ -51,6 +51,7 @@
       </div>
       </div>
       </div>
+
 
 <!-- Page Footer -->
   <div class="footer text-center font">
@@ -61,6 +62,7 @@
 
 
   <script type="text/javascript">
+
   //initializing necessary variables
   let buildinghere = [];
   let htmlString = [];
@@ -68,7 +70,7 @@
   let i = 0;
   let s = i + 10;
 
-//Search Bar JavaScript
+  //Search Bar JavaScript
   Search.addEventListener('keyup', (e) => {
     const searchString = e.target.value.toLowerCase();
     const filteredBuildings = buildinghere.filter((building) => {
@@ -77,8 +79,11 @@
         building.Address.toLowerCase().includes(searchString)
       );
     });
+    i = 0;
+    s = i + 10;
     displayBuildings(filteredBuildings);
   });
+
 
 //Loads building information into array from API
     const loadBuildings = async () => {
@@ -91,6 +96,7 @@
         console.error(err);
       }
     };
+
 
 //Displays buildings on page
     const displayBuildings = (buildings) => {
@@ -111,7 +117,6 @@
         </li>
         `;
       });
-      console.log(i);
       y = s;
       for(let x = i; x < y; x++){
         console.log(htmlString[x]);
@@ -126,6 +131,7 @@
 
     };
     loadBuildings();
+
 
 //Button JavaScript
     document.getElementById("prev").addEventListener("click", prev);
@@ -155,8 +161,6 @@
     }
 
   </script>
-
-
 
 </body>
 
