@@ -100,6 +100,7 @@
   margin: 20px;
   width: auto;
   display:flex;
+  z-index: 9;
 }
 
 .search {
@@ -141,6 +142,8 @@
   height: 337px;
   overflow: hidden;
   border-radius: 50px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .big-background{
@@ -150,9 +153,11 @@
   padding-bottom: 10px;
   margin-top: 25px;
   margin-bottom: 25px;
-  margin-left: 320px;
+  margin-left: 280px;
   margin-right: 300px;
   border-radius: 25px;
+  width: 70%;
+  max-width: 80%;
 }
 
 .main-background{
