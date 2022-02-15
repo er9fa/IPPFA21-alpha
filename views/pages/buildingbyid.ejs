@@ -17,6 +17,7 @@
     <h1 class="item1" id="buildname"></h1>
     <img class="item2" id="buildingimg" src="" />
 
+    <!--Tab Container-->
     <div class="tabContainer">
       <div class="buttonContainer">
         <button onclick="showPanel(0,'#002e63')">Building Information</button>
@@ -25,6 +26,7 @@
       <div class="tabPanel" id="buildinfo"></div>
       <div class="tabPanel" id="map"></div>
     </div>
+    <!--End Tab Container-->
 
     <h3 class="item6">Related Buildings</h3>
     <div class="imageContainer">
@@ -51,6 +53,7 @@
       });
       tabButtons[panelIndex].style.backgroundColor = colorCode;
       tabButtons[panelIndex].style.color = "white";
+      tabButtons[panelIndex].style.border = "outset";
 
 
 
@@ -59,6 +62,8 @@
       });
       tabPanels[panelIndex].style.display = "block";
       tabPanels[panelIndex].style.backgroundColor = colorCode;
+      tabPanels[panelIndex].style.border = "ridge";
+
     }
 
     showPanel(0, '#002e63');
@@ -160,6 +165,11 @@
           console.log(error);
         });
 
+
+
+
+
+      // related building code
       function renderRelatedBuildings(YearBuilt) {
         console.log("Year Built of Current Page", YearBuilt);
 
@@ -258,13 +268,9 @@
 
 
   <style>
-    @font-face {
-      font-family: mrtech;
-      src: url("/MrTech.ttf");
-    }
-
     .item1 {
       grid-area: buildname;
+      font-family: 'Quantico';
     }
 
     .item2 {
@@ -285,6 +291,7 @@
 
     .item6 {
       grid-area: h3;
+      font-family: 'Quantico';
     }
 
 
@@ -303,9 +310,11 @@
     }
 
     .grid-container>div {
+      /* Related buildings header */
       text-align: left;
       padding: 1px 0;
-      font-size: 12px;
+      font-size: 40px;
+      font-family: 'Quantico', sans-serif;
 
     }
 
@@ -323,13 +332,14 @@
       color: white;
       background-color: #002e63;
       text-align: center;
-      font-family: 'mrtech';
-      font-size: 60px;
+      font-family: 'Quantico', sans-serif;
+      font-size: 80px;
       /* margin-top: 0px; */
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
     }
 
     body {
+      /* Background with blue pic */
       background-image: url("/coolerbackground2.jfif");
       background-size: cover;
       padding-top: 10px;
@@ -339,26 +349,24 @@
     h2 {
       /*building info*/
       text-align: left;
-      font-family: 'mrtech';
+      font-family: 'Quantico', sans-serif;
       font-weight: 900;
-      padding-top: 10px;
-      padding-bottom: 10px;
       color: #002e63;
-      font-size: 34px;
+      font-size: 80px;
 
     }
 
     h3 {
-      /*building info*/
+      /*related building info*/
       text-indent: 4%;
       text-align: left;
-      font-family: 'mrtech';
+      font-family: 'Quantico', sans-serif;
       font-weight: 900;
       padding-top: 10px;
       padding-bottom: 10px;
       color: white;
       background-color: #042244;
-      font-size: 30px;
+      font-size: 60px;
 
     }
 
@@ -366,6 +374,7 @@
       margin-top: 2%;
       margin-left: auto;
       margin-right: auto;
+      width: fit-content;
     }
   </style>
 </body>

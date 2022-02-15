@@ -8,17 +8,13 @@
   position: relative;
 }
 
-@font-face {
-  font-family: mrtech;
-  src: url('/MrTech.ttf') format("ttf");
-}
-
 .font{
-  font-family: "mrtech";
+  font-family: "Quantico";
 }
 
+/*related buildings header*/
 .font2{
-  font-family: 'Merriweather', serif;
+  font-family: 'Quantico', serif;
 }
 
 .footer{
@@ -219,10 +215,14 @@
   text-align: center !important;
 }
 
+
+
+
+
 #map {
   height: 330px;
-  width: 500px;
-  padding: 10px;
+  width: 625px;
+  /* padding: 10px; */
 }
 
 
@@ -287,12 +287,13 @@
   transition: 1s opacity;
   animation: fadeIn 0.5s ease-in both;
   background-color: aliceblue;
-  font-family: 'mrtech';
-  font-size: 16px;
+  font-family: 'Quantico';
+  font-size: 23px;
   text-align: left;
-  padding-top: 8%;
+  padding-top: 2%;
   padding-left: 5%;
   padding-bottom: 2%;
+  line-height: normal;
 }
 
 
@@ -354,10 +355,11 @@
   cursor: pointer;
   /* padding: 10px; */
   background-color: #eee;
-  font-family: "mrtech";
-  font-size: medium;
+  font-family: "Quantico";
+  font-size: 25px;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
+  font-weight: bold;
 }
 
 .tabContainer .buttonContainer button:hover{
@@ -366,11 +368,13 @@
 
 .tabContainer .tabPanel {
   height: 85%;
-  width: auto;
+  width: 675px;
   margin-right: 18%;
   background-color: gray;
   color: white;
   /* box-sizing: border-box; */
   padding-top: 20px;
   display: none;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
