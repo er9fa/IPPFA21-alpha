@@ -134,11 +134,12 @@
   display: inline-block;
   width: 50rem;
   max-height: 50rem;
-  height: 337px;
+  min-height: 337px;
   overflow: hidden;
   border-radius: 50px;
-  width: 100%;
+  margin: auto;
   max-width: 100%;
+  height: auto;
 }
 
 .big-background{
@@ -146,13 +147,10 @@
   background-size: cover;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  margin-left: 280px;
-  margin-right: 300px;
   border-radius: 25px;
-  width: 70%;
-  max-width: 80%;
+  margin: auto;
+  max-width: 70%;
+  height: auto;
 }
 
 .main-background{
