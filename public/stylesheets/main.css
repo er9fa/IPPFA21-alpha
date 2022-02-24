@@ -220,6 +220,7 @@
 #map {
   height: 330px;
   width: 625px;
+  animation: fadeIn .5s ease-in both;
   /* padding: 10px; */
 }
 
@@ -275,7 +276,6 @@
 /* left related images container */
 .imageContainer .image:hover{
   opacity: 70%;
-  
 }
 
 /* right related images container */
@@ -296,6 +296,8 @@
   padding-bottom: 2%;
   line-height: normal;
 }
+
+
 
 
 @keyframes fadeIn {
@@ -324,6 +326,7 @@
   margin-left: 0;
   margin-right: 0;
   margin-top: 20px;
+  
 }
 
 .imageContainer2 {
@@ -342,14 +345,12 @@
   padding-right: 0%;
   padding-left: 20%;
   margin-left: 10px;
-  width: 97.5%;
 
   /* margin-right: 35px; */
 }
 
 .tabContainer .buttonContainer{
   height: 15%;
-  /* width: 97.5%; */
 }
 
 .tabContainer .buttonContainer button {
@@ -375,7 +376,7 @@
 
 .tabContainer .tabPanel {
   height: 85%;
-  width: fit-content;
+  width: 625px;
   margin-right: 18%;
   background-color: gray;
   color: white;
@@ -384,6 +385,7 @@
   display: none;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
+
 }
 
 .map {
