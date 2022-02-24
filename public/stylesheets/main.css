@@ -5,7 +5,7 @@
   background-size: contain;
   color: white;
   padding-bottom: 10px;
-  position: relative;
+  padding-top: 140px;
 }
 
 .font{
@@ -15,12 +15,6 @@
 /*related buildings header*/
 .font2{
   font-family: 'Quantico', serif;
-}
-
-.footer{
-  background-image: url(/footerback.jpeg);
-  background-size:contain;
-  color: white;
 }
 
 .jumbotron .btn-primary {
@@ -52,57 +46,6 @@
 .jumbotron .lang-logo img {
   max-width: 100%;
 }
-.nav-contain{
-  position: fixed;
-  margin: 20px;
-  width: auto;
-}
-
-.topnav{
-  overflow: hidden;
-  background-color: #E67E22;
-}
-
-.topnav a{
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 20px 22px;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-.topnav a:hover {
-  background-color: #D35400;
-  color: black;
-}
-
-.topnav2{
-  overflow: hidden;
-  background-color: #E67E22;
-}
-
-.topnav2 input[type=text] {
-  float: center;
-  padding: 10px;
-  border: none;
-  margin: 20px;
-  font-size: 17px;
-}
-
-.wrapper {
-  position: fixed;
-  right: 20px;
-  margin: 20px;
-  width: auto;
-  z-index: 9;
-}
-
-.search {
-  border: 1px solid #009688;
-  background-color: white;
-  color:black;
-}
 
 
 .active {
@@ -117,29 +60,9 @@
   width: 100% !important;
 }
 
-.button{
-  cursor: pointer;
-  position: relative;
-  display: inline-block;
-  width: 15rem;
-  height: 100px;
-  border-radius: 50px;
-  font-size: 25px;
-  background-color: rgb(102,178,255);
-}
 
 .building .building-item {
-  cursor: pointer;
-  position: relative;
-  display: inline-block;
-  width: 50rem;
-  max-height: 50rem;
   min-height: 337px;
-  overflow: hidden;
-  border-radius: 50px;
-  margin: auto;
-  max-width: 100%;
-  height: auto;
 }
 
 .big-background{
@@ -176,41 +99,11 @@
   opacity: 1;
 }
 
-.d-flex {
-  display: flex !important;
-}
-
 .building .building-item .building-item-caption .building-item-caption-content {
-  font-size: 5rem;
+  font-size: 3rem;
   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
-}
-
-.col-md-6 {
-  flex: 0 0 auto;
-  width: 50%;
-}
-
-.mx-auto {
-  margin-right: auto !important;
-  margin-left: auto !important;
-}
-
-.mb-5 {
-  margin-bottom: 3rem !important;
-}
-
-.align-items-center {
-  align-items: center !important;
-}
-
-.justify-content-center {
-  justify-content: center !important;
-}
-
-.text-center {
-  text-align: center !important;
 }
 
 
@@ -326,7 +219,7 @@
   margin-left: 0;
   margin-right: 0;
   margin-top: 20px;
-  
+
 }
 
 .imageContainer2 {
