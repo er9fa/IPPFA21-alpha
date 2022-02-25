@@ -245,6 +245,7 @@
   border-radius: 25px;
   cursor: pointer;
   border: 5px solid rgb(207, 201, 201);
+  
 }
 
 #buildingimg3{
@@ -273,18 +274,23 @@
 }
 
 /* left related images container */
-.imageContainer .image:hover{
+.imageContainer .image2:hover{
+  opacity: 70%;
+}
+
+.imageContainer .image3:hover{
   opacity: 70%;
 }
 
 /* right related images container */
-.imageContainer2 .image2:hover{
+.imageContainer2 .image4:hover{
   opacity: 70%;
 }
 
-.image {
-  visibility: visible;
+.imageContainer2 .image5:hover{
+  opacity: 70%;
 }
+
 
 #buildinfo{
   opacity: 0;
