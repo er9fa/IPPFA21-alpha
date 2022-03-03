@@ -1,5 +1,6 @@
 .jumbotron {
-  background-image: url(/UVABackground.jpeg);
+  background-color: #537895;
+background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
   background-position: center;
   background-repeat: repeat;
   background-size: contain;
@@ -62,11 +63,12 @@
 
 
 .building .building-item {
-  min-height: 337px;
+  min-height: 420px;
+  max-height: 420px;
 }
 
 .big-background{
-  background-image: url("/cool-background.png");
+  background: rgb(16, 2, 2);
   background-size: cover;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -105,9 +107,6 @@
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
-
-
-
 
 
 #map {

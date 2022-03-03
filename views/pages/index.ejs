@@ -8,6 +8,11 @@
 </head>
 
 <body>
+
+  <style>
+
+  </style>
+
 <div class="font">
   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark py-3">
   <div class="container-fluid">
@@ -49,14 +54,16 @@
     <div class="container-fluid">
       <div style="color: black;">
 
-        <h2 class="mb-5" style="margin-right: -20px; margin-left: -25px; font-size: 2vw;"> "... architecture is my delight, and putting up, and pulling down, one of my favorite amusements." -Thomas Jefferson</h2>
+        <h2 class="mb-2 text-white" style="margin-right: -20px; margin-left: -25px; font-size: 2vw;"> "... architecture is my delight, and putting up, and pulling down, one of my favorite amusements." -Thomas Jefferson</h2>
       </div>
 
         <!-- Building/Button Boxes -->
-        <ul id="buildingList"></ul>
-        <div class="d-grid gap-2 col-6 mx-auto">
-        <button type="button" id ="prev" class="btn bg-dark text-white" style="font-size: 150%;">previous</button>
-        <button type="button" id ="next" class="btn bg-dark text-white" style="font-size: 150%;">next</button>
+
+        <ul class="row row-cols-1 row-cols-md-2 g-4 p-3" id="buildingList"></ul>
+
+        <div class="gap-2 col-6 mx-auto">
+        <button type="button" id ="prev" class="btn btn-lg bg-secondary text-white" style="font-size: 150%;">previous</button>
+        <button type="button" id ="next" class="btn btn-lg bg-secondary text-white" style="font-size: 150%;">next</button>
       </div>
       </div>
     </section>
@@ -137,10 +144,11 @@
     const displayBuildings = (buildings) => {
       htmlString = buildings.map((building) => {
         return `
-        <li class="col-md-6 mb-5 font2 card" style="list-style:none;">
+        <div class="col">
+        <li class="font2 card border-0" style="list-style:none; min-height: 420px; max-height:420px;">
           <a href="/building/${building.BuildingId}">
             <div class="building-item">
-              <img class="building-item card-img-top" src="/${building.Name}.jpeg" onerror="this.src='UVABackground.jpeg'"/>
+              <img class="building-item card-img-top" src="/img/buildingname/${building.Name}.jpg" onerror="this.src='UVABackground.jpeg'"/>
               <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div class="building-item-caption-content text-center" style="color: white;"><b>
                     ${building.Name}</b> <br>
@@ -150,8 +158,10 @@
             </div>
           </a>
         </li>
+        </div>
         `;
       });
+      console.log(htmlString);
       y = s;
       for(let x = i; x < y; x++){
         console.log(htmlString[x]);
