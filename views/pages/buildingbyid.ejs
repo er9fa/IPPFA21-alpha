@@ -29,17 +29,19 @@
     <!--End Tab Container-->
 
     <h3 class="item6">Related Buildings</h3>
-    <div class="imageContainer">
-      <img class="image" id="buildingimg2" src="" />
-      <img class="image" id="buildingimg3" src="" />
-    </div>
-    <div class="imageContainer2">
-      <img class="image2" id="buildingimg4" src="" />
-      <img class="image2" id="buildingimg5" src="" />
-    </div>
+    <img class="image" id="buildingimg2" src="" />
+    <img class="image" id="buildingimg3" src="" />
+    <img class="image2" id="buildingimg4" src="" />
+    <img class="image2" id="buildingimg5" src="" />
 
   </div>
 
+  <!-- // <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+    //     <div class="building-item-caption-content text-center" style="color: white;"><b>
+    //         ${obj.Name}</b> <br>
+    //       <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style="text-decoration-color: white;"> ${obj.Address} </u></p>
+    //     </div>
+    //   </div> -->
 
 
   <script>
@@ -138,20 +140,21 @@
               [${building.Longitude}, ${building.Latitude}] <br/>
               ${building.Historic} <br/>`;
 
-          const html4 = `Address: ${building.Address}<br/>
+          const html4 = `<b>Address:</b> ${building.Address}<br/>
           <br/>
-              Year Built: ${building.YearBuilt}<br/>
+              <b>Year Built:</b> ${building.YearBuilt}<br/>
               <br/>
-              Square Footage: ${building.SquareFootage} ft<sup>2</sup> <br/>
+              <b>Square Footage:</b> ${building.SquareFootage} ft<sup>2</sup> <br/>
               <br/>
-              Type of Building: ${building.Category}<br/>
+              <b>Type of Building:</b> ${building.Category}<br/>
               <br/>
-              Location: [${building.Longitude}, ${building.Latitude}] <br/>
+              <b>Location:</b> [${building.Longitude}, ${building.Latitude}] <br/>
               <br/>
-              Historic?: ${building.Historic} <br/>`;
+              <b>Historic?:</b> ${building.Historic} <br/>`;
 
 
           const imgsrc = `/img/buildingname/${html}.jpg`;
+
           document.querySelector(`#buildname`).innerHTML = html;
           document.querySelector(`#buildinfo`).innerHTML = html4;
 
@@ -215,6 +218,14 @@
               window.open(objlink, '_self');
             }
             buildingimg2.src = imgsrc2;
+
+
+            // <div class="building-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+            //     <div class="building-item-caption-content text-center" style="color: white;"><b>
+            //         ${obj.Name}</b> <br>
+            //       <p style="font-size: 70%; -webkit-text-stroke-width: 1px;"> <u style="text-decoration-color: white;"> ${obj.Address} </u></p>
+            //     </div>
+            //   </div>
 
             const imgsrc3 = `/img/buildingname/${obj2.Name}.jpg`;
             const obj2link = `http://localhost:5000/building/${obj2.BuildingId}`;

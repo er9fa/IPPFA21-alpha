@@ -286,6 +286,7 @@
   visibility: visible;
 }
 
+/*information for each building: address, year built, etc*/
 #buildinfo{
   opacity: 0;
   transition: 1s opacity;
