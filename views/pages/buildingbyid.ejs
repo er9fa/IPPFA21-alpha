@@ -146,17 +146,17 @@
               [${building.Longitude}, ${building.Latitude}] <br/>
               ${building.Historic} <br/>`;
 
-          const html4 = `Address: ${building.Address}<br/>
-          <br/>
-              Year Built: ${building.YearBuilt}<br/>
-              <br/>
-              Square Footage: ${building.SquareFootage} ft<sup>2</sup> <br/>
-              <br/>
-              Type of Building: ${building.Category}<br/>
-              <br/>
-              Location: [${building.Longitude}, ${building.Latitude}] <br/>
-              <br/>
-              Historic?: ${building.Historic} <br/>`;
+          const html4 = `<b>Address:</b> ${building.Address}<br>
+          <br>
+              <b>Year Built:</b> ${building.YearBuilt}<br>
+              <br>
+              <b>Square Footage:</b> ${building.SquareFootage} ft<sup>2</sup> <br>
+              <br>
+              <b>Type of Building:</b> ${building.Category}<br>
+              <br>
+              <b>Location:</b> [${building.Longitude}, ${building.Latitude}] <br>
+              <br>
+              <b>Historic?:</b> ${building.Historic} <br>`;
 
 
           const imgsrc = `/img/buildingname/${html}.jpg`;

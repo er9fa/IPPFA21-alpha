@@ -108,10 +108,10 @@ background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
   -webkit-text-stroke-color: black;
 }
 
-
+/* make edits here to specifically edit the map tab of the container */
 #map {
-  height: 330px;
-  width: 625px;
+  height: 325px;
+  width: 618px;
   animation: fadeIn .5s ease-in both;
 }
 
@@ -248,8 +248,8 @@ background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
 }
 
 .tabContainer .tabPanel {
-  height: 85%;
-  width: 625px;
+  height: 78%;
+  width: 587px;
   margin-right: 18%;
   background-color: gray;
   color: white;
@@ -258,6 +258,7 @@ background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
   display: none;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
+  box-shadow: 0 14px 18px 0 rgba(0, 0, 0, 0.2), 0 60px 40px 0 rgba(0, 0, 0, 0.19);
 
 }
 
