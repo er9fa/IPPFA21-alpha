@@ -1,11 +1,12 @@
 .jumbotron {
-  background-image: url(/UVABackground.jpeg);
+  background-color: #537895;
+background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
   background-position: center;
   background-repeat: repeat;
   background-size: contain;
   color: white;
   padding-bottom: 10px;
-  position: relative;
+  padding-top: 140px;
 }
 
 .font{
@@ -15,12 +16,6 @@
 /*related buildings header*/
 .font2{
   font-family: 'Quantico', serif;
-}
-
-.footer{
-  background-image: url(/footerback.jpeg);
-  background-size:contain;
-  color: white;
 }
 
 .jumbotron .btn-primary {
@@ -52,57 +47,6 @@
 .jumbotron .lang-logo img {
   max-width: 100%;
 }
-.nav-contain{
-  position: fixed;
-  margin: 20px;
-  width: auto;
-}
-
-.topnav{
-  overflow: hidden;
-  background-color: #E67E22;
-}
-
-.topnav a{
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 20px 22px;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-.topnav a:hover {
-  background-color: #D35400;
-  color: black;
-}
-
-.topnav2{
-  overflow: hidden;
-  background-color: #E67E22;
-}
-
-.topnav2 input[type=text] {
-  float: center;
-  padding: 10px;
-  border: none;
-  margin: 20px;
-  font-size: 17px;
-}
-
-.wrapper {
-  position: fixed;
-  right: 20px;
-  margin: 20px;
-  width: auto;
-  z-index: 9;
-}
-
-.search {
-  border: 1px solid #009688;
-  background-color: white;
-  color:black;
-}
 
 
 .active {
@@ -117,33 +61,14 @@
   width: 100% !important;
 }
 
-.button{
-  cursor: pointer;
-  position: relative;
-  display: inline-block;
-  width: 15rem;
-  height: 100px;
-  border-radius: 50px;
-  font-size: 25px;
-  background-color: rgb(102,178,255);
-}
 
 .building .building-item {
-  cursor: pointer;
-  position: relative;
-  display: inline-block;
-  width: 50rem;
-  max-height: 50rem;
-  min-height: 337px;
-  overflow: hidden;
-  border-radius: 50px;
-  margin: auto;
-  max-width: 100%;
-  height: auto;
+  min-height: 420px;
+  max-height: 420px;
 }
 
 .big-background{
-  background-image: url("/cool-background.png");
+  background: rgb(16, 2, 2);
   background-size: cover;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -176,50 +101,17 @@
   opacity: 1;
 }
 
-.d-flex {
-  display: flex !important;
-}
-
 .building .building-item .building-item-caption .building-item-caption-content {
-  font-size: 5rem;
+  font-size: 3rem;
   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
 
-.col-md-6 {
-  flex: 0 0 auto;
-  width: 50%;
-}
-
-.mx-auto {
-  margin-right: auto !important;
-  margin-left: auto !important;
-}
-
-.mb-5 {
-  margin-bottom: 3rem !important;
-}
-
-.align-items-center {
-  align-items: center !important;
-}
-
-.justify-content-center {
-  justify-content: center !important;
-}
-
-.text-center {
-  text-align: center !important;
-}
-
-
-
-
-
+/* make edits here to specifically edit the map tab of the container */
 #map {
-  height: 330px;
-  width: 625px;
+  height: 325px;
+  width: 618px;
   animation: fadeIn .5s ease-in both;
 }
 
@@ -238,53 +130,33 @@
 
 }
 
-#buildingimg2{
+.relatedBuildingImage{
+  position: absolute;
   height: 200px;
   width: 300px;
   margin-right: 10px;
   border-radius: 25px;
   cursor: pointer;
   border: 5px solid rgb(207, 201, 201);
-  
+  visibility: visible;
 }
 
-#buildingimg3{
-  height: 200px;
-  width: 300px;
-  border-radius: 25px;
-  cursor: pointer;
-  border: 5px solid rgb(207, 201, 201);
-}
-
-#buildingimg4{
-  height: 200px;
-  width: 300px;
-  margin-right: 10px;
-  border-radius: 25px;
-  cursor: pointer;
-  border: 5px solid rgb(207, 201, 201);
-}
-
-#buildingimg5{
-  height: 200px;
-  width: 300px;
-  border-radius: 25px;
-  cursor: pointer;
-  border: 5px solid rgb(207, 201, 201);
+.relatedBuildingText{
+  position: absolute;
+  color:white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
 }
 
 /* left related images container */
-.imageContainer .image2:hover{
+.relatedBuildingContainer .relatedBuildingImage:hover{
   opacity: 70%;
 }
 
-.imageContainer .image3:hover{
-  opacity: 70%;
-}
-
-/* right related images container */
-.imageContainer2 .image4:hover{
-  opacity: 70%;
+.relatedBuildingContainer:hover .relatedBuildingText{
+  opacity: 1;
 }
 
 .imageContainer2 .image5:hover{
@@ -329,21 +201,14 @@
 	}
 }
 
-.imageContainer {
-  height: auto;
-  width: auto;
+.relatedBuildingContainer {
+  position: relative;
+  height: 200px;
+  width: 300px;
   margin-left: 0;
   margin-right: 0;
   margin-top: 20px;
-  
-}
 
-.imageContainer2 {
-  height: auto;
-  width: auto;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 20px;
 }
 
 
@@ -384,8 +249,8 @@
 }
 
 .tabContainer .tabPanel {
-  height: 85%;
-  width: 625px;
+  height: 78%;
+  width: 587px;
   margin-right: 18%;
   background-color: gray;
   color: white;
@@ -394,6 +259,7 @@
   display: none;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
+  box-shadow: 0 14px 18px 0 rgba(0, 0, 0, 0.2), 0 60px 40px 0 rgba(0, 0, 0, 0.19);
 
 }
 

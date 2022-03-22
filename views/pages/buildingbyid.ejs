@@ -29,13 +29,21 @@
     <!--End Tab Container-->
 
     <h3 class="item6">Related Buildings</h3>
-    <div class="imageContainer">
-      <img class="image2" id="buildingimg2" src="" />
-      <img class="image3" id="buildingimg3" src="" />
+    <div class="relatedBuildingContainer" id="relatedBuilding1">
+      <img class="relatedBuildingImage" id="relatedBuildingImg1" src="" />
+      <p class="relatedBuildingText" id="relatedBuildingText1"></p>
     </div>
-    <div class="imageContainer2">
-      <img class="image4" id="buildingimg4" src="" />
-      <img class="image5" id="buildingimg5" src="" />
+    <div class="relatedBuildingContainer" id="relatedBuilding2">
+      <img class="relatedBuildingImage" id="relatedBuildingImg2" src="" />
+      <p class="relatedBuildingText" id="relatedBuildingText2"></p>
+    </div>
+    <div class="relatedBuildingContainer" id="relatedBuilding3">
+      <img class="relatedBuildingImage" id="relatedBuildingImg3" src="" />
+      <p class="relatedBuildingText" id="relatedBuildingText3"></p>
+    </div>
+    <div class="relatedBuildingContainer" id="relatedBuilding4">
+      <img class="relatedBuildingImage" id="relatedBuildingImg4" src="" />
+      <p class="relatedBuildingText" id="relatedBuildingText4"></p>
     </div>
 
   </div>
@@ -138,17 +146,17 @@
               [${building.Longitude}, ${building.Latitude}] <br/>
               ${building.Historic} <br/>`;
 
-          const html4 = `Address: ${building.Address}<br/>
-          <br/>
-              Year Built: ${building.YearBuilt}<br/>
-              <br/>
-              Square Footage: ${building.SquareFootage} ft<sup>2</sup> <br/>
-              <br/>
-              Type of Building: ${building.Category}<br/>
-              <br/>
-              Location: [${building.Longitude}, ${building.Latitude}] <br/>
-              <br/>
-              Historic?: ${building.Historic} <br/>`;
+          const html4 = `<b>Address:</b> ${building.Address}<br>
+          <br>
+              <b>Year Built:</b> ${building.YearBuilt}<br>
+              <br>
+              <b>Square Footage:</b> ${building.SquareFootage} ft<sup>2</sup> <br>
+              <br>
+              <b>Type of Building:</b> ${building.Category}<br>
+              <br>
+              <b>Location:</b> [${building.Longitude}, ${building.Latitude}] <br>
+              <br>
+              <b>Historic?:</b> ${building.Historic} <br>`;
 
 
           const imgsrc = `/img/buildingname/${html}.jpg`;
@@ -204,38 +212,42 @@
 
 
             }
-            console.log(obj)
-            console.log(obj2)
-            console.log(obj3)
-            console.log(obj4)
+            // console.log(obj)
+            // console.log(obj2)
+            // console.log(obj3)
+            // console.log(obj4)
 
             const imgsrc2 = `/img/buildingname/${obj.Name}.jpg`;
             const objlink = `http://localhost:5000/building/${obj.BuildingId}`;
-            document.getElementById("buildingimg2").onclick = function () {
+            document.getElementById("relatedBuildingImg1").onclick = function () {
               window.open(objlink, '_self');
             }
-            buildingimg2.src = imgsrc2;
+            relatedBuildingImg1.src = imgsrc2;
+            document.getElementById("relatedBuildingText1").innerHTML = obj.Name;
 
             const imgsrc3 = `/img/buildingname/${obj2.Name}.jpg`;
             const obj2link = `http://localhost:5000/building/${obj2.BuildingId}`;
-            document.getElementById("buildingimg3").onclick = function () {
+            document.getElementById("relatedBuildingImg2").onclick = function () {
               window.open(obj2link, '_self');
             }
-            buildingimg3.src = imgsrc3;
+            relatedBuildingImg2.src = imgsrc3;
+            document.getElementById("relatedBuildingText2").innerHTML = obj2.Name;
 
             const imgsrc4 = `/img/buildingname/${obj3.Name}.jpg`;
             const obj3link = `http://localhost:5000/building/${obj3.BuildingId}`;
-            document.getElementById("buildingimg4").onclick = function () {
+            document.getElementById("relatedBuildingImg3").onclick = function () {
               window.open(obj3link, '_self');
             }
-            buildingimg4.src = imgsrc4;
+            relatedBuildingImg3.src = imgsrc4;
+            document.getElementById("relatedBuildingText3").innerHTML = obj3.Name;
 
             const imgsrc5 = `/img/buildingname/${obj4.Name}.jpg`;
             const obj4link = `http://localhost:5000/building/${obj4.BuildingId}`;
-            document.getElementById("buildingimg5").onclick = function () {
+            document.getElementById("relatedBuildingImg4").onclick = function () {
               window.open(obj4link, '_self');
             }
-            buildingimg5.src = imgsrc5;
+            relatedBuildingImg4.src = imgsrc5;
+            document.getElementById("relatedBuildingText4").innerHTML = obj4.Name;
 
 
           })
@@ -282,11 +294,19 @@
     }
 
     .item4 {
-      grid-area: imageContainer;
+      grid-area: relatedBuilding1;
     }
 
     .item5 {
-      grid-area: imageContainer2;
+      grid-area: relatedBuilding2;
+    }
+
+    .item5 {
+      grid-area: relatedBuilding3;
+    }
+
+    .item5 {
+      grid-area: relatedBuilding4;
     }
 
     .item6 {
@@ -301,7 +321,7 @@
         'buildname buildname'
         'buildingimg tabContainer'
         'h3 h3'
-        'imageContainer imageContainer2'
+        'relatedBuilding1 relatedBuilding2'
       ;
 
       grid-gap: 1px;
