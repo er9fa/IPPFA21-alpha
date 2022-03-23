@@ -28,7 +28,7 @@
     </div>
     <!--End Tab Container-->
 
-    <h3 class="item6">Related Buildings</h3>
+    <h3 class="item8">Related Buildings</h3>
     <div class="relatedBuildingContainer" id="relatedBuilding1">
       <img class="relatedBuildingImage" id="relatedBuildingImg1" src="" />
       <p class="relatedBuildingText" id="relatedBuildingText1"></p>
@@ -294,22 +294,26 @@
     }
 
     .item4 {
-      grid-area: relatedBuilding1;
+      grid-row: relatedBuilding1;
+      grid-row: span;
     }
 
     .item5 {
       grid-area: relatedBuilding2;
-    }
-
-    .item5 {
-      grid-area: relatedBuilding3;
-    }
-
-    .item5 {
-      grid-area: relatedBuilding4;
+      grid-row: span;
     }
 
     .item6 {
+      grid-area: relatedBuilding3;
+      grid-column: span;
+    }
+
+    .item7 {
+      grid-area: relatedBuilding4;
+      grid-column: span;
+    }
+
+    .item8 {
       grid-area: h3;
       font-family: 'Quantico';
     }
@@ -317,15 +321,17 @@
 
     .grid-container {
       display: grid;
+      grid-template-columns: auto;
       grid-template-areas:
-        'buildname buildname'
-        'buildingimg tabContainer'
-        'h3 h3'
-        'relatedBuilding1 relatedBuilding2'
+        'buildname buildname buildname buildname'
+        'buildingimg buildingimg buildingimg tabContainer'
+        'h3 h3 h3 h3'
+        'item5 item5 item5 item5'
+
       ;
 
-      grid-gap: 1px;
-      padding: 2px;
+      grid-gap: 0px;
+      padding: 0px;
 
     }
 
