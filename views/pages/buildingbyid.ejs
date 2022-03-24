@@ -18,7 +18,7 @@
     <img class="item2" id="buildingimg" src="" />
 
     <!--Tab Container-->
-    <div class="tabContainer">
+    <div class="tabContainer item3">
       <div class="buttonContainer">
         <button onclick="showPanel(0,'#002e63')">Building Information</button>
         <button onclick="showPanel(1,'#002e63')">Map</button>
@@ -28,24 +28,24 @@
     </div>
     <!--End Tab Container-->
 
-    <h3 class="item6">Related Buildings</h3>
+    <h3 class="item4">Related Buildings</h3>
 
-    <div class="relatedBuildingContainer" id="relatedBuilding1">
+    <div class="relatedBuildingContainer item5" id="relatedBuilding1">
       <img class="relatedBuildingImage" id="relatedBuildingImg1" src="" />
       <p class="relatedBuildingText" id="relatedBuildingText1"></p>
     </div>
 
-    <div class="relatedBuildingContainer" id="relatedBuilding2">
+    <div class="relatedBuildingContainer item6" id="relatedBuilding2">
       <img class="relatedBuildingImage" id="relatedBuildingImg2" src="" />
       <p class="relatedBuildingText" id="relatedBuildingText2"></p>
     </div>
 
-    <div class="relatedBuildingContainer" id="relatedBuilding3">
+    <div class="relatedBuildingContainer item7" id="relatedBuilding3">
       <img class="relatedBuildingImage" id="relatedBuildingImg3" src="" />
       <p class="relatedBuildingText" id="relatedBuildingText3"></p>
     </div>
 
-    <div class="relatedBuildingContainer" id="relatedBuilding4">
+    <div class="relatedBuildingContainer item8" id="relatedBuilding4">
       <img class="relatedBuildingImage" id="relatedBuildingImg4" src="" />
       <p class="relatedBuildingText" id="relatedBuildingText4"></p>
     </div>
@@ -286,51 +286,70 @@
 
   <style>
     .item1 {
-      grid-area: buildname;
+      /* grid-area: buildname; */
       font-family: 'Quantico';
+      grid-column: 1 / span 4;
+      grid-row: 1;
     }
 
     .item2 {
-      grid-area: buildingimg;
+      /* grid-area: buildingimg; */
+      grid-column: 1 / span 2;
+      grid-row: 2;
     }
 
     .item3 {
-      grid-area: tabContainer;
+      /* grid-area: tabContainer; */
+      grid-column: 3 / span 2;
+      grid-row: 2;
     }
 
     .item4 {
-      grid-area: relatedBuilding1;
+      /* grid-area: h3; */
+      font-family: 'Quantico';
+      grid-column: 1 / span 4;
+      grid-row: 3;
+
     }
 
-    .item4 {
-      grid-area: relatedBuilding2;
-    }
-
-    .item4 {
-      grid-area: relatedBuilding3;
-    }
-
-    .item4 {
-      grid-area: relatedBuilding4;
+    .item5 {
+      /* grid-area: relatedBuilding1; */
+      grid-column: 1;
+      grid-row: 4;
     }
 
     .item6 {
-      grid-area: h3;
-      font-family: 'Quantico';
+      /* grid-area: relatedBuilding2; */
+      grid-column: 2;
+      grid-row: 4;
     }
+
+    .item7 {
+      /* grid-area: relatedBuilding3; */
+      grid-column: 3;
+      grid-row: 4;
+    }
+
+    .item8 {
+      /* grid-area: relatedBuilding4; */
+      grid-column: 4;
+      grid-row: 4;
+    }
+
+
 
 
     .grid-container {
       display: grid;
-      grid-template-areas:
+      /* grid-template-areas:
         'buildname buildname buildname buildname'
         'buildingimg buildingimg tabContainer tabContainer'
         'h3 h3 h3 h3'
         'relatedBuilding1 relatedBuilding2 relatedBuilding3 relatedBuilding4'
-      ;
+      ; */
 
-      grid-gap: 1px;
-      padding: 1px;
+      /* grid-gap: 1px;
+      padding: 1px; */
 
     }
 
