@@ -30,37 +30,26 @@
 
     <h3 class="item6">Related Buildings</h3>
 
-    <div class="col">
-
-      <div class="row">
-        <div class="relatedBuildingContainer" id="relatedBuilding1">
-          <img class="relatedBuildingImage" id="relatedBuildingImg1" src="" />
-          <p class="relatedBuildingText" id="relatedBuildingText1"></p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="relatedBuildingContainer" id="relatedBuilding2">
-          <img class="relatedBuildingImage" id="relatedBuildingImg2" src="" />
-          <p class="relatedBuildingText" id="relatedBuildingText2"></p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="relatedBuildingContainer" id="relatedBuilding3">
-          <img class="relatedBuildingImage" id="relatedBuildingImg3" src="" />
-          <p class="relatedBuildingText" id="relatedBuildingText3"></p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="relatedBuildingContainer" id="relatedBuilding4">
-          <img class="relatedBuildingImage" id="relatedBuildingImg4" src="" />
-          <p class="relatedBuildingText" id="relatedBuildingText4"></p>
-        </div>
-      </div>
-
+    <div class="relatedBuildingContainer" id="relatedBuilding1">
+      <img class="relatedBuildingImage" id="relatedBuildingImg1" src="" />
+      <p class="relatedBuildingText" id="relatedBuildingText1"></p>
     </div>
+
+    <div class="relatedBuildingContainer" id="relatedBuilding2">
+      <img class="relatedBuildingImage" id="relatedBuildingImg2" src="" />
+      <p class="relatedBuildingText" id="relatedBuildingText2"></p>
+    </div>
+
+    <div class="relatedBuildingContainer" id="relatedBuilding3">
+      <img class="relatedBuildingImage" id="relatedBuildingImg3" src="" />
+      <p class="relatedBuildingText" id="relatedBuildingText3"></p>
+    </div>
+
+    <div class="relatedBuildingContainer" id="relatedBuilding4">
+      <img class="relatedBuildingImage" id="relatedBuildingImg4" src="" />
+      <p class="relatedBuildingText" id="relatedBuildingText4"></p>
+    </div>
+
 
   </div> <!-- </div> end div grid container -->
 
@@ -313,15 +302,15 @@
       grid-area: relatedBuilding1;
     }
 
-    .item5 {
+    .item4 {
       grid-area: relatedBuilding2;
     }
 
-    .item5 {
+    .item4 {
       grid-area: relatedBuilding3;
     }
 
-    .item5 {
+    .item4 {
       grid-area: relatedBuilding4;
     }
 
@@ -334,14 +323,14 @@
     .grid-container {
       display: grid;
       grid-template-areas:
-        'buildname buildname'
-        'buildingimg tabContainer'
-        'h3 h3'
-        'relatedBuilding1 relatedBuilding2'
+        'buildname buildname buildname buildname'
+        'buildingimg buildingimg tabContainer tabContainer'
+        'h3 h3 h3 h3'
+        'relatedBuilding1 relatedBuilding2 relatedBuilding3 relatedBuilding4'
       ;
 
       grid-gap: 1px;
-      padding: 2px;
+      padding: 1px;
 
     }
 
@@ -392,16 +381,17 @@
     }
 
     h3 {
-      /*related building info*/
+      /*related building info header*/
       text-indent: 4%;
       text-align: left;
+      width: 100%;
       font-family: 'Quantico', sans-serif;
       font-weight: 900;
-      padding-top: 10px;
-      padding-bottom: 10px;
+      /* padding-top: 5px;
+      padding-bottom: 5px; */
       color: white;
       background-color: #042244;
-      font-size: 60px;
+      font-size: 55px;
 
     }
   </style>
