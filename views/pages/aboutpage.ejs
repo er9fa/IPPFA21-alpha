@@ -7,10 +7,10 @@
   integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+
 
     body {
-      font-family: 'Quantico', sans-serif;
+      font-family: 'Quantico';
       margin: 0;
       background-image: url(https://news.virginia.edu/sites/default/files/uva_east_rotunda_sunset_0.jpg);
       background-size: 100%;
@@ -97,19 +97,37 @@
     <title> About Page </title>
   </div>
 
-  <!-- navbar -->
-  <div class="row justify-content-left m-2">
-    <a class="active" href="https://devhub.virginia.edu/" target="_blank"><img src="/uvadevLogo.png" width="70" height="40" class="rounded img-fluid" image-resolution:
-      from-image alt="Responsive image">
-    </a>
-    <a href="/index">
-      <button class="btn" type="submit" style="border-radius: 15px; background-color: LightSalmon; border-color: Black">Home</button>
-    </a>
-  </div>
 
+<div class="total">
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark py-3">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="/uvadevLogo.png" width="70" height="40" class="rounded img-fluid"
+            image-resolution: from-image alt="Responsive image"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <li class="nav-item">
+              <a class="nav-link active text-white h3" aria-current="page" href="/index">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white h3" href="#">About Us</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" id="Search" placeholder="Search" aria-label="Search">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+ <div class="jumbotron text-center" style="background-image: url(https://news.virginia.edu/sites/default/files/uva_east_rotunda_sunset_0.jpg); background-size: 100%">
   <!-- title banner-->
   <section id="title banner">
-      <div class="container p-3">
+      <div class="container p-5">
         <div class="row justify-content-center">
           <div class="col-sm-10 col-md-6 col-lg-5 col-xl-3 text-center text-md-start">
             <div class="card" style="border-radius: 25px;">
@@ -125,7 +143,7 @@
   <!-- image/description cards -->
 <section id="image cards">
 
-    <div class="container-md m-4">
+    <div class="container-md m-2">
 
       <div class="card" style="border-radius: 25px;">
         <div class="card-body">
@@ -163,7 +181,7 @@
               <img src="/img/Allie.jpg" class="card-img-top" alt="Allison">
               <div class="img__description_layer">
                 <p class="img__description text-center">
-                  Allie is a third year undergraduate student at the University of Virginia pursuing a B.A. in Computer
+                  Allison is a third year undergraduate student at the University of Virginia pursuing a B.A. in Computer
                   Science.
                 </p>
               </div>
@@ -288,9 +306,27 @@
     </div>
     </div>
 </section>
+</div>
+</div>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
   integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+
+
+
+  //Search Bar JavaScript
+    Search.addEventListener('keyup', (e) => {
+      const searchString = e.target.value.toLowerCase();
+      const filteredBuildings = buildinghere.filter((building) => {
+        return (
+          building.Name.toLowerCase().includes(searchString) ||
+          building.Address.toLowerCase().includes(searchString)
+        );
+      });
+      i = 0;
+      s = i + 10;
+      displayBuildings(filteredBuildings);
+    });
 </script>
 
 </body>
